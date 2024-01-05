@@ -1,0 +1,204 @@
+.january {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/01/big_img_jan_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/01/big_img_jan_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #e3f6f2;
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "January";
+    }
+  }
+}
+.february {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/02/big_img_feb_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/02/big_img_feb_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #016680;
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "February";
+    }
+  }
+}
+.march {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/03/big_img_mar_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/03/big_img_mar_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #efefef;
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "March";
+    }
+  }
+}
+.april {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/04/big_img_apr_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/04/big_img_apr_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #ffecde;
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "April";
+    }
+  }
+}
+.may {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/05/big_img_may_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/05/big_img_may_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #aee387;
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "May";
+    }
+  }
+}
+.june {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/06/big_img_jun_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/06/big_img_jun_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #bed630;
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "June";
+    }
+  }
+}
+.july {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/07/big_img_jul_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/07/big_img_jul_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #ffe0a3;
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "July";
+    }
+  }
+}
+.august {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/08/big_img_aug_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/08/big_img_aug_r.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/08/back.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain, cover;
+  background-position: left center, right center, center;
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "August";
+    }
+  }
+}
+.september {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/09/big_img_sep_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/09/big_img_sep_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #012548;
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "September";
+    }
+  }
+}
+.october {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/10/big_img_oct_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/10/big_img_oct_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #522b28;
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "October";
+    }
+  }
+}
+.november {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/11/big_img_nov_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/11/big_img_nov_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #ffe6b8;
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "November";
+    }
+  }
+}
+.december {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/12/big_img_dec_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/12/big_img_dec_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #17173b;
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "December";
+    }
+  }
+}

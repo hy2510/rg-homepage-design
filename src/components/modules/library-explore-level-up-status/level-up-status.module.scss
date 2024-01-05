@@ -1,0 +1,43 @@
+// 학습메인 > 사용자의 학습레벨의 레벨업 상태
+.level_up_status {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  z-index: 6;
+  .level_up_status_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .row_a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-s);
+      .dropdown {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: var(--space-xxs);
+      }
+      .txt_h {
+        font-size: var(--text-d-1);
+        font-weight: 600;
+      }
+      .txt_d {
+        font-size: var(--text-d-2);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// 학습메인 > 학습 설정
+.set_study_mode {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  color: var(--gray1);
+  font-size: var(--text-s);
+  font-weight: 500;
+}

@@ -1,0 +1,25 @@
+// 학습메인 > 사용자의 학습레벨의 주제 리스트
+.theme_list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .txt_h {
+    font-size: var(--text-d-1);
+    font-weight: 600;
+  }
+  .theme_list_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-m);
+  }
+}
+
+// 학습메인 > 사용자의 학습레벨의 주제 아이템
+.theme_list_item {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  img {
+    border-radius: var(--round-m);
+  }
+}

@@ -1,0 +1,52 @@
+[
+    {
+        "bookCode": "EB-1A-506",
+        "bookImage": "eb-1a-506.jpg",
+        "title": "Always Tidy Up After Yourself!",
+        "athor": "Hannal",
+        "summary": "After Dodo finds Sheila and Blanc in the basement of the store, she learns more about the unusual things stored there. What could these things be, and will Dodo help Sheila and Blanc tidy up?",
+        "addedToDo": true,
+        "addedFavorite": false,
+        "earnPoint": 10.1
+    },
+    {
+        "bookCode": "EB-1A-327",
+        "bookImage": "eb-1a-327.jpg",
+        "title": "The Little Kangaroo That Wanted to Jump",
+        "athor": "William Anthony",
+        "summary": "Willow is a young kangaroo. As she gets older, she wants to jump around like the other animals, so she asks Momma to teach her to jump. Can Willow learn to jump higher?",
+        "addedToDo": false,
+        "addedFavorite": false,
+        "earnPoint": 10.1
+    },
+    {
+        "bookCode": "EB-1B-513",
+        "bookImage": "eb-1b-513.jpg",
+        "title": "The Popcorn Submarine",
+        "athor": "Blake Hoena",
+        "summary": "After the Crabkin gets away, Dodo comes up with an idea. With the help of Baro, Millo, and Chello, Dodo and Edmond work together to try and build a popcorn submarine. However, a mysterious man has other ideas. Can Dodo and Edmond finish building the popcorn submarine before the mysterious man comes to spoil their plans?",
+        "addedToDo": false,
+        "addedFavorite": false,
+        "earnPoint": 10.1
+    },
+    {
+        "bookCode": "EB-1C-401",
+        "bookImage": "eb-1c-401.jpg",
+        "title": "Lizzie Little, the Sky is Falling!",
+        "athor": "Rourke Publishing",
+        "summary": "Lizzie Lizard was enjoying tanning when it started to rain. When she felt the water falling from the sky, she thinks the sky is breaking and tells everyone of this…",
+        "addedToDo": false,
+        "addedFavorite": false,
+        "earnPoint": 10.1
+    },
+    {
+        "bookCode": "PB-1B-017",
+        "bookImage": "pb-1b-017.png",
+        "title": "Clifford THE BIG RED DOG",
+        "athor": "Norman Bridwell",
+        "summary": "Emily Elizabeth tells the reader about the dilemmas and delights of having a really big, red dog.",
+        "addedToDo": false,
+        "addedFavorite": false,
+        "earnPoint": 10.1
+    }
+]

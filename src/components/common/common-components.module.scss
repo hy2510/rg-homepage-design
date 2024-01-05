@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.2s;
   &:active {
     transform: scale(0.98);
   }
@@ -454,7 +455,6 @@
   top: 3%;
   left: 50%;
   transform: translate(-50%, 0%);
-
   .modal_container {
     width: 800px;
     min-height: 60vh;

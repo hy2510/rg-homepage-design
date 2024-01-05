@@ -1369,7 +1369,7 @@ const LevelTestHistoryItem = ({ testResultLevel, testDate, onClick }) => {
   return (
     <div className={style.level_test_history_item} onClick={onClick}>
       <div className={style.col_a}>
-        <div className={style.level_symbol_box}>{testResultLevel}</div>
+        {/* <div className={style.level_symbol_box}>{testResultLevel}</div> */}
         <div className={style.test_result_info}>
           <div className={style.txt_l}>{testDate}</div>
           <div className={style.txt_p2}>

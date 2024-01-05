@@ -5,12 +5,10 @@ import { BackLink, Nav, NavItem } from "@/components/common/common-components";
 import { usePathname } from "next/navigation";
 
 export default function Layout({ children }) {
-  const pathName = usePathname();
-  const pageName = [
-    "/library/find/assignment/to-do",
-    "/library/find/assignment/try-again",
-    "/library/find/assignment/favorite",
-  ];
+  const pathname = usePathname();
+  const connectToDo = pathname.indexOf("to-do") != -1;
+  const connectTryAgain = pathname.indexOf("try-again") != -1;
+  const connectFavorite = pathname.indexOf("favorite") != -1;
 
   return (
     <div className="pd-top-m">
@@ -20,19 +18,13 @@ export default function Layout({ children }) {
       <div className="mg-bottom-m"></div>
       <Nav>
         <Link href="/library/find/assignment/to-do">
-          <NavItem active={pathName === pageName[0] ? true : false}>
-            To-Do
-          </NavItem>
+          <NavItem active={connectToDo}>To-Do</NavItem>
         </Link>
         <Link href="/library/find/assignment/try-again">
-          <NavItem active={pathName === pageName[1] ? true : false}>
-            Try Again
-          </NavItem>
+          <NavItem active={connectTryAgain}>Try Again</NavItem>
         </Link>
         <Link href="/library/find/assignment/favorite">
-          <NavItem active={pathName === pageName[2] ? true : false}>
-            Favorite
-          </NavItem>
+          <NavItem active={connectFavorite}>Favorite</NavItem>
         </Link>
       </Nav>
       {children}

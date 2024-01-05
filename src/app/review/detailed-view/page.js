@@ -4,5 +4,5 @@ import stylesPc from "./page.module.scss";
 const style = stylesPc;
 
 export default function Page() {
-  return <main className={style.main}>랭킹</main>;
+  return <main className={style.main}>상세리뷰</main>;
 }

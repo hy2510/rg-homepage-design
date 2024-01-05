@@ -1,6 +1,6 @@
 "use client";
 
-import style from "./page.module.scss";
+import stylesPc from "./page.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -38,6 +38,8 @@ import {
   CourseList,
 } from "@/components/modules/library-explore-course-list/course-list";
 import { IntroChoodeLevel } from "@/components/modules/library-intro-choose-level/intro-choose-level";
+
+const style = stylesPc;
 
 export default function Page() {
   return (

@@ -50,6 +50,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexSansKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color: #ffffff;
@@ -64,7 +80,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "SUIT-Regular", sans-serif;
+  font-family: "NanumSquareRound", sans-serif;
   &::-webkit-scrollbar {
     background-color: transparent;
     width: 3px;

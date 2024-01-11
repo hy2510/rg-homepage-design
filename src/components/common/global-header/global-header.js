@@ -135,13 +135,13 @@ const GnbLogOn = ({
         />
         <GnbButton
           active={connectReview}
-          href="/review"
+          href="/review/quick-view"
           imgSrc="/src/images/@global-header/review.svg"
           menuName="리뷰"
         />
         <GnbButton
           active={connectRanking}
-          href="/ranking"
+          href="/ranking/points-rank"
           imgSrc="/src/images/@global-header/ranking.svg"
           menuName="랭킹"
         />

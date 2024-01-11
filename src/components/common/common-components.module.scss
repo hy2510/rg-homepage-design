@@ -236,14 +236,14 @@
 }
 
 // 필 네브
-.pill-container {
+.pill_container {
   display: flex;
   align-items: center;
   gap: var(--space-s);
 }
 
 // 필 네브 아이템
-.pill-item {
+.pill_item {
   padding: var(--space-xs) var(--space-s);
   border-radius: var(--round-full);
   font-weight: 500;

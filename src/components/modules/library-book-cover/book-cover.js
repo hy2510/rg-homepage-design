@@ -244,7 +244,6 @@ export function BookInfoModal({
                     <></>
                   )}
                 </div>
-                <addFavoriteButton />
                 <div className={style.add_todo}>
                   <div
                     className={style.add_todo_icon}
@@ -342,7 +341,7 @@ export function BookInfoModal({
                 </div>
               </div>
             </div>
-            <Button width="100%" shadow color={"red"}>
+            <Button shadow width="100%" color={"red"}>
               학습하기
             </Button>
           </div>

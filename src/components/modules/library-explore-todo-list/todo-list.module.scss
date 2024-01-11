@@ -13,7 +13,7 @@
     grid-template-columns: repeat(6, 1fr);
     gap: var(--space-m);
     .more_button {
-      border: 2px dashed var(--gray2);
+      border: 2px dotted var(--gray2);
       color: var(--gray1);
       font-weight: 600;
       display: flex;

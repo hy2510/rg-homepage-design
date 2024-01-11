@@ -1,0 +1,29 @@
+.report_search_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--round-l);
+  border: 2px solid var(--gray2);
+  // background-color: #ebf5ff;
+  background-color: var(--gray3);
+  padding: var(--space-s);
+  .period {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    .start_date,
+    .end_date {
+      border: 2px solid var(--gray2);
+      border-radius: var(--round-m);
+      background-color: var(--white);
+      padding: var(--space-xxs);
+      overflow: hidden;
+    }
+  }
+  .search_bar {
+    display: flex;
+    background-color: var(--white);
+    padding: var(--space-xxs) var(--space-s);
+    border-radius: var(--round-full);
+  }
+}

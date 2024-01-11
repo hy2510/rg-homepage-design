@@ -43,7 +43,7 @@ const style = stylesPc;
 
 export default function Page() {
   return (
-    <main className={`${style.explore} ${style.pc}`}>
+    <main className={`${style.explore}`}>
       {/* <IntroChoodeLevel /> */}
       {/* <PrekMode /> */}
       <BookReadingMode />

@@ -66,12 +66,12 @@
           background-color: var(--orange);
           color: var(--white);
           border: none;
-          padding: 3px 10px;
+          padding: 4px 10px;
         }
       }
       span {
-        padding: 3px 8px;
-        border: 1.5px dashed var(--gray2);
+        padding: 4px 8px;
+        border: 1.5px dotted var(--gray2);
         border-radius: var(--round-full);
       }
     }
@@ -292,17 +292,18 @@
               cursor: pointer;
               width: 100%;
               min-height: 50px;
-              border: 2px dotted;
-              border-radius: var(--round-m);
+              border-radius: var(--round-full);
               display: flex;
               align-items: center;
               justify-content: center;
-              font-weight: 600;
+              font-weight: 400;
             }
             .speak_button {
+              border: 2px dotted #ff274f50;
               color: var(--red);
             }
             .movie_button {
+              border: 2px dotted #15b5f150;
               color: var(--blue);
             }
           }

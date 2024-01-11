@@ -158,12 +158,14 @@ export function NavItem({ active, onClick, width, children, toolTip }) {
 
 // 필 네브
 export function Pills({ children }) {
-  return <div className="pill-container">{children}</div>;
+  return <div className={style.pill_container}>{children}</div>;
 }
 
 // 필 네브 아이템
 export function PillItem({ active, children }) {
-  return <div className={`pill-item ${active}`}>{children}</div>;
+  return (
+    <div className={`${style.pill_item} ${active && style.on}`}>{children}</div>
+  );
 }
 
 // 페이지네이션

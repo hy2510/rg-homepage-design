@@ -1,7 +1,5 @@
 .explore {
-  &.pc {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-l);
-  }
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
 }

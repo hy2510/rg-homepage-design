@@ -77,11 +77,11 @@ export function CourseItem({
               ? undefined
               : studyData[prevNum].passed === "Y" &&
                 studyData[currentNum].passed === "N"
-              ? style.pulsate_fwd
+              ? style.heartbeat
               : undefined
           } ${
             currentNum == 0
-              ? studyData[currentNum].passed === "N" && style.pulsate_fwd
+              ? studyData[currentNum].passed === "N" && style.heartbeat
               : undefined
           }`}
         >

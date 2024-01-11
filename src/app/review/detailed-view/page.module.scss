@@ -1,3 +1,5 @@
-.main {
-  color: red;
+.detailed_view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
 }

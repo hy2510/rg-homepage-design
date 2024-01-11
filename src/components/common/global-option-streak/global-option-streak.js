@@ -8,6 +8,31 @@ import Link from "next/link";
 
 // 연속학습 모달
 export function StreakModal({ _viewStreakModal }) {
+  // 체크포인트
+  const CheckPoint = ({ imgSrc, score, date }) => {
+    return (
+      <div className={style.check_point}>
+        <div className={style.check_mark}>
+          <div className={style.line}></div>
+          <Image
+            alt=""
+            src="/src/images/@streak-modal/check_mark.svg"
+            width={30}
+            height={30}
+          />
+          <div className={style.line}></div>
+        </div>
+        <div className={style.label_image}>
+          <Image alt="" src={imgSrc} width={110} height={110} />
+        </div>
+        <div className={style.check_message}>
+          <div className={style.txt_l}>연속학습 {score}일 달성</div>
+          <div className={style.date}>{date}</div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <Modal
       compact
@@ -69,28 +94,3 @@ export function StreakModal({ _viewStreakModal }) {
     </Modal>
   );
 }
-
-// 연속학습 모달 > 체크포인트
-const CheckPoint = ({ imgSrc, score, date }) => {
-  return (
-    <div className={style.check_point}>
-      <div className={style.check_mark}>
-        <div className={style.line}></div>
-        <Image
-          alt=""
-          src="/src/images/@streak-modal/check_mark.svg"
-          width={30}
-          height={30}
-        />
-        <div className={style.line}></div>
-      </div>
-      <div className={style.label_image}>
-        <Image alt="" src={imgSrc} width={110} height={110} />
-      </div>
-      <div className={style.check_message}>
-        <div className={style.txt_l}>연속학습 {score}일 달성</div>
-        <div className={style.date}>{date}</div>
-      </div>
-    </div>
-  );
-};

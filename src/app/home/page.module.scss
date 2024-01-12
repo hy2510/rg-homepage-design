@@ -1,3 +1,13 @@
-.main {
-  color: red;
+.home {
+  background-image: url("/src/images/@home/home_bg.svg");
+  background-repeat: repeat-x;
+  animation: linear 200s infinite cloud;
+  @keyframes cloud {
+    0% {
+      background-position: top -30px right 0;
+    }
+    100% {
+      background-position: top -30px right -5187px;
+    }
+  }
 }

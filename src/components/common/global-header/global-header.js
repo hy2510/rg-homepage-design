@@ -13,7 +13,7 @@ import { NoticeModal } from "../global-option-notice/global-option-notice";
 
 // 공통상단
 export default function Gheader({ children }) {
-  const logOnStatus = true;
+  const logOnStatus = false;
   const pathname = usePathname();
   const connectHome = pathname.indexOf("home") != -1;
   const connectAbout = pathname.indexOf("about") != -1;
@@ -96,8 +96,8 @@ const GnbLogOff = ({ connectHome, connectAbout, connectTrial }) => {
         />
       </div>
       <div className={style.sign_buttons}>
-        <Link href="/">회원 가입</Link>
-        <Link href="/">로그인</Link>
+        <Link href="/account/account-list">로그인</Link>
+        <Link href="/account/sign-up">회원가입</Link>
       </div>
     </>
   );

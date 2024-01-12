@@ -10,13 +10,12 @@
   .global_header_container {
     height: var(--header-height);
     padding: 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     .company_logo {
       display: flex;
       align-items: center;
-      min-width: 250px;
+      min-width: 150px;
       justify-content: start;
     }
   }
@@ -31,13 +30,13 @@
   gap: var(--space-l);
 }
 .sign_buttons {
-  min-width: 250px;
+  min-width: 150px;
   color: var(--white);
   font-weight: 500;
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: var(--space-s);
+  gap: var(--space-m);
 }
 
 // 공통상단 > 로그온 상태의 메뉴

@@ -32,7 +32,18 @@ export function CalendarModal({ _viewCalendarModal }) {
     "november",
     "december",
   ];
-  const mon = monthNames[date.getMonth()];
+
+  const [changeCalVal, _changeCalVal] = useState(0);
+  const monthChangeLeft = () => {
+    date.getMonth() + changeCalVal > 0 ? _changeCalVal(changeCalVal - 1) : null;
+  };
+  const monthChangeRight = () => {
+    date.getMonth() + changeCalVal < 11
+      ? _changeCalVal(changeCalVal + 1)
+      : null;
+  };
+
+  const mon = monthNames[date.getMonth() + changeCalVal];
 
   // ____달력임시
   let e = [];
@@ -77,8 +88,24 @@ export function CalendarModal({ _viewCalendarModal }) {
         <div className={`${style.cal_header} ${mon}`}>
           <div className={style.cal_header_container}>
             <div className={style.current_month}>
-              <div className={`${style.cal_year} cal_year`}>2023</div>
-              <div className={`${style.cal_month} cal_month`}></div>
+              <div className={`${style.year_carousel} year_carousel`}>
+                <div className={"carousel_left_button"}></div>
+                <div className={`${style.cal_year} cal_year`}>
+                  {date.getFullYear()}
+                </div>
+                <div className={"carousel_right_button"}></div>
+              </div>
+              <div className={style.month_carousel}>
+                <div
+                  className={"carousel_left_button"}
+                  onClick={monthChangeLeft}
+                ></div>
+                <div className={`${style.cal_month} cal_month`}></div>
+                <div
+                  className={"carousel_right_button"}
+                  onClick={monthChangeRight}
+                ></div>
+              </div>
             </div>
             <div className={style.monthly_study_status}>
               {isSimpleMode ? (
@@ -112,6 +139,21 @@ export function CalendarModal({ _viewCalendarModal }) {
   );
 }
 
+// 캘린더 테이블 헤더 (요일)
+const CalTableHeader = () => {
+  return (
+    <div className={style.cal_table_header}>
+      <div className={style.col_day}>SUN</div>
+      <div className={style.col_day}>MON</div>
+      <div className={style.col_day}>TUE</div>
+      <div className={style.col_day}>WED</div>
+      <div className={style.col_day}>THU</div>
+      <div className={style.col_day}>FRI</div>
+      <div className={style.col_day}>SAT</div>
+    </div>
+  );
+};
+
 // 캘린더 모달 > 간편보기 헤더정보
 const CalendarSimpleModeInfo = () => {
   return (
@@ -139,22 +181,25 @@ const CalendarSimpleModeInfo = () => {
 // 캘린더 모달 > 간편보기 달력
 const CalendarSimpleModeBody = (props) => {
   return (
-    <div className={style.calendar_simple_mode_body}>
-      {props.e.map((a, i) => {
-        return (
-          <div className={style.cal_item} key={i}>
-            <div className={style.date}>{a}</div>
-            {/* no_attendance: 미출석, attendance: 출석함, achieved_goals: 일일목표달성) */}
-            <div className={`${style.event} ${style.no_attendance}`}></div>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <CalTableHeader />
+      <div className={style.calendar_simple_mode_body}>
+        {props.e.map((a, i) => {
+          return (
+            <div className={style.cal_item} key={i}>
+              <div className={style.date}>{a}</div>
+              {/* no_attendance: 미출석, attendance: 출석함, achieved_goals: 일일목표달성) */}
+              <div className={`${style.event} ${style.no_attendance}`}></div>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
 // 일일목표 달성방식 (passed: 학습권수 , point: 포인트획득)
-const dailyGoalMode = "passed";
+const dailyGoalMode = "point";
 
 // 캘린더 모달 > 상세보기 헤더정보
 const CalendarDetailModeInfo = () => {
@@ -163,14 +208,6 @@ const CalendarDetailModeInfo = () => {
       {/* 일일목표설정이 포인트획득 방식인 경우 */}
       {dailyGoalMode === "point" && (
         <div className={style.calendar_detail_mode_info_container}>
-          <div className={style.daily_goal_info}>
-            <Image
-              src="/src/images/@calendar-modal/flag_check_dark_blue.svg"
-              width="18"
-              height="18"
-            />
-            <span>일일목표: +10P</span>
-          </div>
           <div className={style.goal_point_pass}>
             <Image
               src="/src/images/@calendar-modal/point_blue.svg"
@@ -179,19 +216,19 @@ const CalendarDetailModeInfo = () => {
             />
             <span>일일목표 달성: 9건</span>
           </div>
+          <div className={style.daily_goal_info}>
+            {/* <Image
+              src="/src/images/@calendar-modal/flag_check_dark_blue.svg"
+              width="18"
+              height="18"
+            /> */}
+            <span>(하루 +10P 획득하기)</span>
+          </div>
         </div>
       )}
       {/* 일일목표설정이 학습완료(읽은권수) 방식인 경우 */}
       {dailyGoalMode === "passed" && (
         <div className={style.calendar_detail_mode_info_container}>
-          <div className={style.daily_goal_info}>
-            <Image
-              src="/src/images/@calendar-modal/flag_check_dark_blue.svg"
-              width="18"
-              height="18"
-            />
-            <span>일일목표: +10권</span>
-          </div>
           <div className={style.goal_passed_pass}>
             <Image
               src="/src/images/@calendar-modal/book_blue.svg"
@@ -199,6 +236,14 @@ const CalendarDetailModeInfo = () => {
               height="18"
             />
             <span>일일목표 달성: 9건</span>
+          </div>
+          <div className={style.daily_goal_info}>
+            {/* <Image
+              src="/src/images/@calendar-modal/flag_check_dark_blue.svg"
+              width="18"
+              height="18"
+            /> */}
+            <span>(하루 10권씩 학습하기)</span>
           </div>
         </div>
       )}
@@ -266,6 +311,7 @@ const CalendarDetailModeBody = (props) => {
         </div>
       </div>
       {/* 캘린더 */}
+      <CalTableHeader />
       <div className={style.cal_detail_mode_body}>
         {props.e.map((a, i) => {
           return (

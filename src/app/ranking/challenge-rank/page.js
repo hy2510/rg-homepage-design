@@ -112,7 +112,7 @@ export default function Page() {
           <div className={style.th_item}>순위</div>
           <div className={style.th_item}>학생 이름</div>
           <div className={style.th_item}>학습 참여일 수</div>
-          <div className={style.th_item}>획득한 포인트 / 학습 권수</div>
+          <div className={style.th_item}>획득한 포인트 / 학습 권수</div>{" "}
         </div>
         {ranking.map((a) => {
           return (

@@ -1,3 +1,34 @@
+@mixin carouselButtons(
+  $leftIco: "/src/images/arrow-icons/chv_left.svg",
+  $rightIco: "/src/images/arrow-icons/chv_right.svg"
+) {
+  .carousel_left_button,
+  .carousel_right_button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+    cursor: pointer;
+  }
+  .carousel_left_button {
+    background-image: url($leftIco);
+  }
+  .carousel_right_button {
+    background-image: url($rightIco);
+  }
+  .year_carousel {
+    .carousel_left_button,
+    .carousel_right_button {
+      background-size: 24px;
+      opacity: 0.2;
+    }
+  }
+}
+
 .january {
   background-image: url("/src/images/@calendar-modal/calendar-bg/01/big_img_jan_l.svg"),
     url("/src/images/@calendar-modal/calendar-bg/01/big_img_jan_r.svg");
@@ -14,6 +45,7 @@
       content: "January";
     }
   }
+  @include carouselButtons();
 }
 .february {
   background-image: url("/src/images/@calendar-modal/calendar-bg/02/big_img_feb_l.svg"),
@@ -31,6 +63,10 @@
       content: "February";
     }
   }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
 }
 .march {
   background-image: url("/src/images/@calendar-modal/calendar-bg/03/big_img_mar_l.svg"),
@@ -48,6 +84,7 @@
       content: "March";
     }
   }
+  @include carouselButtons();
 }
 .april {
   background-image: url("/src/images/@calendar-modal/calendar-bg/04/big_img_apr_l.svg"),
@@ -65,6 +102,7 @@
       content: "April";
     }
   }
+  @include carouselButtons();
 }
 .may {
   background-image: url("/src/images/@calendar-modal/calendar-bg/05/big_img_may_l.svg"),
@@ -82,6 +120,7 @@
       content: "May";
     }
   }
+  @include carouselButtons();
 }
 .june {
   background-image: url("/src/images/@calendar-modal/calendar-bg/06/big_img_jun_l.svg"),
@@ -99,6 +138,7 @@
       content: "June";
     }
   }
+  @include carouselButtons();
 }
 .july {
   background-image: url("/src/images/@calendar-modal/calendar-bg/07/big_img_jul_l.svg"),
@@ -116,6 +156,7 @@
       content: "July";
     }
   }
+  @include carouselButtons();
 }
 .august {
   background-image: url("/src/images/@calendar-modal/calendar-bg/08/big_img_aug_l.svg"),
@@ -133,6 +174,10 @@
       content: "August";
     }
   }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
 }
 .september {
   background-image: url("/src/images/@calendar-modal/calendar-bg/09/big_img_sep_l.svg"),
@@ -150,6 +195,10 @@
       content: "September";
     }
   }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
 }
 .october {
   background-image: url("/src/images/@calendar-modal/calendar-bg/10/big_img_oct_l.svg"),
@@ -167,6 +216,10 @@
       content: "October";
     }
   }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
 }
 .november {
   background-image: url("/src/images/@calendar-modal/calendar-bg/11/big_img_nov_l.svg"),
@@ -184,6 +237,7 @@
       content: "November";
     }
   }
+  @include carouselButtons();
 }
 .december {
   background-image: url("/src/images/@calendar-modal/calendar-bg/12/big_img_dec_l.svg"),
@@ -201,4 +255,8 @@
       content: "December";
     }
   }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
 }

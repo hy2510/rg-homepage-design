@@ -1,6 +1,16 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
+"use client";
 
-export default function Home() {
-  return <main className={styles.main}>회원가입 / 로그인</main>;
+import styledPc from "./page.module.scss";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
+const style = styledPc;
+
+export default function Page() {
+  const moveToPage = () => {
+    const router = useRouter();
+    router.push("/account/sign-in/personal-member");
+  };
+
+  return <main className={style.account}>{moveToPage()}</main>;
 }

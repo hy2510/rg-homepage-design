@@ -251,7 +251,7 @@ export function DropdownItem({ onClick, children }) {
 }
 
 // 텍스트필드
-export function TextField({ id, hint }) {
+export function TextField({ id, hint, password }) {
   const [onKey, _onKey] = useState(false);
 
   return (
@@ -259,7 +259,7 @@ export function TextField({ id, hint }) {
       <div className={style.txt_l}>{onKey && hint}</div>
       <input
         id={id}
-        type="text"
+        type={password ? "password" : "text"}
         placeholder={onKey ? null : hint}
         onKeyUp={() => {
           _onKey(true);

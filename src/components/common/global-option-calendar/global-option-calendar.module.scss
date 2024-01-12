@@ -16,12 +16,26 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        .cal_year {
-          font-size: var(--text-xl);
+        .year_carousel {
+          display: grid;
+          grid-template-columns: 40px 100px 40px;
+          align-items: center;
+          justify-items: center;
+          gap: var(--space-l);
+          .cal_year {
+            font-size: var(--text-xl);
+          }
         }
-        .cal_month {
-          font-size: 3em;
-          font-weight: 600;
+        .month_carousel {
+          display: grid;
+          grid-template-columns: 40px 300px 40px;
+          align-items: center;
+          justify-items: center;
+          gap: var(--space-l);
+          .cal_month {
+            font-size: 3em;
+            font-weight: 600;
+          }
         }
       }
       .monthly_study_status {
@@ -46,6 +60,24 @@
     background-color: var(--white);
     border-radius: 0 0 var(--round-l) var(--round-l);
     margin-bottom: var(--space-s);
+  }
+}
+
+// 캘린더 테이블 헤더 (요일)
+.cal_table_header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  .col_day {
+    font-size: var(--text-s);
+    font-weight: 500;
+    color: #333;
+    &:nth-child(1) {
+      color: var(--red);
+    }
+    &:nth-child(7) {
+      color: var(--blue);
+    }
   }
 }
 
@@ -112,7 +144,7 @@
 .calendar_detail_mode_info {
   .calendar_detail_mode_info_container {
     display: flex;
-    gap: var(--space-s);
+    gap: var(--space-xxs);
     .goal_point_fail,
     .goal_point_pass,
     .goal_passed_fail,
@@ -125,8 +157,9 @@
     .goal_point_fail,
     .goal_passed_fail,
     .daily_goal_info {
-      color: #698eb2;
-      font-weight: 600;
+      color: var(--gray1);
+      font-weight: 500;
+      font-size: var(--text-s);
     }
     .goal_point_pass,
     .goal_passed_pass {

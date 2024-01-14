@@ -41,10 +41,10 @@ export function Button({ color, shadow, roundFull, width, onClick, children }) {
 }
 
 // 뒤로가기
-export function BackLink({ href, largeFont, children }) {
+export function BackLink({ href, largeFont, children, onClick }) {
   return (
     <div className={style.back_link}>
-      <Link href={href ? href : "/"}>
+      <Link href={href ? href : "/"} onClick={onClick ? onClick : null}>
         <div className={style.back_link}>
           <Image
             alt=""
@@ -251,7 +251,7 @@ export function DropdownItem({ onClick, children }) {
 }
 
 // 텍스트필드
-export function TextField({ id, hint, password }) {
+export function TextField({ id, hint, password, email }) {
   const [onKey, _onKey] = useState(false);
 
   return (
@@ -259,7 +259,7 @@ export function TextField({ id, hint, password }) {
       <div className={style.txt_l}>{onKey && hint}</div>
       <input
         id={id}
-        type={password ? "password" : "text"}
+        type={password ? "password" : email ? "emial" : "text"}
         placeholder={onKey ? null : hint}
         onKeyUp={() => {
           _onKey(true);
@@ -368,9 +368,9 @@ export function EmptyMessage({ isAward, children }) {
 }
 
 // 체크박스
-export function CheckBox({ id, check }) {
+export function CheckBox({ id, check, onClick }) {
   return (
-    <div id={id} className={style.check_box}>
+    <div id={id} className={style.check_box} onClick={onClick}>
       {check ? (
         <Image
           src="/src/images/check-icons/check_box_on.svg"

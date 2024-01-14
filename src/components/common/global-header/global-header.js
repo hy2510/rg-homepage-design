@@ -97,7 +97,7 @@ const GnbLogOff = ({ connectHome, connectAbout, connectTrial }) => {
       </div>
       <div className={style.sign_buttons}>
         <Link href="/account/account-list">로그인</Link>
-        <Link href="/account/sign-up">회원가입</Link>
+        <Link href="/account/sign-up/step1">회원가입</Link>
       </div>
     </>
   );

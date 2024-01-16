@@ -1,7 +1,7 @@
 // 연속학습 모달
 .streak_modal {
   .streak_modal_body {
-    padding: 0 var(--space-m);
+    padding: var(--space-m);
     min-height: 600px;
     .advance_notice {
       display: flex;

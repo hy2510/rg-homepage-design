@@ -14,8 +14,8 @@ export default function Page() {
         로그인
       </Button>
       <div className={style.row_box}>
-        <Link href={""}>아이디 찾기</Link>
-        <Link href={""}>비밀번호 찾기</Link>
+        <Link href={"../forgot/forgot-id"}>아이디 찾기</Link>
+        <Link href={"../forgot/forgot-password"}>비밀번호 찾기</Link>
       </div>
       <div className={style.comment}>
         ❗️ 학교나 학원에서 사용 안내를 받은 경우, 그룹 회원 탭에서 검색 후

@@ -31,9 +31,7 @@ export default function Page() {
 
   return (
     <main className={style.step1}>
-      <BackLink href="/account/sign-in/personal-member">
-        리딩게이트 회원가입
-      </BackLink>
+      <BackLink>리딩게이트 회원가입</BackLink>
       <AlertBar>
         가입특혜: 가입일로 부터 7일간 무료사용 (레벨테스트 제외)
       </AlertBar>

@@ -252,6 +252,7 @@
   background-color: var(--gray3);
   color: var(--gray1);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
   &.on {
     background-color: var(--blue);
     color: var(--white);
@@ -414,6 +415,9 @@
   border: 1.2px solid var(--gray2);
   border-radius: var(--round-m);
   padding: var(--space-s);
+  &.val {
+    background-color: var(--gray3);
+  }
   .txt_l {
     font-size: var(--text-xs);
     color: var(--gray1);
@@ -464,8 +468,8 @@
     background-color: var(--white);
     border-radius: var(--round-l);
     color: var(--black);
-    overflow: hidden;
-    overflow-y: scroll;
+    // overflow: hidden;
+    overflow-y: auto;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
       rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -483,6 +487,7 @@
       top: 0;
       z-index: 100;
       background-color: var(--white);
+      color: var(--black);
       &::after {
         content: "";
         position: absolute;
@@ -497,7 +502,8 @@
         flex-direction: column;
         gap: 3px;
         .txt_h {
-          font-size: var(--text-xl);
+          font-size: 1.4em;
+          font-weight: 600;
         }
         .txt_p {
           color: var(--gray1);
@@ -532,7 +538,7 @@
   }
 }
 .light_box {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;

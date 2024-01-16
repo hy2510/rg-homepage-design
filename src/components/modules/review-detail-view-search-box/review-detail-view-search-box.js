@@ -7,25 +7,28 @@ const style = stylesPc;
 export const ReportSearchBox = ({ onClick }) => {
   return (
     <div className={style.report_search_box}>
-      <div className={style.period}>
-        <div className={style.start_date}>
-          <input type="date" />
+      <div className={style.column1}>
+        <div className={style.period}>
+          <div className={style.start_date}>
+            <input type="date" />
+          </div>
+          <div>~</div>
+          <div className={style.end_date}>
+            <input type="date" />
+          </div>
         </div>
-        <div>~</div>
-        <div className={style.end_date}>
-          <input type="date" />
+        <div className={style.search_bar}>
+          <input type="text" placeholder="도서 또는 시리즈명" />
         </div>
       </div>
-      <div className={style.search_bar}>
-        <input type="text" placeholder="도서 제목 입력" />
-        <button onClick={onClick}>
-          <Image
-            src="/src/images/search-icons/search.svg"
-            width={20}
-            height={20}
-          />
-        </button>
-      </div>
+      <button onClick={onClick} className={style.search_button}>
+        <Image
+          src="/src/images/search-icons/search_white.svg"
+          width={20}
+          height={20}
+        />
+        <span className={style.button_text}>검색하기</span>
+      </button>
     </div>
   );
 };

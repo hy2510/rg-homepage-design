@@ -1,0 +1,99 @@
+.account_info {
+  display: flex;
+  flex-direction: column;
+  .heading {
+    font-size: var(--text-d-2);
+    font-weight: 600;
+    margin: var(--space-m) 0;
+  }
+  .contents {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    .sub_title {
+      font-size: var(--text-d-1);
+      font-weight: 600;
+    }
+    .description {
+      font-size: 400;
+      &.include_link {
+        display: flex;
+        gap: var(--space-xs);
+        align-items: center;
+        flex-wrap: wrap;
+        .lable_text {
+          font-weight: 500;
+        }
+        .link_text {
+          color: var(--blue);
+          font-weight: 500;
+        }
+      }
+    }
+    .form_box {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-m);
+    }
+    .check {
+      display: flex;
+      gap: var(--space-xxs);
+      align-items: center;
+    }
+  }
+}
+
+.edit_text_field {
+  position: relative;
+  .btn_edit {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    color: var(--gray1);
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 15px;
+    font-size: var(--text-s);
+    -webkit-tap-highlight-color: transparent;
+    .text_blue {
+      color: var(--blue);
+    }
+  }
+}
+
+.accordion_box {
+  border: 2px solid var(--gray2);
+  border-radius: var(--round-m);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray2);
+  gap: 2px;
+  overflow: hidden;
+  .accordion_item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-m);
+      cursor: pointer;
+      .header_text {
+        font-weight: 500;
+      }
+      .btn_toggle {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .body_contents {
+      padding: var(--space-m);
+      border-top: 2px solid var(--gray2);
+    }
+  }
+}

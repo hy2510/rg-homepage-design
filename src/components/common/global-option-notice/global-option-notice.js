@@ -112,7 +112,7 @@ const NoticeModalItem = ({
   return (
     <div className={`${style.notice_modal_item} ${check && style.check}`}>
       <div className={style.icon_image}>
-        <Image alt="" src={imgSrcIcon} width={20} height={20} />
+        <Image alt="" src={imgSrcIcon} width={44} height={44} />
       </div>
       <div className={style.contents} onClick={onClick}>
         <div className={style.info}>

@@ -23,6 +23,11 @@
   &:nth-last-child(1) {
     margin-bottom: var(--space-s);
   }
+  .icon_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .contents {
     width: 100%;
     display: flex;
@@ -33,6 +38,10 @@
       align-items: center;
       justify-content: space-between;
       color: var(--gray1);
+      .notice_type,
+      .notice_date {
+        font-size: var(--text-s);
+      }
     }
     .notice_title {
       font-size: var(--text-l);

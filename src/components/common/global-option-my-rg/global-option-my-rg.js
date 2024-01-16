@@ -120,6 +120,12 @@ export function MyRgModal({ _viewMyRgModal }) {
               _isMyRg(false);
               _isMyStudyLevel(true);
             }}
+            onClickAccountInfo={() => {
+              location.href = "/account/account-info";
+              setTimeout(() => {
+                _isMyRg(false);
+              }, 300);
+            }}
             onClickSetStudyMode={() => {
               _isMyRg(false);
               _isSetStudyMode(true);
@@ -180,6 +186,7 @@ export function MyRg({
   onClickFavorite,
   onClickDailyGoalSetting,
   onClickMyStudyLevel,
+  onClickAccountInfo,
   onClickSetStudyMode,
 }) {
   return (
@@ -196,7 +203,10 @@ export function MyRg({
         onClickDailyGoalSetting={onClickDailyGoalSetting}
         onClickMyStudyLevel={onClickMyStudyLevel}
       />
-      <MyRgEtc onClickSetStudyMode={onClickSetStudyMode} />
+      <MyRgEtc
+        onClickSetStudyMode={onClickSetStudyMode}
+        onClickAccountInfo={onClickAccountInfo}
+      />
       <div className={style.log_out}>
         <Button color="dark">로그아웃</Button>
       </div>
@@ -291,10 +301,10 @@ const MyRgGoalInfo = ({ onClickDailyGoalSetting, onClickMyStudyLevel }) => {
 };
 
 // My RG > 기타
-const MyRgEtc = ({ onClickSetStudyMode }) => {
+const MyRgEtc = ({ onClickAccountInfo, onClickSetStudyMode }) => {
   return (
     <div className={style.my_rg_etc}>
-      <div className={style.etc_item}>
+      <div className={style.etc_item} onClick={onClickAccountInfo}>
         <Image
           src="/src/images/@my-rg-modal/user_info.svg"
           width={50}
@@ -458,7 +468,7 @@ export function EditProfile({ onClickChangeAvatar }) {
           />
         </div>
       </div>
-      <TextField id={"edit-student-name"} hint={"학생이름"} />
+      <TextField id={"edit-student-name"} hint={"학생이름"} value={"윤서현"} />
       <SelectBox id={"select-student-grade"} hint={"학년"}>
         <SelectBoxItem value={"age0"}>미정</SelectBoxItem>
         <SelectBoxItem value={"age5"}>5세</SelectBoxItem>

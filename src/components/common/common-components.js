@@ -44,7 +44,10 @@ export function Button({ color, shadow, roundFull, width, onClick, children }) {
 export function BackLink({ href, largeFont, children, onClick }) {
   return (
     <div className={style.back_link}>
-      <Link href={href ? href : "/"} onClick={onClick ? onClick : null}>
+      <Link
+        href={href ? href : "javascript:history.back();"}
+        onClick={onClick ? onClick : null}
+      >
         <div className={style.back_link}>
           <Image
             alt=""
@@ -251,19 +254,21 @@ export function DropdownItem({ onClick, children }) {
 }
 
 // 텍스트필드
-export function TextField({ id, hint, password, email }) {
-  const [onKey, _onKey] = useState(false);
+export function TextField({ id, hint, password, email, value, disabled }) {
+  const [inputValue, _inputValue] = useState(value);
 
   return (
-    <div className={style.text_field}>
-      <div className={style.txt_l}>{onKey && hint}</div>
+    <div className={`${style.text_field} ${disabled && style.val}`}>
+      <div className={style.txt_l}>{inputValue && hint}</div>
       <input
         id={id}
         type={password ? "password" : email ? "emial" : "text"}
-        placeholder={onKey ? null : hint}
-        onKeyUp={() => {
-          _onKey(true);
+        value={inputValue}
+        onChange={(e) => {
+          _inputValue(e.target.value);
         }}
+        disabled={disabled}
+        placeholder={inputValue ? null : hint}
       />
     </div>
   );

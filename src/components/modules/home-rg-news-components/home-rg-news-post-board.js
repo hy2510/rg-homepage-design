@@ -66,7 +66,7 @@ export default function RgNewsPostBoard({ postData }) {
 
       <Margin height={20} />
       {/* 내용 */}
-      <div>
+      <div className={style.group_2}>
         <Image
           src={data[current].imgSrc}
           width={1000}

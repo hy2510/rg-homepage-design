@@ -29,20 +29,22 @@ export default function Page() {
         <div className={style.row_2}>
           <div> - 광고 베너 - </div>
           <Margin height={20} />
-          <Image
-            alt=""
-            src={data.contents}
-            width={1000}
-            height={800}
-            placeholder="blur"
-            blurDataURL={blurDataURL}
-            style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-              borderRadius: "10px",
-            }}
-          />
+          <div style={{ width: "100%", maxWidth: "750px", margin: "auto" }}>
+            <Image
+              alt=""
+              src={data.contents}
+              width={1000}
+              height={800}
+              placeholder="blur"
+              blurDataURL={blurDataURL}
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                borderRadius: "10px",
+              }}
+            />
+          </div>
           <Margin height={20} />
           <div> - 광고 베너 - </div>
         </div>

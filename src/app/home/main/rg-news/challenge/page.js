@@ -5,7 +5,7 @@ export default function Page() {
     {
       title: "2024년 1월 신규 콘텐츠",
       imgSrc:
-        "https://wcfresource.a1edu.com/newsystem/image/newbooks/newbooks_202401.jpg",
+        "https://fservice6.readinggate.com/UPLOADFILE/Notice/29ce16d89be97d847461e376e5b82464.png",
     },
     {
       title: "2023년 12월 신규 콘텐츠",

@@ -122,7 +122,7 @@ export const BookSearchBarCategoryItem = ({
       }}
       key={key}
     >
-      <Image alt="" alt="" src={imgSrc} width={60} height={60} />
+      <Image alt="" src={imgSrc} width={60} height={60} />
       <div className={style.col}>
         <div className={style.txt_h}>{title}</div>
         <div className={style.txt_p}>{comment}</div>

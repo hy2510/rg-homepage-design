@@ -28,6 +28,7 @@ export const DetailedReportItem = ({
     <div className={style.detailed_report_item}>
       <div className={style.book_cover}>
         <Image
+          alt=""
           src={imgSrc}
           layout="intrinsic"
           width={140}
@@ -87,6 +88,7 @@ export const SpeakReportItem = ({
     <div className={style.speak_report_item}>
       <div className={style.book_cover} onClick={runAssessmentReport}>
         <Image
+          alt=""
           src={imgSrc}
           layout="intrinsic"
           width={200}
@@ -103,6 +105,7 @@ export const SpeakReportItem = ({
         {isPassed ? (
           <div className={style.label}>
             <Image
+              alt=""
               src={"/src/images/@review/mic_icon_blue.svg"}
               width={18}
               height={18}
@@ -112,6 +115,7 @@ export const SpeakReportItem = ({
         ) : (
           <div className={style.label}>
             <Image
+              alt=""
               src={"/src/images/@review/mic_icon_red.svg"}
               width={18}
               height={18}
@@ -163,6 +167,7 @@ export const WritingReportItem = ({
     <div className={style.writing_report_item}>
       <div className={style.book_cover}>
         <Image
+          alt=""
           src={imgSrc}
           layout="intrinsic"
           width={140}

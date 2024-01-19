@@ -36,6 +36,7 @@ export const QuickReportItem = ({
     <div className={style.quick_report_item}>
       <div className={style.book_cover} onClick={runAssessmentReport}>
         <Image
+          alt=""
           src={imgSrc}
           layout="intrinsic"
           width={200}

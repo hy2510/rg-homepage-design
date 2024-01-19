@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         <Gheader />
+        {/* 띠 베너 들어가는 곳 */}
         {children}
         <Gfooter />
       </body>

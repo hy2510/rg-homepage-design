@@ -306,6 +306,7 @@ const MyRgEtc = ({ onClickAccountInfo, onClickSetStudyMode }) => {
     <div className={style.my_rg_etc}>
       <div className={style.etc_item} onClick={onClickAccountInfo}>
         <Image
+          alt=""
           src="/src/images/@my-rg-modal/user_info.svg"
           width={50}
           height={50}
@@ -314,6 +315,7 @@ const MyRgEtc = ({ onClickAccountInfo, onClickSetStudyMode }) => {
       </div>
       <div className={style.etc_item} onClick={onClickSetStudyMode}>
         <Image
+          alt=""
           src="/src/images/@my-rg-modal/set_study.svg"
           width={50}
           height={50}
@@ -322,6 +324,7 @@ const MyRgEtc = ({ onClickAccountInfo, onClickSetStudyMode }) => {
       </div>
       <div className={style.etc_item}>
         <Image
+          alt=""
           src=" /src/images/@my-rg-modal/chatbot.svg"
           width={50}
           height={50}
@@ -396,6 +399,7 @@ const TotalStudyScore = ({
           <div className={style.txt_l}>{studentName}</div>
           <div className={style.edit_button} onClick={onClick}>
             <Image
+              alt=""
               src={"/src/images/pencil-icons/pencil_white_2.svg"}
               width={20}
               height={20}
@@ -404,6 +408,7 @@ const TotalStudyScore = ({
         </div>
         <div className={style.user_avatar}>
           <Image
+            alt=""
             src="https://wcfresource.a1edu.com/newsystem/image/character/maincharacter/dodo_03.png"
             width={150}
             height={150}
@@ -440,6 +445,7 @@ const AwardListItem = ({ text, tag, collectNum, onClick }) => {
         </span>
       </div>
       <Image
+        alt=""
         src="/src/images/arrow-icons/chv_right.svg"
         width={24}
         height={24}
@@ -455,6 +461,7 @@ export function EditProfile({ onClickChangeAvatar }) {
       <div className={style.user_avatar}>
         <div className={style.user_avatar_image}>
           <Image
+            alt=""
             src="https://wcfresource.a1edu.com/newsystem/image/character/maincharacter/dodo_03.png"
             width={150}
             height={150}
@@ -462,6 +469,7 @@ export function EditProfile({ onClickChangeAvatar }) {
         </div>
         <div className={style.edit_button} onClick={onClickChangeAvatar}>
           <Image
+            alt=""
             src="/src/images/pencil-icons/pencil_white_2.svg"
             width={20}
             height={20}
@@ -911,6 +919,7 @@ export function DailyGoalSetting() {
           >
             <div className={style.icon}>
               <Image
+                alt=""
                 src="/src/images/@daily-goal-setting/earn_point.svg"
                 width={90}
                 height={90}
@@ -927,6 +936,7 @@ export function DailyGoalSetting() {
           >
             <div className="icon">
               <Image
+                alt=""
                 src="/src/images/@daily-goal-setting/passed.svg"
                 width={90}
                 height={90}
@@ -942,6 +952,7 @@ export function DailyGoalSetting() {
           <div className={style.counter}>
             <div className={style.minus_button}>
               <Image
+                alt=""
                 src="/src/images/@daily-goal-setting/minus.svg"
                 width={36}
                 height={36}
@@ -950,6 +961,7 @@ export function DailyGoalSetting() {
             <div className={style.number}>매일 1권씩 학습</div>
             <div className={style.plus_button}>
               <Image
+                alt=""
                 src="/src/images/@daily-goal-setting/plus.svg"
                 width={36}
                 height={36}
@@ -1473,12 +1485,14 @@ const ChooseStudyModeItem = ({
       {levelUpIcon &&
         (active ? (
           <Image
+            alt=""
             src="/src/images/@set-study-mode/book_icon_on.svg"
             width={24}
             height={24}
           />
         ) : (
           <Image
+            alt=""
             src="/src/images/@set-study-mode/book_icon_off.svg"
             width={24}
             height={24}
@@ -1487,12 +1501,14 @@ const ChooseStudyModeItem = ({
       {challengeIcon &&
         (active ? (
           <Image
+            alt=""
             src="/src/images/@set-study-mode/crown_icon_on.svg"
             width={24}
             height={24}
           />
         ) : (
           <Image
+            alt=""
             src="/src/images/@set-study-mode/crown_icon_off.svg"
             width={24}
             height={24}

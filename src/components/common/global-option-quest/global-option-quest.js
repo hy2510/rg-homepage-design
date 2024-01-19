@@ -91,6 +91,7 @@ const DodoAndFriends = () => {
       <div className={style.intro_button}>
         <span>인트로</span>
         <Image
+          alt=""
           src="/src/images/play-icons/play_white.svg"
           width={30}
           height={30}
@@ -121,6 +122,7 @@ const DodoAndFriends = () => {
       <div className={style.ending_button}>
         <span>엔딩</span>
         <Image
+          alt=""
           src="/src/images/play-icons/play_white.svg"
           width={30}
           height={30}
@@ -137,7 +139,7 @@ const FriendsEntry = ({ imgSrc, title, story }) => {
       <div className={style.bridge}></div>
       <div className={style.friends_entry}>
         <div>
-          <Image src={imgSrc} width={100} height={100} />
+          <Image alt="" src={imgSrc} width={100} height={100} />
         </div>
         <div className={style.friends_entry_text}>
           <div className={style.title}>{title}</div>
@@ -183,6 +185,7 @@ const FriendsStory = ({
             }}
           >
             <Image
+              alt=""
               src="/src/images/delete-icons/x_black.svg"
               width={30}
               height={30}
@@ -334,6 +337,7 @@ const LevelMasterProgressItem = ({
             className={`${style.symbol_image} ${!viewProgress && style.master}`}
           >
             <Image
+              alt=""
               src={imgSrc}
               width={viewProgress ? 90 : 105}
               height={viewProgress ? 90 : 105}

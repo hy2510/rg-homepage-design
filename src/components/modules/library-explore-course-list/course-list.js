@@ -121,6 +121,7 @@ export function CourseItem({
           }`}
         >
           <Image
+            alt=""
             src="/src/images/@course-list/download.svg"
             width={20}
             height={20}

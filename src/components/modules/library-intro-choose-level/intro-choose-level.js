@@ -100,7 +100,7 @@ export function IntroChooseItem({
           <div className={style.txt_p}>{detail}</div>
         </div>
         <div className={style.symbol_image}>
-          <Image src={symbolImgSrc} width={100} height={120} />
+          <Image alt="" src={symbolImgSrc} width={100} height={120} />
         </div>
       </div>
       <div className={style.buttons}>

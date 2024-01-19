@@ -1,6 +1,18 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
+import stylesPc from "./page.module.scss";
+
+const style = stylesPc;
 
 export default function Home() {
-  return <main className={styles.main}>리딩게이트 소개</main>;
+  return (
+    <main style={{ padding: 0 }}>
+      <iframe
+        title="External Content"
+        width="100%"
+        src="/src/html/landing-page/index.html"
+        frameBorder="0"
+        className={style.iframe}
+      />
+    </main>
+  );
 }

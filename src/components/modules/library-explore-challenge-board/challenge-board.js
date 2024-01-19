@@ -19,7 +19,7 @@ export function ChallengeBoard({
         <div className={style.txt_h}>{challengeTitle}</div>
         <div className={style.line}></div>
         <div className={style.challenge_symbol}>
-          <Image alt="" alt="" src={symbolImgSrc} width={200} height={170} />
+          <Image alt="" src={symbolImgSrc} width={200} height={170} />
         </div>
         <div className={style.challenge_period}>{challengePeriod}</div>
       </div>
@@ -136,12 +136,14 @@ export function SetMyGoalItem({ imgSrc, title, exp, active }) {
       <div className={style.col_a}>
         {active ? (
           <Image
+            alt=""
             src="/src/images/radio-icons/radio_on.svg"
             width={20}
             height={20}
           />
         ) : (
           <Image
+            alt=""
             src="/src/images/radio-icons/radio_off.svg"
             width={20}
             height={20}
@@ -149,7 +151,7 @@ export function SetMyGoalItem({ imgSrc, title, exp, active }) {
         )}
       </div>
       <div className={style.col_b}>
-        <Image src={imgSrc} width={80} height={80} />
+        <Image alt="" src={imgSrc} width={80} height={80} />
       </div>
       <div className={style.col_c}>
         <div className={style.txt_h}>{title}</div>

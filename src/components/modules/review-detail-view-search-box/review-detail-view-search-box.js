@@ -23,6 +23,7 @@ export const ReportSearchBox = ({ onClick }) => {
       </div>
       <button onClick={onClick} className={style.search_button}>
         <Image
+          alt=""
           src="/src/images/search-icons/search_white.svg"
           width={20}
           height={20}

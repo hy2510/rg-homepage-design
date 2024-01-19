@@ -58,6 +58,7 @@ export default function Page() {
           <div className={style.header_text}>{headerContents}</div>
           <div className={style.btn_toggle}>
             <Image
+              alt=""
               src="/src/images/arrow-icons/chv_down.svg"
               width={20}
               height={20}

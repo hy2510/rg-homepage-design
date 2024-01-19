@@ -41,7 +41,7 @@ export default function Page() {
             </div>
           )}
           <div className={style.user_avatar}>
-            <Image src={userAvatar} width={100} height={100} />
+            <Image alt="" src={userAvatar} width={100} height={100} />
           </div>
         </div>
         <ColumnBox label={"학생 이름"} contents={"김예서"} />
@@ -95,7 +95,7 @@ export default function Page() {
                 : ""
             }`}
           >
-            <Image src={studentAvatar} width={60} height={60} />
+            <Image alt="" src={studentAvatar} width={60} height={60} />
             <div className={style.txt_student_name}>{studentName}</div>
           </div>
           <div className={style.txt_present}>{present}</div>

@@ -41,7 +41,7 @@ export function Button({ color, shadow, roundFull, width, onClick, children }) {
 }
 
 // 뒤로가기
-export function BackLink({ href, largeFont, children, onClick }) {
+export function BackLink({ href, largeFont, children, onClick, colorWhite }) {
   return (
     <div className={style.back_link}>
       <Link
@@ -49,13 +49,25 @@ export function BackLink({ href, largeFont, children, onClick }) {
         onClick={onClick ? onClick : null}
       >
         <div className={style.back_link}>
-          <Image
-            alt=""
-            src="/src/images/arrow-icons/chv_left.svg"
-            width={26}
-            height={26}
-          />
-          <div className={`${largeFont ? style.txt_d2 : style.txt_d1}`}>
+          {colorWhite ? (
+            <Image
+              alt=""
+              src="/src/images/arrow-icons/chv_left_white.svg"
+              width={26}
+              height={26}
+            />
+          ) : (
+            <Image
+              alt=""
+              src="/src/images/arrow-icons/chv_left.svg"
+              width={26}
+              height={26}
+            />
+          )}
+          <div
+            className={`${largeFont ? style.txt_d2 : style.txt_d1}`}
+            style={{ color: colorWhite ? "#fff" : "" }}
+          >
             {children}
           </div>
         </div>
@@ -378,12 +390,14 @@ export function CheckBox({ id, check, onClick }) {
     <div id={id} className={style.check_box} onClick={onClick}>
       {check ? (
         <Image
+          alt=""
           src="/src/images/check-icons/check_box_on.svg"
           width={18}
           height={18}
         />
       ) : (
         <Image
+          alt=""
           src="/src/images/check-icons/check_box_off.svg"
           width={18}
           height={18}
@@ -397,3 +411,20 @@ export function CheckBox({ id, check, onClick }) {
 export function Margin({ height }) {
   return <div style={{ marginBottom: `${height}px` }}></div>;
 }
+
+// 게시판 (컨테이너)
+export const NoticeBoardContainer = ({ children }) => {
+  return <div className={style.notice_board_container}>{children}</div>;
+};
+
+// 게시판 (아이템)
+export const NoticeBoardItem = ({ title, date, href }) => {
+  return (
+    <div className={style.notice_board_item}>
+      <div className={style.notice_date}>{date}</div>
+      <Link href={href ? href : ""} target="_self">
+        <div className={style.notice_title}>{title}</div>
+      </Link>
+    </div>
+  );
+};

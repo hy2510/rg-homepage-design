@@ -160,6 +160,7 @@ const CalendarSimpleModeInfo = () => {
     <div className={style.calendar_simple_mode_info}>
       <div className={style.attend_days}>
         <Image
+          alt=""
           src="/src/images/@calendar-modal/circle_green.svg"
           width="18"
           height="18"
@@ -168,6 +169,7 @@ const CalendarSimpleModeInfo = () => {
       </div>
       <div className={style.achieve_goals}>
         <Image
+          alt=""
           src="/src/images/@calendar-modal/circle_blue.svg"
           width="18"
           height="18"
@@ -210,6 +212,7 @@ const CalendarDetailModeInfo = () => {
         <div className={style.calendar_detail_mode_info_container}>
           <div className={style.goal_point_pass}>
             <Image
+              alt=""
               src="/src/images/@calendar-modal/point_blue.svg"
               width="18"
               height="18"
@@ -231,6 +234,7 @@ const CalendarDetailModeInfo = () => {
         <div className={style.calendar_detail_mode_info_container}>
           <div className={style.goal_passed_pass}>
             <Image
+              alt=""
               src="/src/images/@calendar-modal/book_blue.svg"
               width="18"
               height="18"
@@ -269,6 +273,7 @@ const CalendarDetailModeBody = (props) => {
         >
           {tabButtonStatus === "passed" && (
             <Image
+              alt=""
               src="/src/images/@calendar-modal/book_blue.svg"
               width={24}
               height={24}
@@ -276,6 +281,7 @@ const CalendarDetailModeBody = (props) => {
           )}
           {tabButtonStatus === "point" && (
             <Image
+              alt=""
               src="/src/images/@calendar-modal/book_white.svg"
               width={24}
               height={24}
@@ -294,6 +300,7 @@ const CalendarDetailModeBody = (props) => {
         >
           {tabButtonStatus === "point" && (
             <Image
+              alt=""
               src="/src/images/@calendar-modal/point_blue.svg"
               width={24}
               height={24}
@@ -301,6 +308,7 @@ const CalendarDetailModeBody = (props) => {
           )}
           {tabButtonStatus === "passed" && (
             <Image
+              alt=""
               src="/src/images/@calendar-modal/point_white.svg"
               width={24}
               height={24}
@@ -330,6 +338,7 @@ const CalendarDetailModeBody = (props) => {
                 >
                   {tabButtonStatus === "passed" && (
                     <Image
+                      alt=""
                       src="/src/images/@calendar-modal/book_blue.svg"
                       width={16}
                       height={16}
@@ -337,6 +346,7 @@ const CalendarDetailModeBody = (props) => {
                   )}
                   {tabButtonStatus === "point" && (
                     <Image
+                      alt=""
                       src="/src/images/@calendar-modal/book_gray.svg"
                       width="16"
                       height="16"
@@ -351,6 +361,7 @@ const CalendarDetailModeBody = (props) => {
                 >
                   {tabButtonStatus === "point" && (
                     <Image
+                      alt=""
                       src="/src/images/@calendar-modal/point_blue.svg"
                       width={16}
                       height={16}
@@ -358,6 +369,7 @@ const CalendarDetailModeBody = (props) => {
                   )}
                   {tabButtonStatus === "passed" && (
                     <Image
+                      alt=""
                       src="/src/images/@calendar-modal/point_gray.svg"
                       width={16}
                       height={16}

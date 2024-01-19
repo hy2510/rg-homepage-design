@@ -80,12 +80,14 @@ export function BookCover({
               >
                 {isCheckActive ? (
                   <Image
+                    alt=""
                     src="/src/images/check-icons/check_box_on.svg"
                     width={24}
                     height={24}
                   />
                 ) : (
                   <Image
+                    alt=""
                     src="/src/images/check-icons/check_box_off.svg"
                     width={24}
                     height={24}

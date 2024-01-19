@@ -13,7 +13,7 @@ import { NoticeModal } from "../global-option-notice/global-option-notice";
 
 // 공통상단
 export default function Gheader({ children }) {
-  const logOnStatus = true;
+  const logOnStatus = false;
   const pathname = usePathname();
   const connectHome = pathname.indexOf("home") != -1;
   const connectAbout = pathname.indexOf("about") != -1;

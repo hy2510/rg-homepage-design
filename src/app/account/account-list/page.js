@@ -39,12 +39,14 @@ export default function Page() {
           {text}
           {isChecked ? (
             <Image
+              alt=""
               src={"/src/images/check-icons/check_box_on.svg"}
               width={24}
               height={24}
             />
           ) : (
             <Image
+              alt=""
               src={"/src/images/check-icons/check_box_off.svg"}
               width={24}
               height={24}
@@ -129,11 +131,16 @@ export default function Page() {
       <div className={style.account_card}>
         {/* 비밀번호를 치고 로그인을 해야하는 상태 표시 */}
         <div className={style.auto_login_lock}>
-          <Image src="/src/images/lock-icons/lock.svg" width={18} height={18} />
+          <Image
+            alt=""
+            src="/src/images/lock-icons/lock.svg"
+            width={18}
+            height={18}
+          />
         </div>
         {/* 오토 로그인 상태 표시 */}
         {/* <div className={style.auto_login_unlock}>
-          <Image
+          <Image alt=""  
             src="/src/images/lock-icons/unlock.svg"
             width={18}
             height={18}
@@ -146,7 +153,7 @@ export default function Page() {
             _viewPasswordInput(true);
           }}
         >
-          <Image src={userAvatar} width={150} height={150} />
+          <Image alt="" src={userAvatar} width={150} height={150} />
         </div>
         <div
           className={style.user_info}
@@ -202,6 +209,7 @@ export default function Page() {
         >
           <div className={style.plus_icon}>
             <Image
+              alt=""
               src="/src/images/plus-icons/plus-circle-blue.svg"
               width={24}
               height={24}

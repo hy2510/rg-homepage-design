@@ -10,6 +10,9 @@
       background-position: top -30px right -5187px;
     }
   }
+  @media (prefers-color-scheme: dark) {
+    background-image: none;
+  }
 }
 
 .home_nav_bar {

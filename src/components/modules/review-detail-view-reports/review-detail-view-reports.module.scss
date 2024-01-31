@@ -35,10 +35,16 @@
     &.pass {
       background-color: var(--light);
       border-top: 2px solid var(--blue);
+      @media (prefers-color-scheme: dark) {
+        background-color: #15b5f120;
+      }
     }
     &.fail {
       background-color: #f9eeee;
       border-top: 2px solid var(--red);
+      @media (prefers-color-scheme: dark) {
+        background-color: #ff274f20;
+      }
     }
     .report_container {
       cursor: pointer;
@@ -77,7 +83,7 @@
         .contents {
           font-size: var(--text-m);
           font-weight: 500;
-          color: var(--black);
+          // color: var(--black);
         }
       }
     }
@@ -194,10 +200,16 @@
     &.pass {
       background-color: var(--light);
       border-top: 2px solid var(--blue);
+      @media (prefers-color-scheme: dark) {
+        background-color: #15b5f120;
+      }
     }
     &.fail {
       background-color: #f9eeee;
       border-top: 2px solid var(--red);
+      @media (prefers-color-scheme: dark) {
+        background-color: #ff274f20;
+      }
     }
     .report_container {
       cursor: pointer;
@@ -236,7 +248,6 @@
         .contents {
           font-size: var(--text-m);
           font-weight: 500;
-          color: var(--black);
         }
       }
     }

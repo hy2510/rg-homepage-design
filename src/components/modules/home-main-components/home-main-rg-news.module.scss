@@ -18,6 +18,9 @@
         background-size: 24px;
         background-position: center;
         background-repeat: no-repeat;
+        @media (prefers-color-scheme: dark) {
+          background-image: url("/src/images/arrow-icons/chv_right_white.svg");
+        }
       }
     }
   }
@@ -37,6 +40,9 @@
   min-height: 330px;
   @media (hover: none) {
     min-height: 260px;
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: #ffffff10;
   }
   padding: var(--space-m);
   border-radius: var(--round-l);

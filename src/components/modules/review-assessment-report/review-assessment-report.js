@@ -315,14 +315,7 @@ export const ReviewAssessmentReport = ({
         <div className={style.col_b}>
           <div className={style.col_b_header}>
             <div className={style.txt_h}>학습 리포트</div>
-            <div className={style.delete_button} onClick={onClickDelete}>
-              <Image
-                alt=""
-                src="/src/images/delete-icons/x_black.svg"
-                width={28}
-                height={28}
-              />
-            </div>
+            <div className={style.delete_button} onClick={onClickDelete}></div>
           </div>
           <div className={style.col_b_body}>
             <SubTitle>학습 정보</SubTitle>

@@ -13,7 +13,9 @@ export const AdBannerType1 = ({ bgColor, children, href, target }) => {
     <Link href={href ? href : ""} target={target ? target : "_self"}>
       <div
         className={style.ad_banner_type_1}
-        style={{ backgroundColor: bgColor ? bgColor : "#fff" }}
+        style={{
+          backgroundColor: bgColor ? bgColor : "#fff",
+        }}
       >
         {children}
       </div>

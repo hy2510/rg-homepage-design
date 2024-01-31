@@ -130,22 +130,10 @@ export default function Page() {
     return (
       <div className={style.account_card}>
         {/* 비밀번호를 치고 로그인을 해야하는 상태 표시 */}
-        <div className={style.auto_login_lock}>
-          <Image
-            alt=""
-            src="/src/images/lock-icons/lock.svg"
-            width={18}
-            height={18}
-          />
-        </div>
-        {/* 오토 로그인 상태 표시 */}
-        {/* <div className={style.auto_login_unlock}>
-          <Image alt=""  
-            src="/src/images/lock-icons/unlock.svg"
-            width={18}
-            height={18}
-          />
+        {/* <div className={style.auto_login_lock}>
         </div> */}
+        {/* 오토 로그인 상태 표시 */}
+        <div className={style.auto_login_unlock}></div>
         <MoreButton />
         <div
           className={style.user_avatar}

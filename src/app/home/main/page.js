@@ -41,6 +41,7 @@ export default function Page() {
             tag={"인포그래픽"}
             tagColor={"#FF81AD"}
             title={"뜨거웠던 2023년! RG학습데이터 공개"}
+            titleColor={"#000000"}
             summary={"한눈에 보기 쉽게 정리해 보았어요."}
             summaryColor={"#777"}
             // date={"2024-01-17"}
@@ -58,6 +59,7 @@ export default function Page() {
             tag={"뉴스레터"}
             tagColor={"#00AEEF"}
             title={"2024년 3월"}
+            titleColor={"#000000"}
             summary={"다양한 정보를 제공해 드려요"}
             summaryColor={"#777"}
             bgColor={"#F1F6FF"}
@@ -117,19 +119,19 @@ export default function Page() {
           </AdBannerType1> */}
           <Margin height={10} />
           <AdBannerType2
-            bgColor={"#FFEAEC"}
+            bgColor={"#ff274f20"}
             txt1={"B2B"}
             txt2={"문의하기"}
             imgSrc={"/src/images/@home/img_letter.svg"}
           />
           <AdBannerType2
-            bgColor={"#E6EFF9"}
+            bgColor={"#15b5f120"}
             txt1={"DODO & FRIENDS"}
             txt2={"SHOP"}
             imgSrc={"/src/images/@home/img_bag.svg"}
           />
           <AdBannerType2
-            bgColor={"#E7E1FC"}
+            bgColor={"#9747FF20"}
             txt1={"WORK BOOK"}
             txt2={"구매하기"}
             imgSrc={"/src/images/@home/img_note.svg"}

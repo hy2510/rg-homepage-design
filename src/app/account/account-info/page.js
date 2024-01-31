@@ -50,6 +50,54 @@ export default function Page() {
     );
   };
 
+  // 비밀번호 변경하기
+  const EditChangePassword = () => {
+    const [isChangePassword, _isChangePassword] = useState(false);
+
+    return (
+      <div className={style.edit_change_password}>
+        {isChangePassword == false ? (
+          <>
+            <div
+              className={style.btn_edit}
+              onClick={() => {
+                _isChangePassword(true);
+              }}
+            >
+              편집
+            </div>
+            <TextField
+              hint={"비밀번호"}
+              value={"dnldlstjs8282"}
+              disabled
+              password
+            />
+          </>
+        ) : (
+          <div className={style.input_password}>
+            <div className={style.row_1}>
+              <TextField hint={"현재 비밀번호"} password />
+            </div>
+            <div className={style.row_2}>
+              <div className={style.btn_edit}>
+                <div
+                  className={style.text_blue}
+                  onClick={() => {
+                    _isChangePassword(false);
+                  }}
+                >
+                  취소
+                </div>
+                <div className={style.text_blue}>변경</div>
+              </div>
+              <TextField hint={"변경할 비밀번호"} password />
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   // 아코디언 아이템
   const AccordionItem = ({ headerContents, bodyContents }) => {
     return (
@@ -57,12 +105,12 @@ export default function Page() {
         <div className={style.header}>
           <div className={style.header_text}>{headerContents}</div>
           <div className={style.btn_toggle}>
-            <Image
+            {/* <Image
               alt=""
               src="/src/images/arrow-icons/chv_down.svg"
               width={20}
               height={20}
-            />
+            /> */}
           </div>
         </div>
         <div className={style.body_contents}>{bodyContents}</div>
@@ -97,21 +145,23 @@ export default function Page() {
           <div>
             <TextField hint={"E-Mail(ID)"} value={"wii@rg.com"} disabled />
           </div>
-          <EditTextField
-            hint={"비밀번호"}
-            value={"dnldlstjs8282"}
-            password
-            editMessage={"편집"}
-            saveMessage={"저장"}
-          />
+
+          {/* 비밀번호 변경 */}
+          <EditChangePassword />
           {/* 전화번호가 있는 경우 */}
-          <EditTextField
-            hint={"연락처 (휴대전화번호)"}
+          {/* <EditTextField
+            hint={"휴대전화번호"}
             value={"01012345678"}
             editMessage={"편집"}
             saveMessage={"본인인증"}
-          />
+          /> */}
           {/* 전화번호가 없는 경우 */}
+          <EditTextField
+            hint={`휴대전화번호 ("-" 없이 입력)`}
+            value={""}
+            editMessage={"입력"}
+            saveMessage={"본인인증"}
+          />
         </div>
         <div className={style.check}>
           {/* 전화번호가 없는 경우 체크박스를 눌렀을 때 경고창 출력: 학습 리포트, 소식 등 알림을 받으려면 수신할 휴대전화번호가 필요합니다. 연락처 칸에서 휴대전화번호를 등록해 주세요. [확인] */}

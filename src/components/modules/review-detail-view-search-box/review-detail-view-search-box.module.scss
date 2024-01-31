@@ -5,9 +5,12 @@
   gap: var(--space-s);
   border-radius: var(--round-l);
   border: 2px solid var(--gray2);
-  // background-color: #ebf5ff;
   background-color: var(--gray3);
   padding: var(--space-s);
+  @media (prefers-color-scheme: dark) {
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background-color: #0c0541;
+  }
   .column1 {
     display: flex;
     gap: var(--space-m);
@@ -23,6 +26,9 @@
         background-color: var(--white);
         padding: var(--space-xxs);
         overflow: hidden;
+        @media (prefers-color-scheme: dark) {
+          background-color: transparent;
+        }
       }
     }
     .search_bar {

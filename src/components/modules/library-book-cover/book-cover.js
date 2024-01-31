@@ -353,12 +353,12 @@ export function BookInfoModal({
           <div className={style.col_b_header}>
             <div className={style.txt_h}>학습 정보</div>
             <div className={style.delete_button} onClick={onClickDelete}>
-              <Image
+              {/* <Image
                 alt=""
                 src="/src/images/delete-icons/x_black.svg"
                 width={28}
                 height={28}
-              />
+              /> */}
             </div>
           </div>
           <div className={style.col_b_body}>

@@ -26,6 +26,9 @@
   border-radius: var(--round-l);
   background-color: var(--light);
   padding: var(--space-s) var(--space-m);
+  @media (prefers-color-scheme: dark) {
+    background-color: #15b5f120;
+  }
   .user_symbol {
     position: relative;
     .user_rank {
@@ -110,6 +113,11 @@
     position: sticky;
     top: 78px;
     z-index: 3;
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba($color: #ffffff, $alpha: 0.15);
+      border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+      border-bottom: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+    }
   }
 }
 
@@ -121,8 +129,14 @@
   padding: var(--space-s) 0;
   font-weight: 500;
   border-bottom: 1px dotted var(--gray2);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 1px dotted rgba($color: #ffffff, $alpha: 0.15);
+  }
   &.top_ranker {
     background-color: #fff9f5;
+    @media (prefers-color-scheme: dark) {
+      background-color: #ffffff10;
+    }
   }
   .rank {
     font-size: var(--text-xl);
@@ -131,6 +145,9 @@
     &.rank2,
     &.rank3 {
       color: var(--black);
+      @media (prefers-color-scheme: dark) {
+        color: var(--white);
+      }
     }
   }
   .student_name {

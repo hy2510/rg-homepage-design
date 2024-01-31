@@ -46,12 +46,7 @@ export default function Page() {
       </BookList>
       <Pagination>
         <PaginationItem>
-          <Image
-            alt=""
-            src="/src/images/arrow-icons/chv_left.svg"
-            width={20}
-            height={20}
-          />
+          <div className="arrow left"></div>
         </PaginationItem>
         <PaginationItem active={true}>1</PaginationItem>
         <PaginationItem active={false}>2</PaginationItem>
@@ -59,12 +54,7 @@ export default function Page() {
         <PaginationItem active={false}>4</PaginationItem>
         <PaginationItem active={false}>5</PaginationItem>
         <PaginationItem>
-          <Image
-            alt=""
-            src="/src/images/arrow-icons/chv_right.svg"
-            width={20}
-            height={20}
-          />
+          <div className="arrow right"></div>
         </PaginationItem>
       </Pagination>
     </main>

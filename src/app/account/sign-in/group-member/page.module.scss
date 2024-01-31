@@ -27,4 +27,7 @@
   padding: var(--space-m);
   font-weight: 500;
   cursor: pointer;
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba($color: #ffffff, $alpha: 0.15);
+  }
 }

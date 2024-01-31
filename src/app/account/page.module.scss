@@ -4,4 +4,8 @@
   background-repeat: no-repeat, repeat-x;
   background-position: right top 400px, center top;
   background-size: 240px, auto;
+  @media (prefers-color-scheme: dark) {
+    background-image: url("/src/images/@home/reading_unit_edmond.svg"),
+      url("/src/images/@home/home_bg_dark.svg");
+  }
 }

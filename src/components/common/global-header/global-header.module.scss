@@ -7,6 +7,9 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+  }
   .global_header_container {
     height: var(--header-height);
     padding: 0 15px;
@@ -118,6 +121,9 @@
         font-weight: 600;
         line-height: 8px;
         padding: 6px 0 1px 0;
+        @media (prefers-color-scheme: dark) {
+          color: #0c0541;
+        }
       }
       .today {
         width: 36px;
@@ -126,6 +132,9 @@
         font-weight: 800;
         line-height: 10px;
         padding: 2px 0 4px 0;
+        @media (prefers-color-scheme: dark) {
+          color: #0c0541;
+        }
       }
     }
     .calendar_icon {

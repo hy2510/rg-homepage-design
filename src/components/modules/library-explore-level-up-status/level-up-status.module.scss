@@ -12,20 +12,32 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--space-s);
-      .dropdown {
-        cursor: pointer;
+      gap: var(--space-xxs);
+      .current_level {
         display: flex;
         align-items: center;
         gap: var(--space-xxs);
-      }
-      .txt_h {
-        font-size: var(--text-d-1);
-        font-weight: 600;
-      }
-      .txt_d {
-        font-size: var(--text-d-2);
-        font-weight: 600;
+        cursor: pointer;
+        .txt_h {
+          font-size: var(--text-d-1);
+          font-weight: 600;
+          margin-right: var(--space-xxs);
+        }
+        .txt_d {
+          font-size: var(--text-d-2);
+          font-weight: 600;
+        }
+        .arrow_icon {
+          width: 20px;
+          height: 20px;
+          background-image: url("/src/images/arrow-icons/chv_down.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 20px;
+          @media (prefers-color-scheme: dark) {
+            background-image: url("/src/images/arrow-icons/chev_down_white.svg");
+          }
+        }
       }
     }
   }

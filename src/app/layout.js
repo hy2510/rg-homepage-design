@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <link
-          href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           rel="stylesheet"
         />
         <Gheader />

@@ -50,19 +50,16 @@ export function BackLink({ href, largeFont, children, onClick, colorWhite }) {
       >
         <div className={style.back_link}>
           {colorWhite ? (
-            <Image
-              alt=""
-              src="/src/images/arrow-icons/chv_left_white.svg"
-              width={26}
-              height={26}
-            />
+            <>
+              <Image
+                alt=""
+                src="/src/images/arrow-icons/chv_left_white.svg"
+                width={26}
+                height={26}
+              />
+            </>
           ) : (
-            <Image
-              alt=""
-              src="/src/images/arrow-icons/chv_left.svg"
-              width={26}
-              height={26}
-            />
+            <div className={style.arrow_icon}></div>
           )}
           <div
             className={`${largeFont ? style.txt_d2 : style.txt_d1}`}
@@ -236,12 +233,7 @@ export function Dropdown({ inlineStyle, fontSizeM, title, children }) {
         <div className={`${style.title} ${fontSizeM && style.txt_h}`}>
           {title}
         </div>
-        <Image
-          alt=""
-          src="/src/images/arrow-icons/chv_down.svg"
-          width={20}
-          height={20}
-        />
+        <div className={style.chev_down}></div>
         {check && <div className={style.menu}>{children}</div>}
       </div>
       {check && (
@@ -316,36 +308,28 @@ export function Modal({
   return (
     <>
       <div className={style.modal}>
-        <div
-          className={`${style.modal_container} slide-in-top ${
-            compact && style.compact
-          }`}
-        >
+        <div className={`${style.modal_container} ${compact && style.compact}`}>
           {header && (
             <div className={style.modal_header}>
               <div className={style.modal_header_container}>
                 <div className={style.txt_h}>{title}</div>
               </div>
-              <button onClick={onClickDelete}>
-                <Image
-                  alt=""
-                  src="/src/images/delete-icons/x_black.svg"
-                  width="28"
-                  height="28"
-                />
-              </button>
+              <button
+                onClick={onClickDelete}
+                className={style.delete_button}
+              ></button>
             </div>
           )}
           {navTop && (
             <div className={style.nav_top}>
               <div className={style.nav_top_back_link} onClick={onClickBack}>
                 <div className={style.arrow_icon}>
-                  <Image
+                  {/* <Image
                     alt=""
                     src="/src/images/arrow-icons/chv_left.svg"
                     width={26}
                     height={26}
-                  />
+                  /> */}
                 </div>
                 <div className={style.txt_h}>{title}</div>
               </div>

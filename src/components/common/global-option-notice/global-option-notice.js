@@ -8,11 +8,13 @@ import Link from "next/link";
 // 알림 모달
 export function NoticeModal({ _viewNoticeModal }) {
   const noticeIcon = {
-    notice: "/src/images/@notice-modal/notice-icon/speaker.svg",
-    point: "/src/images/@notice-modal/notice-icon/coin.svg",
-    dailyGoal: "/src/images/@notice-modal/notice-icon/target.svg",
-    challengeGoal: "/src/images/@notice-modal/notice-icon/trophy.svg",
-    levelMaster: "/src/images/@notice-modal/notice-icon/badge_ka.svg",
+    notice: "/src/images/@notice-modal/notice_icon.svg",
+    point: "/src/images/@notice-modal/point_icon.svg",
+    dailyGoal: "/src/images/@notice-modal/daily_goal_icon.svg",
+    streak: "/src/images/@notice-modal/streak_icon.svg",
+    challengeGoal: "/src/images/@notice-modal/challenge_icon.svg",
+    dodonFriends: "/src/images/@notice-modal/quest_icon.svg",
+    levelMaster: "/src/images/@notice-modal/quest_icon.svg",
   };
 
   return (
@@ -52,7 +54,7 @@ export function NoticeModal({ _viewNoticeModal }) {
             _viewNoticeModal={_viewNoticeModal}
           />
           <NoticeModalItem
-            imgSrcIcon={noticeIcon.dailyGoal}
+            imgSrcIcon={noticeIcon.streak}
             noticeType="연속 학습"
             noticeTitle="연속 학습을 달성했어요."
             noticeDate="2023.10.31"
@@ -66,7 +68,7 @@ export function NoticeModal({ _viewNoticeModal }) {
             _viewNoticeModal={_viewNoticeModal}
           />
           <NoticeModalItem
-            imgSrcIcon={noticeIcon.dailyGoal}
+            imgSrcIcon={noticeIcon.streak}
             noticeType="어워드 / 연속 학습"
             noticeTitle="20일 연속 학습을 달성했어요."
             noticeDate="2023.10.31"
@@ -80,14 +82,14 @@ export function NoticeModal({ _viewNoticeModal }) {
             _viewNoticeModal={_viewNoticeModal}
           />
           <NoticeModalItem
-            imgSrcIcon={noticeIcon.dailyGoal}
+            imgSrcIcon={noticeIcon.challengeGoal}
             noticeType="챌린지 / 영어 독서왕"
             noticeTitle="영어 독서왕 챌린지에서 우수상에 도달했어요."
             noticeDate="2023.10.31"
             _viewNoticeModal={_viewNoticeModal}
           />
           <NoticeModalItem
-            imgSrcIcon={noticeIcon.dailyGoal}
+            imgSrcIcon={noticeIcon.dodonFriends}
             noticeType="퀘스트 / 도도 앤 프렌즈"
             noticeTitle="Chello의 스토리가 해제되었어요"
             noticeDate="2023.10.31"

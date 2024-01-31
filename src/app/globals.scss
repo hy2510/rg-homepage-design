@@ -45,7 +45,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color: #ffffff;
-    background-color: #0e0f20;
+    background-color: #0c0541;
   }
   html {
     color-scheme: dark;
@@ -75,6 +75,19 @@ body {
   height: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  background-repeat: repeat-x;
+  animation: linear 200s infinite cloud;
+  @keyframes cloud {
+    0% {
+      background-position: top -30px right 0;
+    }
+    100% {
+      background-position: top -30px right -5187px;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    background-image: url("/src/images/@home/home_bg_dark.svg");
+  }
 }
 
 a {
@@ -95,6 +108,7 @@ input {
   width: 100%;
   padding: var(--space-xxs);
   font-size: var(--text-m);
+  background-color: transparent;
   &::placeholder {
     color: var(--gray1);
   }
@@ -110,6 +124,31 @@ button {
   border: none;
   min-width: 30px;
   min-height: 30px;
+  display: block;
+}
+
+.arrow {
+  @mixin left_right_style {
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &.left {
+    @include left_right_style;
+    background-image: url("/src/images/arrow-icons/chv_left.svg");
+    @media (prefers-color-scheme) {
+      background-image: url("/src/images/arrow-icons/chv_left_white.svg");
+    }
+  }
+  &.right {
+    @include left_right_style;
+    background-image: url("/src/images/arrow-icons/chv_right.svg");
+    @media (prefers-color-scheme) {
+      background-image: url("/src/images/arrow-icons/chv_right_white.svg");
+    }
+  }
 }
 
 .container {
@@ -827,8 +866,8 @@ button {
 }
 
 .slide-in-top {
-  -webkit-animation: slide-in-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-in-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: slide-in-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-in-top {
@@ -845,8 +884,8 @@ button {
 }
 @keyframes slide-in-top {
   0% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
     opacity: 0;
   }
   100% {

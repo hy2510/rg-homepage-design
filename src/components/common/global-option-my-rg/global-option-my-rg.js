@@ -73,11 +73,11 @@ export function MyRgModal({ _viewMyRgModal }) {
       onClickBack={() => {
         isMyProfile && _isMyRg(true) & _isMyProfile(false);
         isEditProfile && _isMyProfile(true) & _isEditProfile(false);
-        isChooseAvatar && _isEditProfile(true) & _isChooseAvatar(false);
-        isDailyGoalAward && _isMyProfile(true) & _isDailyGoalAward(false);
-        isStreakAward && _isMyProfile(true) & _isStreakAward(false);
-        isChallengeAward && _isMyProfile(true) & _isChallengeAward(false);
-        isLevelMasterAward && _isMyProfile(true) & _isLevelMasterAward(false);
+        isChooseAvatar && _isMyRg(true) & _isChooseAvatar(false);
+        isDailyGoalAward && _isMyRg(true) & _isDailyGoalAward(false);
+        isStreakAward && _isMyRg(true) & _isStreakAward(false);
+        isChallengeAward && _isMyRg(true) & _isChallengeAward(false);
+        isLevelMasterAward && _isMyRg(true) & _isLevelMasterAward(false);
         isDailyGoalSetting && _isMyRg(true) & _isDailyGoalSetting(false);
         isMyStudyLevel && _isMyRg(true) & _isMyStudyLevel(false);
         isSetStudyMode && _isMyRg(true) & _isSetStudyMode(false);
@@ -104,6 +104,10 @@ export function MyRgModal({ _viewMyRgModal }) {
               _isMyRg(false);
               _isMyProfile(true);
             }}
+            onClickChooseAvatar={() => {
+              _isMyRg(false);
+              _isChooseAvatar(true);
+            }}
             onClickTodo={() => {
               _viewMyRgModal(false);
               _isMyRg(true);
@@ -119,6 +123,22 @@ export function MyRgModal({ _viewMyRgModal }) {
             onClickMyStudyLevel={() => {
               _isMyRg(false);
               _isMyStudyLevel(true);
+            }}
+            onClickDailyGoalAward={() => {
+              _isMyRg(false);
+              _isDailyGoalAward(true);
+            }}
+            onClickStreakAward={() => {
+              _isMyRg(false);
+              _isStreakAward(true);
+            }}
+            onClickChallengeAward={() => {
+              _isMyRg(false);
+              _isChallengeAward(true);
+            }}
+            onClickLevelMasterAward={() => {
+              _isMyRg(false);
+              _isLevelMasterAward(true);
             }}
             onClickAccountInfo={() => {
               location.href = "/account/account-info";
@@ -182,17 +202,29 @@ export function MyRg({
   onClickMyRgUserCard,
   _isMyRg,
   _isMyProfile,
+  onClickChooseAvatar,
   onClickTodo,
   onClickFavorite,
   onClickDailyGoalSetting,
   onClickMyStudyLevel,
   onClickAccountInfo,
   onClickSetStudyMode,
+  onClickDailyGoalAward,
+  onClickStreakAward,
+  onClickChallengeAward,
+  onClickLevelMasterAward,
 }) {
   return (
     <div className={style.my_rg}>
       <MyRgUseEndDate useEndDate={180} />
-      <MyRgUserCard onClick={onClickMyRgUserCard} />
+      {/* <MyRgUserCard onClick={onClickMyRgUserCard} /> */}
+      <TotalStudyScore
+        userGrade={"초등3학년"}
+        studentName={"윤서현"}
+        totalPassed={1000}
+        totalEarnPoints={2000.22}
+        onClickChooseAvatar={onClickChooseAvatar}
+      />
       <MyRgAssignmentInfo
         onClickTodo={onClickTodo}
         onClickFavorite={onClickFavorite}
@@ -203,12 +235,40 @@ export function MyRg({
         onClickDailyGoalSetting={onClickDailyGoalSetting}
         onClickMyStudyLevel={onClickMyStudyLevel}
       />
+      <AwardListContainer>
+        <AwardListItem
+          tag="목표달성"
+          text={"매일목표 어워드"}
+          collectNum={10}
+          onClick={onClickDailyGoalAward}
+        />
+        <AwardListItem
+          tag="목표달성"
+          text={"연속학습 어워드"}
+          collectNum={10}
+          onClick={onClickStreakAward}
+        />
+        <AwardListItem
+          tag="챌린지"
+          text={"영어독서왕 시상"}
+          collectNum={10}
+          onClick={onClickChallengeAward}
+        />
+        <AwardListItem
+          tag="퀘스트"
+          text={"레벨 마스터"}
+          collectNum={10}
+          onClick={onClickLevelMasterAward}
+        />
+      </AwardListContainer>
       <MyRgEtc
         onClickSetStudyMode={onClickSetStudyMode}
         onClickAccountInfo={onClickAccountInfo}
       />
       <div className={style.log_out}>
-        <Button color="dark">로그아웃</Button>
+        <Button color="red" shadow>
+          로그아웃
+        </Button>
       </div>
     </div>
   );
@@ -389,7 +449,7 @@ const TotalStudyScore = ({
   userAvatar,
   totalPassed,
   totalEarnPoints,
-  onClick,
+  onClickChooseAvatar,
 }) => {
   return (
     <div className={style.total_study_score}>
@@ -397,14 +457,6 @@ const TotalStudyScore = ({
         <div className={style.user_grade}>{userGrade}</div>
         <div className={style.student_name}>
           <div className={style.txt_l}>{studentName}</div>
-          <div className={style.edit_button} onClick={onClick}>
-            <Image
-              alt=""
-              src={"/src/images/pencil-icons/pencil_white_2.svg"}
-              width={20}
-              height={20}
-            />
-          </div>
         </div>
         <div className={style.user_avatar}>
           <Image
@@ -412,6 +464,14 @@ const TotalStudyScore = ({
             src="https://wcfresource.a1edu.com/newsystem/image/character/maincharacter/dodo_03.png"
             width={150}
             height={150}
+          />
+        </div>
+        <div className={style.edit_button} onClick={onClickChooseAvatar}>
+          <Image
+            alt=""
+            src={"/src/images/pencil-icons/pencil_white_2.svg"}
+            width={20}
+            height={20}
           />
         </div>
       </div>
@@ -444,12 +504,13 @@ const AwardListItem = ({ text, tag, collectNum, onClick }) => {
           {text} {collectNum}개
         </span>
       </div>
-      <Image
+      <div className={style.arrow_icon}></div>
+      {/* <Image
         alt=""
         src="/src/images/arrow-icons/chv_right.svg"
         width={24}
         height={24}
-      />
+      /> */}
     </div>
   );
 };
@@ -950,23 +1011,9 @@ export function DailyGoalSetting() {
         <div className={style.txt_h}>목표 설정</div>
         <div className={style.row_b_container}>
           <div className={style.counter}>
-            <div className={style.minus_button}>
-              <Image
-                alt=""
-                src="/src/images/@daily-goal-setting/minus.svg"
-                width={36}
-                height={36}
-              />
-            </div>
+            <div className={style.minus_button}></div>
             <div className={style.number}>매일 1권씩 학습</div>
-            <div className={style.plus_button}>
-              <Image
-                alt=""
-                src="/src/images/@daily-goal-setting/plus.svg"
-                width={36}
-                height={36}
-              />
-            </div>
+            <div className={style.plus_button}></div>
           </div>
           <div className={style.save_button}>
             <Button color={"gray"} width="100%">
@@ -1027,7 +1074,7 @@ export function MyStudyLevel() {
               _isLevelTestHistory(false);
             }}
           >
-            현재 상태
+            학습 레벨 변경
           </NavItem>
           <NavItem
             active={isLevelTestHistory}
@@ -1205,10 +1252,11 @@ const CurrentStudyLevel = () => {
     <>
       <div className={style.current_study_level}>
         <div>
-          <div className={style.txt_h}>학습 중인 레벨</div>
+          {/* <div className={style.txt_h}>학습 레벨</div> */}
           <div className={style.txt_p}>
-            현재 학습 중인 레벨이 표시됩니다. 아래 메뉴를 탭 해서 학습 레벨을
-            변경할 수도 있어요.
+            기본적인 학습 목록을 구성하는 '나의 학습 레벨'이 설정되어 있어요.
+            만약 레벨을 바꾸고 싶다면 아래 메뉴를 탭 해서 학습 레벨을 변경할
+            수도 있어요.
           </div>
           <SelectBox>
             <SelectBoxItem>PreK (유치원 수준)</SelectBoxItem>
@@ -1235,14 +1283,14 @@ const CurrentStudyLevel = () => {
             <SelectBoxItem>6C (고등 수준)</SelectBoxItem>
           </SelectBox>
         </div>
-        <div>
+        {/* <div>
           <div className={style.txt_h}>전체 레벨</div>
           <div className={style.txt_p}>
             전체 레벨과 레벨업 진행 상태를 확인할 수 있어요. 레벨업을 완료하면
             레벨 마스터 배지가 표시됩니다.
           </div>
-        </div>
-        <div className={style.current_study_level_container}>
+        </div> */}
+        {/* <div className={style.current_study_level_container}>
           {leveledStudyStatusData.map((a, i) => {
             const currentLevel = 1;
             return (
@@ -1258,12 +1306,12 @@ const CurrentStudyLevel = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
       {/* 레벨을 셀렉트 박스에서 변경했을 때 활성화 됨 */}
       <div className={style.change_current_study_level}>
         <div className={style.txt_p}>
-          선택한 레벨로 <b>학습 중인 레벨</b>을 변경하시겠어요?
+          선택한 레벨로 <b>나의 학습 레벨</b>을 변경하시겠어요?
         </div>
         <div className={style.confirm}>
           <div className={style.button}>예</div>
@@ -1412,7 +1460,7 @@ export function SetStudyMode() {
   return (
     <div className={style.set_study_mode}>
       <div className={style.row_a}>
-        <div className={style.txt_h}>학습 화면</div>
+        <div className={style.txt_h}>화면 모드</div>
         {/* 자유 모드, 코스 모드 */}
         <div className={style.choose_study_mode}>
           <ChooseStudyModeItem

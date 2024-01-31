@@ -249,7 +249,7 @@ const LevelMasterProgress = () => {
               _viewBadgeList(false);
             }}
           >
-            <span>진행중인 레벨</span>
+            <span>학습중인 레벨</span>
           </div>
           <div
             className={`${style.tab_item} ${viewBadgeList && style.active}`}
@@ -369,7 +369,7 @@ const LevelMasterProgressBottom = ({ imgSrc, currentEarnPoint, goalPoint }) => {
       </div>
       <div className={style.progress_status}>
         <div className={style.comment}>
-          <span>현재 학습 중인 레벨</span>
+          <span>나의 학습 레벨</span>
           <span>
             {currentEarnPoint}/{goalPoint}P
           </span>

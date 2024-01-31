@@ -1,12 +1,50 @@
+"use client";
+
 import Image from "next/image";
+import "./course-list.scss";
 import style from "./course-list.module.scss";
 import {
+  Button,
   FilterContainer,
   FilterItem,
 } from "@/components/common/common-components";
+import { useState } from "react";
 
 // 코스 리스트
-export function CourseList({ passedNum, totalNum, children }) {
+export function CourseList({
+  passedNum,
+  totalNum,
+  children,
+  introVideoSrc,
+  outroVideoSrc,
+  introBgUrl1,
+  introBgUrl2,
+  introBgUrl3,
+  introBg,
+  outroBg,
+  outroBgUrl,
+  courseBgUrl,
+}) {
+  const IntroVideoBox = () => {
+    return (
+      <div className={style.video_wraper}>
+        <video controls>
+          <source src={introVideoSrc} type="video/mp4" />
+        </video>
+      </div>
+    );
+  };
+
+  const OutroVidioBox = () => {
+    return (
+      <div className={style.video_wraper}>
+        <video controls>
+          <source src={outroVideoSrc} type="video/mp4" />
+        </video>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className={style.row_a}>
@@ -18,9 +56,28 @@ export function CourseList({ passedNum, totalNum, children }) {
           </div>
         </div>
       </div>
-      <div>인트로 영상</div>
+      <div className={style.intro_movie}>
+        <div className={`intro_bg ${introBg}`}></div>
+        {introVideoSrc && <IntroVideoBox />}
+      </div>
       <div className={style.course_list}>{children}</div>
-      <div>아웃트로 영상</div>
+      {outroVideoSrc && (
+        <div className={style.outro_movie}>
+          <OutroVidioBox />
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <Button color={"gray"} width={400} shadow>
+              Go to Next!
+            </Button>
+          </div>
+          <div className={`outro_bg ${outroBg}`}></div>
+        </div>
+      )}
+      {/* <div
+        className={style.course_bg}
+        style={{
+          backgroundImage: `url(${courseBgUrl})`,
+        }}
+      ></div> */}
     </>
   );
 }

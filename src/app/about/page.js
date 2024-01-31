@@ -9,7 +9,7 @@ export default function Home() {
       <iframe
         title="External Content"
         width="100%"
-        src="/src/html/landing-page/index.html"
+        src="https://dev.readinggate.com/7th/motion/"
         frameBorder="0"
         className={style.iframe}
       />

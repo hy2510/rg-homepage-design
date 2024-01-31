@@ -14,16 +14,29 @@ import { BookList } from "@/components/modules/library-find-book-list/book-list"
 import { BookCover } from "@/components/modules/library-book-cover/book-cover";
 import bookData from "@/app/library/sample-data-book-finder.json";
 import { useState } from "react";
+import LevelSelector from "@/components/modules/library-explore-level-selector/level-selector";
 
 export default function Page() {
   const [isExportMode, _isExportMode] = useState(false);
+  const [viewLevelSelector, _viewLevelSelector] = useState(false);
 
   return (
     <main className={style.ebook}>
       <BackLink href="/library/explore" largeFont>
         eBook
       </BackLink>
-      <StudyLevelSelector eb level="KA" />
+      <StudyLevelSelector
+        level="KA"
+        onClick={() => {
+          _viewLevelSelector(true);
+        }}
+      />
+      {viewLevelSelector && (
+        <LevelSelector
+          _viewLevelSelector={_viewLevelSelector}
+          studyType={"eBook"}
+        />
+      )}
       <BookList
         count={50}
         isExportMode={isExportMode}

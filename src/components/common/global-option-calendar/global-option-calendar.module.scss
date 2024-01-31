@@ -1,6 +1,9 @@
 // 캘린더 모달
 .calendar_modal {
   background-color: var(--gray3);
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+  }
   .cal_header {
     min-height: 160px;
     display: flex;
@@ -60,6 +63,13 @@
     background-color: var(--white);
     border-radius: 0 0 var(--round-l) var(--round-l);
     margin-bottom: var(--space-s);
+    @media (prefers-color-scheme: dark) {
+      background-color: #0c0541;
+      border-top: 1px solid #000;
+      border-right: 1px solid #000;
+      border-bottom: 4px solid #000;
+      border-left: 1px solid #000;
+    }
   }
 }
 
@@ -72,6 +82,9 @@
     font-size: var(--text-s);
     font-weight: 500;
     color: #333;
+    @media (prefers-color-scheme: dark) {
+      color: var(--gray1);
+    }
     &:nth-child(1) {
       color: var(--red);
     }
@@ -110,6 +123,9 @@
     height: 80px;
     position: relative;
     border-bottom: 1px solid var(--gray3);
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.15);
+    }
     .date {
       position: absolute;
       top: 10px;
@@ -175,6 +191,9 @@
   border-radius: var(--round-l);
   background: var(--blue);
   padding: var(--space-xxs);
+  @media (prefers-color-scheme: dark) {
+    background: rgba($color: #fff, $alpha: 0.15);
+  }
   .tab_button {
     cursor: pointer;
     width: 100%;
@@ -192,6 +211,9 @@
       color: var(--blue);
       border-radius: var(--round-m);
       background: var(--white);
+      @media (prefers-color-scheme: dark) {
+        background: rgba($color: #0c0541, $alpha: 0.8);
+      }
       // 입체적인 효과를 주고자 할 때
       // border-top: 1px solid #e7e7e7;
       // border-right: 1px solid #e7e7e7;
@@ -209,6 +231,9 @@
     height: 80px;
     position: relative;
     border-bottom: 1px solid var(--gray3);
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.15);
+    }
     .date {
       position: absolute;
       top: 10px;

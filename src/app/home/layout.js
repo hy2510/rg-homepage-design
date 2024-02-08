@@ -1,18 +1,21 @@
 "use client";
 
 import Link from "next/link";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import { usePathname } from "next/navigation";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Layout({ children }) {
   const pathname = usePathname();
   const connectMain = pathname.indexOf("main") != -1;
-  const connectMainRgNews = pathname.indexOf("rg-news") != -1;
-  const connectHallOfFame = pathname.indexOf("hall-of-fame") != -1;
-  const connectCustomerReview = pathname.indexOf("customer-review") != -1;
-  const connectRgMembership = pathname.indexOf("rg-membership") != -1;
+  const connectMainRgNews = pathname.indexOf("/rg-news") != -1;
+  const connectHallOfFame = pathname.indexOf("/hall-of-fame") != -1;
+  const connectCustomerReview = pathname.indexOf("/customer-review") != -1;
+  const connectRgMembership = pathname.indexOf("/rg-membership") != -1;
 
   const HomeNavItem = ({ name, href, target, active, onClick }) => {
     return (

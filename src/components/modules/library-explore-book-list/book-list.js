@@ -1,6 +1,11 @@
+import { useMobileDetect } from "@/components/util";
 import { SetFilter } from "../library-set-fliter/set-fliter";
-import style from "./book-list.module.scss";
+import stylesMobile from "./book-list_m.module.scss";
+import stylesPc from "./book-list.module.scss";
 import { AlertBar } from "@/components/common/common-components";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 학습메인 > 사용자의 학습레벨의 도서 리스트
 export function BookList({ children }) {

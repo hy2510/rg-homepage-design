@@ -1,7 +1,12 @@
-import Link from "next/link";
-import stylesPc from "./home-main-rg-news.module.scss";
+"use client";
 
-const style = stylesPc;
+import Link from "next/link";
+import stylesMobile from "./home-main-rg-news_m.module.scss";
+import stylesPc from "./home-main-rg-news.module.scss";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export const RgNewsContainer = ({ children }) => {
   return (

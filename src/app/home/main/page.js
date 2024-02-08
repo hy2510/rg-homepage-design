@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import stylesPc from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
 import MainBanner from "@/components/modules/home-main-components/home-main-main-banner";
 import {
   RgNewsCard,
@@ -16,8 +19,10 @@ import {
   RgPostContainer,
   RgPostItem,
 } from "@/components/modules/home-main-components/home-main-rg-post";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   const RgPost = () => {

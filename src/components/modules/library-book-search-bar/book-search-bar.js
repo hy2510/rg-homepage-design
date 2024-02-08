@@ -1,16 +1,21 @@
 "use client";
 
-import style from "./book-search-bar.module.scss";
+import stylesMobile from "./book-search-bar_m.module.scss";
+import stylesPc from "./book-search-bar.module.scss";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/common/common-components";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 const bookSearchBarCategoryData = [
   {
     title: "기초 학습",
     comment: "PreK - 알파벳, 파닉스 배우기",
     image: "/src/images/@book-search-bar/dodo_abc.png",
-    link: "/library/find/study-prek",
+    link: "/library/find/study-dodo-abc/study",
   },
   {
     title: "기초 학습 (classic)",
@@ -47,6 +52,9 @@ const bookSearchBarCategoryData = [
 // 도서 검색바
 export const BookSearchBar = () => {
   let [isBookSearchActive, _isBookSearchActive] = useState(false);
+  useEffect(() => {
+    isMobile ? _isBookSearchActive(true) : null;
+  }, []);
 
   return (
     <>
@@ -94,7 +102,7 @@ export const BookSearchBarCategoryContainer = () => {
       <div className={style.row_b}>
         {bookSearchBarCategoryData.map((a, i) => (
           <BookSearchBarCategoryItem
-            key={`bookserch-category-${i}`}
+            key={`booksearch-category-${i}`}
             title={a.title}
             comment={a.comment}
             imgSrc={a.image}

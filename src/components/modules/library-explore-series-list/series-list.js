@@ -1,8 +1,13 @@
-import style from "./series-list.module.scss";
+import stylesPc from "./series-list.module.scss";
+import stylesMobile from "./series-list_m.module.scss";
 import "./series-item-theme.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { AlertBar } from "@/components/common/common-components";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 학습메인 > 사용자의 학습레벨의 시리즈 리스트
 export function SeriesList({ children }) {

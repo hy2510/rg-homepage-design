@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import {
   Dropdown,
@@ -13,8 +16,10 @@ import {
   QuickReportsList,
 } from "@/components/modules/review-quick-view-reports/quick-view-reports";
 import { reports } from "../sample-data";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   return (

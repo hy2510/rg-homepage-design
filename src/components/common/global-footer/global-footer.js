@@ -1,8 +1,13 @@
+"use client";
+
+import stylesMobile from "./global-footer_m.module.scss";
 import stylesPc from "./global-footer.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 공통하단
 export default function Gfooter() {

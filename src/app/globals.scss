@@ -40,6 +40,10 @@
   --round-full: 100px;
   --header-height: 78px;
   --footer-height: 180px;
+  @media (pointer: coarse) {
+    font-size: 14px;
+    --header-height: 68px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,18 +79,22 @@ body {
   height: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-repeat: repeat-x;
-  animation: linear 200s infinite cloud;
-  @keyframes cloud {
-    0% {
-      background-position: top -30px right 0;
-    }
-    100% {
-      background-position: top -30px right -5187px;
-    }
-  }
   @media (prefers-color-scheme: dark) {
     background-image: url("/src/images/@home/home_bg_dark.svg");
+    background-repeat: repeat-x;
+    animation: linear 200s infinite cloud;
+    @keyframes cloud {
+      0% {
+        background-position: top -30px right 0;
+      }
+      100% {
+        background-position: top -30px right -5187px;
+      }
+    }
+  }
+  @media (pointer: coarse) {
+    min-height: fit-content;
+    height: fit-content;
   }
 }
 
@@ -156,6 +164,9 @@ button {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 20px;
+  @media (pointer: coarse) {
+    padding-top: 0;
+  }
   &.compact {
     max-width: 1024px;
   }

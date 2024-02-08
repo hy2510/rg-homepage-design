@@ -1,11 +1,14 @@
 "use client";
 
+import stylesMobile from "./ranking-nav-bar_m.module.scss";
 import stylesPc from "./ranking-nav-bar.module.scss";
 import { usePathname } from "next/navigation";
 import { Nav, NavItem } from "@/components/common/common-components";
 import Link from "next/link";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export const RankingNavBar = () => {
   const pathname = usePathname();

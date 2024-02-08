@@ -1,5 +1,10 @@
-import style from "./todo-list.module.scss";
+import stylesMobile from "./todo-list_m.module.scss";
+import stylesPc from "./todo-list.module.scss";
 import Link from "next/link";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 학습메인 > 사용자의 진행중인 학습 리스트
 export function ExpTodoList({ children }) {

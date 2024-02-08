@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import { Dropdown, DropdownItem } from "@/components/common/common-components";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import { ranking } from "../sample-data";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   const SubTitle = ({ children, message }) => {
@@ -111,8 +116,8 @@ export default function Page() {
         <div className={style.table_header}>
           <div className={style.th_item}>순위</div>
           <div className={style.th_item}>학생 이름</div>
-          <div className={style.th_item}>학습 참여일 수</div>
-          <div className={style.th_item}>획득한 포인트 / 학습 권수</div>{" "}
+          <div className={style.th_item}>참여일 수</div>
+          <div className={style.th_item}>포인트 / 학습 권수</div>{" "}
         </div>
         {ranking.map((a) => {
           return (

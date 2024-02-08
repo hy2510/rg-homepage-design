@@ -1,7 +1,12 @@
-import style from "./theme-list.module.scss";
+import stylesMobile from "./theme-list_m.module.scss";
+import stylesPc from "./theme-list.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { AlertBar } from "@/components/common/common-components";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 학습메인 > 사용자의 학습레벨의 주제 리스트
 export function ThemeList({ children }) {

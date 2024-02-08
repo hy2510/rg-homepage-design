@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/common/common-components";
+import stylesMobile from "./home-main-log-in_m.module.scss";
 import stylesPc from "./home-main-log-in.module.scss";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function LogIn() {
   return (

@@ -1,6 +1,11 @@
-import style from "./level-up-status.module.scss";
+import stylesMobile from "./level-up-status_m.module.scss";
+import stylesPc from "./level-up-status.module.scss";
 import Image from "next/image";
 import { Modal, ProgressBar } from "@/components/common/common-components";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 학습메인 > 사용자의 학습레벨의 레벨업 상태
 export const LevelUpStatus = ({ isLevelPk, studyLevel, progress, onClick }) => {

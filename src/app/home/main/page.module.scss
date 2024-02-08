@@ -5,55 +5,36 @@
     "main_banner ad_banner"
     "rg_news ad_banner"
     "rg_post ad_banner";
-  padding-top: var(--space-s);
+  padding-top: var(--space-xs);
   gap: var(--space-m);
-  @media (orientation: portrait) {
-    grid-template-areas: none;
-    display: flex;
-    flex-direction: column;
-  }
   width: 100%;
   .item1 {
     grid-area: main_banner;
     width: 100%;
-    max-width: 940px;
+    max-width: 900px;
     height: fit-content;
-    order: 2;
   }
   .item2 {
     grid-area: rg_news;
     width: 100%;
-    max-width: 940px;
+    max-width: 900px;
     height: fit-content;
-    order: 3;
   }
   .item3 {
     grid-area: log_in;
     min-width: 320px;
     height: fit-content;
-    @media (hover: none) {
-      min-width: 280px;
-      order: 1;
-    }
   }
   .item4 {
     grid-area: ad_banner;
     min-width: 320px;
     height: fit-content;
-    @media (hover: none) {
-      min-width: 280px;
-      order: 5;
-    }
   }
   .item5 {
     grid-area: rg_post;
     width: 100%;
-    max-width: 940px;
+    max-width: 900px;
     height: fit-content;
-    @media (hover: none) {
-      min-width: 280px;
-      order: 4;
-    }
   }
 }
 

@@ -1,9 +1,14 @@
 "use client";
 
 import { Modal } from "@/components/common/common-components";
-import style from "./set-filter.module.scss";
+import stylesMobile from "./set-filter_m.module.scss";
+import stylesPc from "./set-filter.module.scss";
 import Image from "next/image";
 import { useState } from "react";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 필터 콘테이너
 export function SetFilter({ children }) {

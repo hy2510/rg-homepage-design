@@ -1,11 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import stylesMobile from "./review-detail-view-reports_m.module.scss";
 import stylesPc from "./review-detail-view-reports.module.scss";
 import { useState } from "react";
 import { ReviewAssessmentReport } from "../review-assessment-report/review-assessment-report";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 상세보기 리포트 리스트
 export const DetailedReportsList = ({ children }) => {

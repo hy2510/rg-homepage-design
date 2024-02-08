@@ -2,11 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import stylesMobile from "./home-main-main-banner_m.module.scss";
 import stylesPc from "./home-main-main-banner.module.scss";
 import { useEffect, useState } from "react";
 import { Oregano } from "next/font/google";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function MainBanner({ data }) {
   const mainBannerData = [

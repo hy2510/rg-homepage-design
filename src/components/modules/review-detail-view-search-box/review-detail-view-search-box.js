@@ -1,7 +1,10 @@
 import Image from "next/image";
+import stylesMobile from "./review-detail-view-search-box_m.module.scss";
 import stylesPc from "./review-detail-view-search-box.module.scss";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 상세보기 리포트 검색박스
 export const ReportSearchBox = ({ onClick }) => {

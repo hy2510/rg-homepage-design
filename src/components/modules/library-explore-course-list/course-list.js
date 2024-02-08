@@ -2,13 +2,18 @@
 
 import Image from "next/image";
 import "./course-list.scss";
-import style from "./course-list.module.scss";
+import stylesMobile from "./course-list_m.module.scss";
+import stylesPc from "./course-list.module.scss";
 import {
   Button,
   FilterContainer,
   FilterItem,
 } from "@/components/common/common-components";
 import { useState } from "react";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 코스 리스트
 export function CourseList({
@@ -65,7 +70,7 @@ export function CourseList({
         <div className={style.outro_movie}>
           <OutroVidioBox />
           <div style={{ position: "relative", zIndex: 1 }}>
-            <Button color={"gray"} width={400} shadow>
+            <Button color={"gray"} width={"100%"} shadow>
               Go to Next!
             </Button>
           </div>

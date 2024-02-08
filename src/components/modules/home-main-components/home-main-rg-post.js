@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import stylesMobile from "./home-main-rg-post_m.module.scss";
 import stylesPc from "./home-main-rg-post.module.scss";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export const RgPostContainer = ({ children }) => {
   return (

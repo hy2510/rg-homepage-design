@@ -1,12 +1,15 @@
 "use client";
 
+import stylesMobile from "./review-nav-bar_m.module.scss";
 import styelsPc from "./review-nav-bar.module.scss";
 import Link from "next/link";
 import { Nav, NavItem } from "@/components/common/common-components";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useMobileDetect } from "@/components/util";
 
-const style = styelsPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : styelsPc;
 
 // ReviewNavBar : 간편보기, 상세보기 네브바
 export function ReviewNavBar() {

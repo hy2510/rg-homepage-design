@@ -2,16 +2,48 @@ import { Dropdown, DropdownItem } from "@/components/common/common-components";
 import style from "./study-level-selector.module.scss";
 import { SetFilter } from "../library-set-fliter/set-fliter";
 
-export function StudyLevelSelector({ prek, level, onClick }) {
+export function StudyLevelSelector({
+  prek,
+  level,
+  onClick,
+  dodoabc,
+  dodoabcGame,
+  dodoabcSongnChant,
+}) {
   return (
     <div className={style.study_level_selector}>
       {prek && (
         <Dropdown title={`모든 단계`}>
           <DropdownItem>모든 단계</DropdownItem>
-          <DropdownItem>1 알파벳 학습</DropdownItem>
-          <DropdownItem>2 파닉스 학습</DropdownItem>
-          <DropdownItem>3 단어 학습</DropdownItem>
-          <DropdownItem>4 스토리 읽기</DropdownItem>
+          <DropdownItem>알파벳</DropdownItem>
+          <DropdownItem>파닉스</DropdownItem>
+          <DropdownItem>단어</DropdownItem>
+          <DropdownItem>스토리</DropdownItem>
+        </Dropdown>
+      )}
+      {dodoabc && (
+        <Dropdown title={`모든 단계`}>
+          <DropdownItem>모든 단계</DropdownItem>
+          <DropdownItem>알파벳</DropdownItem>
+          <DropdownItem>파닉스1</DropdownItem>
+          <DropdownItem>파닉스2</DropdownItem>
+          <DropdownItem>사이트워드1</DropdownItem>
+          <DropdownItem>사이트워드2</DropdownItem>
+        </Dropdown>
+      )}
+      {dodoabcGame && (
+        <Dropdown title={`알파벳`}>
+          <DropdownItem>알파벳</DropdownItem>
+          <DropdownItem>파닉스</DropdownItem>
+          <DropdownItem>사이트워드1</DropdownItem>
+          <DropdownItem>사이트워드2</DropdownItem>
+        </Dropdown>
+      )}
+      {dodoabcSongnChant && (
+        <Dropdown title={`Nursery Rhyme`}>
+          <DropdownItem>Nursery Rhyme</DropdownItem>
+          <DropdownItem>Alphabet Chant</DropdownItem>
+          <DropdownItem>Phonics Chant</DropdownItem>
         </Dropdown>
       )}
       {level && (
@@ -20,7 +52,7 @@ export function StudyLevelSelector({ prek, level, onClick }) {
           <span className={style.arrow_icon}></span>
         </div>
       )}
-      <SetFilter />
+      {!dodoabc && !dodoabcGame && !dodoabcSongnChant && <SetFilter />}
     </div>
   );
 }

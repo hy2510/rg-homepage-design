@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import stylesMobile from "./quick-view-reports_m.module.scss";
 import stylesPc from "./quick-view-reports.module.scss";
 import Image from "next/image";
 import { ReviewAssessmentReport } from "../review-assessment-report/review-assessment-report";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 간편보기 리포트 리스트
 export const QuickReportsList = ({ children }) => {

@@ -1,10 +1,15 @@
 "use client";
 
 import { Flamenco } from "next/font/google";
-import style from "./common-components.module.scss";
+import stylesMobile from "./common-components_m.module.scss";
+import stylesPc from "./common-components.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useMobileDetect } from "../util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 기본버튼
 export function Button({ color, shadow, roundFull, width, onClick, children }) {

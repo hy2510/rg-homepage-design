@@ -1,5 +1,6 @@
 "use client";
 
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,15 +43,17 @@ import {
 } from "@/components/modules/library-explore-course-list/course-list";
 import { IntroChoodeLevel } from "@/components/modules/library-intro-choose-level/intro-choose-level";
 import LevelSelector from "@/components/modules/library-explore-level-selector/level-selector";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   return (
     <main className={`${style.explore}`}>
       {/* <IntroChoodeLevel /> */}
-      <PrekMode />
-      {/* <BookReadingMode /> */}
+      {/* <PrekMode /> */}
+      <BookReadingMode />
       {/* <ChallengeMode /> */}
     </main>
   );
@@ -215,8 +218,8 @@ const PrekMode = () => {
           "https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/alphabet_intro.mp4",
         outroVideoSrc:
           "https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/alphabet_ending.mp4",
-        courseBgUrl:
-          "https://www.readinggate.com/Content/DodoABC/Alphabet/img/page_bg.png",
+        // courseBgUrl:
+        //   "https://www.readinggate.com/Content/DodoABC/Alphabet/img/page_bg.png",
       },
       {
         stageName: "phonics1",
@@ -224,8 +227,8 @@ const PrekMode = () => {
           "https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/phonics1_intro.mp4",
         outroVideoSrc:
           "https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/phonics1_ending.mp4",
-        courseBgUrl:
-          "https://www.readinggate.com/Content/DodoABC/Phonics1/img/board_bg.png",
+        // courseBgUrl:
+        //   "https://www.readinggate.com/Content/DodoABC/Phonics1/img/board_bg.png",
       },
       {
         stageName: "phonics2",
@@ -233,8 +236,8 @@ const PrekMode = () => {
           "https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/phonics2_intro.mp4",
         outroVideoSrc:
           "https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/phonics2_ending.mp4",
-        courseBgUrl:
-          "https://www.readinggate.com/Content/DodoABC/Phonics2/img/board_bg.png",
+        // courseBgUrl:
+        //   "https://www.readinggate.com/Content/DodoABC/Phonics2/img/board_bg.png",
       },
       {
         stageName: "sightWords1",
@@ -242,15 +245,15 @@ const PrekMode = () => {
           "https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/sightwords_intro.mp4",
         outroVideoSrc:
           "https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/sightwords_ending.mp4",
-        courseBgUrl:
-          "https://www.readinggate.com/Content/DodoABC/SightWords1/img/board_bg.png",
+        // courseBgUrl:
+        //   "https://www.readinggate.com/Content/DodoABC/SightWords1/img/board_bg.png",
       },
       {
         stageName: "sightWords2",
         introVideoSrc: "",
         outroVideoSrc: "",
-        courseBgUrl:
-          "https://www.readinggate.com/Content/DodoABC/SightWords2/img/board_bg.png",
+        // courseBgUrl:
+        //   "https://www.readinggate.com/Content/DodoABC/SightWords2/img/board_bg.png",
       },
     ];
     const [stage, _stage] = useState("alphabet");

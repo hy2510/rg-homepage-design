@@ -47,5 +47,8 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: var(--space-m);
+    &.dodo_abc_songn_chant {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }

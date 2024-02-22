@@ -5,7 +5,7 @@
   font-size: 1.1em;
   font-weight: 500;
   padding: var(--space-xs) var(--space-s);
-  min-height: 50px;
+  min-height: 40px;
   display: flex;
   gap: var(--space-xxs);
   align-items: center;
@@ -81,7 +81,7 @@
 
 // 얼럿바
 .alert_bar {
-  padding: var(--space-xxs) var(--space-xs) var(--space-xxs) var(--space-s);
+  padding: 8px var(--space-xs) 8px var(--space-s);
   background-color: #fcf1e3;
   color: var(--orange);
   font-size: var(--text-s);
@@ -144,6 +144,9 @@
       position: absolute;
       bottom: 100%;
       left: 12px;
+      @media (prefers-color-scheme: dark) {
+        border-bottom: 8px solid var(--black);
+      }
     }
   }
   .txt_h {
@@ -185,19 +188,21 @@
 .nav_container {
   display: flex;
   position: sticky;
-  top: 78px;
+  top: 60px;
   z-index: 5;
   background-color: var(--white);
   box-shadow: 10px 0 var(--white), -10px 0 var(--white);
   // border-radius: var(--round-m);
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow-x: auto;
+  border-bottom: 1.5px solid rgba($color: #000000, $alpha: 0.05);
   &::-webkit-scrollbar {
     display: none;
   }
   @media (prefers-color-scheme: dark) {
     background-color: #0c0541;
     box-shadow: 10px 0 #0c0541, -10px 0 #0c0541;
+    border-bottom: 1.5px solid rgba($color: #ffffff, $alpha: 0.1);
   }
   // &::after {
   //   content: "";
@@ -341,6 +346,7 @@
   // background-color: var(--gray3);
   border-radius: var(--round-full);
   position: relative;
+  margin: auto;
   @media (prefers-color-scheme: dark) {
     background-color: rgba(255, 255, 255, 0.1);
   }
@@ -359,7 +365,7 @@
     .pointer {
       position: absolute;
       padding: var(--space-xxs) var(--space-xs);
-      right: -25px;
+      right: -30px;
       top: calc(50% - 16px);
       background-color: var(--dark-blue);
       color: var(--white);
@@ -372,7 +378,7 @@
     height: 15px;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -5px;
     z-index: 1;
     &::after {
       content: "";
@@ -422,7 +428,7 @@
   // z-index: 4;
   .title {
     font-size: var(--text-d-1);
-    font-weight: 800;
+    font-weight: 600;
     &.txt_h {
       font-size: var(--text-m);
       font-weight: normal;
@@ -446,7 +452,7 @@
     left: -5px;
     z-index: 3;
     background-color: var(--white);
-    border: 2px solid var(--gray2);
+    border: 1.2px solid var(--gray2);
     border-radius: var(--round-m);
     @media (prefers-color-scheme: dark) {
       background-color: #0c0541;
@@ -466,7 +472,7 @@
 .dropdown_item {
   min-width: 200px;
   padding: var(--space-xs) var(--space-s);
-  border-bottom: 2px solid var(--gray2);
+  border-bottom: 1.2px solid var(--gray2);
   font-size: var(--text-l);
   font-weight: 500;
   &:nth-last-child(1) {
@@ -476,11 +482,11 @@
 
 // 텍스트필드
 .text_field {
-  border: 2px solid var(--gray2);
+  border: 1.2px solid var(--gray2);
   border-radius: var(--round-m);
-  padding: var(--space-s);
+  padding: var(--space-xs) var(--space-s);
   @media (prefers-color-scheme: dark) {
-    border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+    border: 1.2px solid rgba($color: #ffffff, $alpha: 0.15);
   }
   &.val {
     background-color: var(--gray3);
@@ -500,9 +506,9 @@
 
 // 셀렉트박스
 .select_box {
-  border: 2px solid var(--gray2);
+  border: 1.2px solid var(--gray2);
   border-radius: var(--round-m);
-  padding: var(--space-s);
+  padding: var(--space-xs) var(--space-s);
   background-image: url("/src/images/arrow-icons/chv_down.svg");
   background-repeat: no-repeat;
   background-position: center right 10px;
@@ -539,15 +545,19 @@
   bottom: 0;
   .modal_container {
     width: 100vw;
-    height: 100vh;
+    // height: calc(100vh - constant);
+    overscroll-behavior-y: none;
     background-color: var(--white);
     overflow-x: hidden;
     overflow-y: auto;
     margin: auto;
     position: relative;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     @media (prefers-color-scheme: dark) {
       box-shadow: none;
-      border: 2px solid rgba(255, 255, 255, 0.15);
+      // border: 2px solid rgba(255, 255, 255, 0.15);
       background-color: #0c0541;
     }
     &.compact {
@@ -555,7 +565,7 @@
       height: 100vh;
     }
     .modal_header {
-      padding: var(--space-m);
+      padding: var(--space-s) var(--space-s) var(--space-xxs) var(--space-s);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -585,6 +595,7 @@
         .txt_h {
           font-size: 1.4em;
           font-weight: 600;
+          margin-left: var(--space-xxs);
         }
         .txt_p {
           color: var(--gray1);
@@ -606,15 +617,23 @@
     }
     .nav_top {
       display: flex;
-      padding: var(--space-s) var(--space-xs);
+      padding: var(--space-s);
+      padding-left: var(--space-xs);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: var(--white);
+      @media (prefers-color-scheme: dark) {
+        background-color: #0c0541;
+      }
       .nav_top_back_link {
         cursor: pointer;
         display: flex;
         align-items: center;
         gap: var(--space-xxs);
         .arrow_icon {
-          width: 40px;
-          height: 40px;
+          width: 30px;
+          height: 30px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -627,7 +646,7 @@
           }
         }
         .txt_h {
-          font-size: var(--text-xl);
+          font-size: 1.4em;
           font-weight: 500;
         }
       }
@@ -690,11 +709,19 @@
 
 // 게시판 (아이템)
 .notice_board_item {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  align-items: center;
-  padding: var(--space-m) 0;
+  // display: grid;
+  // grid-template-columns: 120px 1fr;
+  // align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: var(--space-xxs);
+  padding: var(--space-s) 0;
   border-bottom: 1px dotted var(--gray2);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 1px dotted rgba($color: #ffffff, $alpha: 0.15);
+  }
   .notice_date {
     font-size: var(--txet-m);
     font-weight: 500;
@@ -704,6 +731,6 @@
   .notice_title {
     font-size: var(--txet-l);
     font-weight: 500;
-    padding-left: var(--space-m);
+    // padding-left: var(--space-m);
   }
 }

@@ -6,13 +6,18 @@ import {
   NavItem,
   ProgressBar,
 } from "../common-components";
-import style from "./global-option-quest.module.scss";
+import stylesMobile from "./global-option-quest_m.module.scss";
+import stylesPc from "./global-option-quest.module.scss";
 import "./global-option-level-bg-color.scss";
 import Image from "next/image";
 import {
   LevelMasterAward,
   LevelMasterAwardItem,
 } from "../global-option-my-rg/global-option-my-rg";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 퀘스트 모달
 export function QuestModal({ _viewQuestModal }) {
@@ -138,7 +143,7 @@ const FriendsEntry = ({ imgSrc, title, story }) => {
     <>
       <div className={style.bridge}></div>
       <div className={style.friends_entry}>
-        <div>
+        <div className={style.friends_entry_image}>
           <Image alt="" src={imgSrc} width={100} height={100} />
         </div>
         <div className={style.friends_entry_text}>

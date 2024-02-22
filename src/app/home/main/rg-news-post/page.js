@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import { BackLink, Margin } from "@/components/common/common-components";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   const data = {
@@ -17,18 +22,19 @@ export default function Page() {
 
   return (
     <main className="container compact">
+      {isMobile ? <div style={{ padding: "10px" }}></div> : <></>}
       <BackLink largeFont colorWhite>
         공지
       </BackLink>
-      <Margin height={30} />
+      <Margin height={isMobile ? 20 : 30} />
       <div className={style.rg_news_post}>
         <div className={style.row_1}>
           <div className={style.txt_1}>{data.title}</div>
           <div className={style.txt_2}>{data.date}</div>
         </div>
         <div className={style.row_2}>
-          <div> - 광고 베너 - </div>
-          <Margin height={20} />
+          {/* <div> - 광고 베너 - </div>
+          <Margin height={20} /> */}
           <div style={{ width: "100%", maxWidth: "750px", margin: "auto" }}>
             <Image
               alt=""
@@ -45,8 +51,8 @@ export default function Page() {
               }}
             />
           </div>
-          <Margin height={20} />
-          <div> - 광고 베너 - </div>
+          {/* <Margin height={20} />
+          <div> - 광고 베너 - </div> */}
         </div>
       </div>
     </main>

@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { BackLink, Nav, NavItem } from "@/components/common/common-components";
 import { usePathname } from "next/navigation";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
 
 export default function Layout({ children }) {
   const pathname = usePathname();
@@ -15,7 +18,12 @@ export default function Layout({ children }) {
       <BackLink href="/library/explore" largeFont>
         진행중인 학습
       </BackLink>
-      <div className="mg-bottom-m"></div>
+      {isMobile ? (
+        <div className="mg-bottom-xxs"></div>
+      ) : (
+        <div className="mg-bottom-m"></div>
+      )}
+
       <Nav>
         <Link href="/library/find/assignment/to-do">
           <NavItem active={connectToDo}>To-Do</NavItem>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import stylesMobile from "./quick-view-reports_m.module.scss";
 import stylesPc from "./quick-view-reports.module.scss";
 import Image from "next/image";
@@ -34,6 +34,14 @@ export const QuickReportItem = ({
   const hideAssessReport = () => {
     _viewAssessment(false);
   };
+
+  useEffect(() => {
+    if (viewAssessment) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
 
   return (
     <div className={style.quick_report_item}>

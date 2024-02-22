@@ -36,6 +36,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #e3f6f2;
+  @media (pointer: coarse) {
+    background-position: left -100px center, right -100px center;
+  }
   .cal_year {
     color: var(--black);
   }
@@ -54,6 +57,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #016680;
+  @media (pointer: coarse) {
+    background-position: left -80px center, right -100px center;
+  }
   .cal_year {
     color: var(--white);
   }
@@ -75,6 +81,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #efefef;
+  @media (pointer: coarse) {
+    background-position: left -100px center, right -50px center;
+  }
   .cal_year {
     color: var(--black);
   }
@@ -93,6 +102,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #ffecde;
+  @media (pointer: coarse) {
+    background-position: left -80px center, right -100px center;
+  }
   .cal_year {
     color: var(--black);
   }
@@ -111,6 +123,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #aee387;
+  @media (pointer: coarse) {
+    background-position: left -130px center, right -130px center;
+  }
   .cal_year {
     color: var(--black);
   }
@@ -129,6 +144,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #bed630;
+  @media (pointer: coarse) {
+    background-position: left -150px center, right -100px center;
+  }
   .cal_year {
     color: var(--black);
   }
@@ -147,6 +165,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #ffe0a3;
+  @media (pointer: coarse) {
+    background-position: left -100px center, right -100px center;
+  }
   .cal_year {
     color: var(--black);
   }
@@ -165,6 +186,9 @@
   background-repeat: no-repeat;
   background-size: contain, contain, cover;
   background-position: left center, right center, center;
+  @media (pointer: coarse) {
+    background-position: left -150px center, right -150px center, center;
+  }
   .cal_year {
     color: var(--white);
   }
@@ -186,6 +210,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #012548;
+  @media (pointer: coarse) {
+    background-position: left -100px center, right -100px center;
+  }
   .cal_year {
     color: var(--white);
   }
@@ -207,6 +234,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #522b28;
+  @media (pointer: coarse) {
+    background-position: left -80px center, right -100px center;
+  }
   .cal_year {
     color: var(--white);
   }
@@ -228,6 +258,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #ffe6b8;
+  @media (pointer: coarse) {
+    background-position: left -80px center, right -100px center;
+  }
   .cal_year {
     color: var(--black);
   }
@@ -246,6 +279,9 @@
   background-size: contain, contain;
   background-position: left center, right center;
   background-color: #17173b;
+  @media (pointer: coarse) {
+    background-position: left -50px center, right -100px center;
+  }
   .cal_year {
     color: var(--white);
   }

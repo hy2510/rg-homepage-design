@@ -1,6 +1,7 @@
 "use client";
 
-import style from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
+import stylesPc from "./page.module.scss";
 import {
   AlertBar,
   Dropdown,
@@ -16,6 +17,10 @@ import {
   ExportItem,
   ExportModePanel,
 } from "@/components/modules/library-export-mode-panel/export-mode-panel";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   const [isExportMode, _isExportMode] = useState(false);

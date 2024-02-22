@@ -14,6 +14,8 @@ export const RankingNavBar = () => {
   const pathname = usePathname();
   const connectPointsRank = pathname.indexOf("points-rank") != -1;
   const connectChallengeRank = pathname.indexOf("challenge-rank") != -1;
+  const connectHallOfFameRank = pathname.indexOf("hall-of-fame-rank") != -1;
+  const connectLevelMasterBoard = pathname.indexOf("level-master-board") != -1;
 
   return (
     <div className={style.ranking_nav_bar}>
@@ -25,6 +27,12 @@ export const RankingNavBar = () => {
         <Link href="/ranking/challenge-rank">
           <NavItem active={connectChallengeRank}>영어독서왕</NavItem>
         </Link>
+        <Link href="/ranking/hall-of-fame-rank">
+          <NavItem active={connectHallOfFameRank}>명예의전당</NavItem>
+        </Link>
+        {/* <Link href="/ranking/level-master-board">
+          <NavItem active={connectLevelMasterBoard}>레벨마스터</NavItem>
+        </Link> */}
       </Nav>
     </div>
   );

@@ -14,10 +14,14 @@
     .book_cover_img {
       cursor: pointer;
       filter: contrast(103%);
-      border-radius: var(--round-l);
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      border-radius: var(--round-m);
+      border: 1.2px solid rgba($color: #000000, $alpha: 0.15);
+      @media (prefers-color-scheme: dark) {
+        border: 1.2px solid rgba($color: #ffffff, $alpha: 0.2);
+      }
+      // box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      //   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      //   rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     }
     @mixin mark {
       width: 40px;

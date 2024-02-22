@@ -116,12 +116,14 @@
     border-bottom: 2px solid var(--gray2);
     background-color: var(--white);
     position: sticky;
-    top: 78px;
+    top: calc(60px + 52px);
     z-index: 3;
     @media (prefers-color-scheme: dark) {
       background-color: rgba($color: #ffffff, $alpha: 0.15);
       border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
       border-bottom: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
     }
   }
 }

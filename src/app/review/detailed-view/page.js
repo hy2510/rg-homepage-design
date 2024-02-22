@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import {
   Button,
@@ -22,8 +23,10 @@ import {
 } from "@/components/modules/review-detail-view-reports/review-detail-view-reports";
 import { reports } from "../sample-data";
 import { useState } from "react";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   const [reportType, _reportType] = useState("detail");

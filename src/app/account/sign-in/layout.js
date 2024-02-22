@@ -2,11 +2,14 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import { Nav, NavItem } from "@/components/common/common-components";
 import Link from "next/link";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Layout({ children }) {
   const pathname = usePathname();

@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import { useState } from "react";
 import { Flamenco } from "next/font/google";
 import { Button, TextField } from "@/components/common/common-components";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   const MoreButton = () => {

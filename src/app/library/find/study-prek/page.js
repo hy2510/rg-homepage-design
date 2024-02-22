@@ -5,13 +5,18 @@ import {
   Pagination,
   PaginationItem,
 } from "@/components/common/common-components";
-import style from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
+import stylesPc from "./page.module.scss";
 import { StudyLevelSelector } from "@/components/modules/library-find-study-level-selector/study-level-selector";
 import { BookList } from "@/components/modules/library-find-book-list/book-list";
 import { BookCover } from "@/components/modules/library-book-cover/book-cover";
 import bookData from "@/app/library/sample-data-book-finder.json";
 import { useState } from "react";
 import Image from "next/image";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   const [isExportMode, _isExportMode] = useState(false);

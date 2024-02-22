@@ -1,10 +1,13 @@
 "use client";
 
+import stylesMobile from "./page_m.module.scss";
 import styledPc from "./page.module.scss";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { useMobileDetect } from "@/components/util";
 
-const style = styledPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : styledPc;
 
 export default function Page() {
   const moveToPage = () => {

@@ -30,21 +30,24 @@ export default function Layout({ children }) {
   const HomeNavBar = () => {
     return (
       <div className={`${style.home_nav_bar} container`}>
-        <HomeNavItem name={"메인"} href={"main"} active={connectMain} />
-        <HomeNavItem
+        <HomeNavItem name={"메인"} href={"/home/main"} active={connectMain} />
+        {/* <HomeNavItem
           name={"명예의 전당"}
-          href={"hall-of-fame"}
+          href={"/home/hall-of-fame"}
           active={connectHallOfFame}
-        />
+        /> */}
         <HomeNavItem
           name={"활용수기"}
-          href={"customer-review"}
+          href={"/home/customer-review"}
           active={connectCustomerReview}
         />
         <HomeNavItem
           name={"RG 멤버십"}
-          href={"rg-membership"}
-          active={connectRgMembership}
+          // href={"/home/rg-membership"}
+          // active={connectRgMembership}
+          href={"https://www.readinggate.com/Payment/Price"}
+          active={false}
+          target={"_blank"}
         />
         <HomeNavItem
           name={"고객센터"}

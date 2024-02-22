@@ -1,0 +1,65 @@
+.sign_in_group {
+  background-image: url("/src/images/@home/home_bg.svg");
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: auto;
+  @media (prefers-color-scheme: dark) {
+    background-image: url("/src/images/@home/home_bg_dark.svg");
+  }
+  .catchphrase {
+    margin: auto;
+    margin-top: var(--space-s);
+    text-align: center;
+    .brand_name {
+      color: var(--white);
+      text-align: center;
+      font-size: var(--text-d-3);
+      font-weight: 700;
+      margin-bottom: var(--space-xxs);
+    }
+    .sentence {
+      color: var(--white);
+      text-align: center;
+      font-size: var(--text-l);
+      font-weight: 500;
+    }
+  }
+}
+
+.group_log_in_box {
+  width: calc(100% - 40px);
+  min-height: 400px;
+  background-color: var(--white);
+  border-radius: var(--round-l);
+  margin: auto;
+  margin-top: var(--space-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  padding: var(--space-s);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+    border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+  }
+  .txt_school_name {
+    font-size: var(--text-d-2);
+    font-weight: 500;
+  }
+  .row_box {
+    padding: var(--space-xs);
+    display: flex;
+    gap: var(--space-m);
+    color: var(--gray-dark);
+    font-weight: 400;
+    font-size: var(--text-m);
+  }
+  .comment {
+    padding: var(--space-xs);
+    display: flex;
+    color: var(--gray1);
+    font-weight: 400;
+    font-size: var(--text-m);
+    margin-bottom: var(--space-m);
+  }
+}

@@ -1,10 +1,15 @@
 "use client";
 
 import { Modal } from "@/components/common/common-components";
-import style from "./challenge-board.module.scss";
+import stylesMobile from "./challenge-board_m.module.scss";
+import stylesPc from "./challenge-board.module.scss";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 영어독서왕 스코어보드
 export function ChallengeBoard({

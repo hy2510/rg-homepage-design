@@ -3,10 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckBox, TextField } from "@/components/common/common-components";
-import styledPc from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
+import stylesPc from "./page.module.scss";
 import { useState } from "react";
+import { useMobileDetect } from "@/components/util";
 
-const style = styledPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   // 수정하기 기능이 있는 텍스트 필드

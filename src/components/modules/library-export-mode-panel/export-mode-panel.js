@@ -1,7 +1,12 @@
 "use client";
 
 import { Button } from "@/components/common/common-components";
-import style from "./export-mode-panel.module.scss";
+import stylesMobile from "./export-mode-panel_m.module.scss";
+import stylesPc from "./export-mode-panel.module.scss";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 내보내기(일괄작업) 콘테이너
 export const ExportModePanel = ({ children, buttonName }) => {
@@ -11,7 +16,11 @@ export const ExportModePanel = ({ children, buttonName }) => {
         {/* <div>이호열반</div> */}
         <div className={style.selected_books}>선택한 도서 0</div>
         <div className={style.export_items}>
-          <div className={style.export_items_container}>{children}</div>
+          {children ? (
+            <div className={style.export_items_container}>{children}</div>
+          ) : (
+            <></>
+          )}
           <Button shadow roundFull color={"red"}>
             {buttonName ? buttonName : "내보내기"}
           </Button>

@@ -1,6 +1,12 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
+"use client";
+
+import { useRouter } from "next/navigation";
 
 export default function Page() {
-  return <main></main>;
+  const moveToPage = () => {
+    const router = useRouter();
+    router.push("/home/customer-review/student");
+  };
+
+  return moveToPage();
 }

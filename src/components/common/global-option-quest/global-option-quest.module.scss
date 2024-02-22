@@ -58,6 +58,9 @@
   padding: var(--space-s);
   display: flex;
   gap: var(--space-m);
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--yellow);
+  }
   .friends_entry_text {
     display: flex;
     flex-direction: column;

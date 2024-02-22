@@ -1,5 +1,6 @@
 "use client";
 
+import stylesMobile from "./home-rg-news-post-board_m.module.scss";
 import stylesPc from "./home-rg-news-post-board.module.scss";
 import {
   Dropdown,
@@ -8,8 +9,10 @@ import {
 } from "@/components/common/common-components";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function RgNewsPostBoard({ postData }) {
   const data = [...postData];
@@ -32,12 +35,13 @@ export default function RgNewsPostBoard({ postData }) {
       {/* 회차 선택 */}
       <div className={style.group_1}>
         <div className={style.btn_left} onClick={onClickLeft}>
-          <Image
+          <div className={"ico-arrow-left"}></div>
+          {/* <Image
             alt=""
             src={"/src/images/arrow-icons/chv_left.svg"}
             width={24}
             height={24}
-          />
+          /> */}
         </div>
         <div className={style.col_center}>
           <Dropdown title={data[current].title}>
@@ -55,16 +59,17 @@ export default function RgNewsPostBoard({ postData }) {
           </Dropdown>
         </div>
         <div className={style.btn_right} onClick={onClickRight}>
-          <Image
+          <div className={"ico-arrow-right"}></div>
+          {/* <Image
             alt=""
             src={"/src/images/arrow-icons/chv_right.svg"}
             width={24}
             height={24}
-          />
+          /> */}
         </div>
       </div>
 
-      <Margin height={20} />
+      <Margin height={isMobile ? 0 : 20} />
       {/* 내용 */}
       <div className={style.group_2}>
         <Image

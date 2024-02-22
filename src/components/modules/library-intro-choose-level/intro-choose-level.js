@@ -1,9 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import style from "./intro-choose-level.module.scss";
+import stylesMobile from "./intro-choose-level_m.module.scss";
+import stylesPc from "./intro-choose-level.module.scss";
 import { Button } from "@/components/common/common-components";
 import { useState } from "react";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 단계선택 콘테이너
 export function IntroChoodeLevel() {
@@ -27,7 +32,7 @@ export function IntroChoodeLevel() {
           <IntroChooseItem
             label="PreK"
             title="기초 다지기"
-            detail="이제 영어를 배우기 시작한 학생에게 권장"
+            detail="권장 연령: 미취학"
             symbolImgSrc="/src/images/@intro-choose-level/symbol_img_01.svg"
             onClick={() => {
               choosePreK ? _choosePreK(false) : _choosePreK(true);
@@ -40,7 +45,7 @@ export function IntroChoodeLevel() {
           <IntroChooseItem
             label="Level K"
             title="초급"
-            detail="영어 학습 경험 2년 미만 학생에게 권장"
+            detail="권장 연령: 초등 저학년"
             symbolImgSrc="/src/images/@intro-choose-level/symbol_img_02.svg"
             onClick={() => {
               choosePreK && _choosePreK(false);
@@ -53,7 +58,7 @@ export function IntroChoodeLevel() {
           <IntroChooseItem
             label="Level 1"
             title="중급"
-            detail="영어 학습 경험 3년 미만 학생에게 권장"
+            detail="권장 연령: 초등 고학년"
             symbolImgSrc="/src/images/@intro-choose-level/symbol_img_03.svg"
             onClick={() => {
               choosePreK && _choosePreK(false);
@@ -64,9 +69,9 @@ export function IntroChoodeLevel() {
             active={choose1}
           />
           <IntroChooseItem
-            label="Level 2~4"
+            label="Level 2"
             title="상급"
-            detail="영어 학습 경험 3년 이상 학생에게 권장"
+            detail="권장 연령: 중등 이상"
             symbolImgSrc="/src/images/@intro-choose-level/symbol_img_04.svg"
             onClick={() => {
               choosePreK && _choosePreK(false);
@@ -92,7 +97,10 @@ export function IntroChooseItem({
   active,
 }) {
   return (
-    <div style={{ minHeight: "300px", position: "relative" }} onClick={onClick}>
+    <div
+      style={{ minHeight: isMobile ? "250px" : "300px", position: "relative" }}
+      onClick={onClick}
+    >
       <div className={`${style.intro_choose_item} ${active && style.active}`}>
         <div className={style.exp}>
           <div className={style.txt_l}>{label}</div>

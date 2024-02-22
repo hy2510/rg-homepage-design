@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import style from "./book-list.module.scss";
+import stylesMobile from "./book-list_m.module.scss";
+import stylesPc from "./book-list.module.scss";
 import {
   AlertBar,
   Button,
@@ -14,6 +15,10 @@ import {
   ExportItem,
   ExportModePanel,
 } from "../library-export-mode-panel/export-mode-panel";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 학습메인 > 사용자의 학습레벨의 도서 리스트
 export function BookList({

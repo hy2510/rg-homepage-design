@@ -33,6 +33,20 @@ export default function Gheader({ children }) {
   const [viewQuestModal, _viewQuestModal] = useState(false);
   const [viewNoticeModal, _viewNoticeModal] = useState(false);
 
+  useEffect(() => {
+    if (
+      viewCalendarModal ||
+      viewMyRgModal ||
+      viewStreakModal ||
+      viewQuestModal ||
+      viewNoticeModal
+    ) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
+
   return (
     <>
       <div className={style.global_header}>
@@ -75,6 +89,7 @@ export default function Gheader({ children }) {
           )}
         </div>
       </div>
+      <div style={{ height: isMobile ? 0 : "78px" }}></div>
       {viewCalendarModal && (
         <CalendarModal _viewCalendarModal={_viewCalendarModal} />
       )}
@@ -338,6 +353,14 @@ const GnbLogOnMobile = () => {
   const connectReview = pathname.indexOf("/review") != -1;
   const connectRanking = pathname.indexOf("/ranking") != -1;
   const [searchOn, _searchOn] = useState(false);
+
+  useEffect(() => {
+    if (searchOn) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
 
   const MenuButton = ({ imgSrcBtnOff, imgSrcBtnOn, name, active, href }) => {
     return (

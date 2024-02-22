@@ -69,7 +69,7 @@
   padding: 0 var(--space-m);
   .assignment_info_container {
     min-height: 100px;
-    padding: var(--space-m);
+    padding: var(--space-m) 0;
     // background-color: var(--blue);
     background-color: #3ab6ff;
     color: var(--white);
@@ -78,6 +78,9 @@
     border-radius: var(--round-m);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--dark-blue);
+    }
     .to_do {
       display: flex;
       flex-direction: column;
@@ -198,6 +201,9 @@
     padding: var(--space-m) var(--space-l);
     position: relative;
     border-radius: var(--round-l) var(--round-l) 0 0;
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--dark-blue);
+    }
     .user_grade {
       font-size: var(--text-s);
       opacity: 0.7;
@@ -238,6 +244,9 @@
     border-radius: 0 0 var(--round-l) var(--round-l);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    @media (prefers-color-scheme: dark) {
+      background-color: #319ddd25;
+    }
     .col_a,
     .col_b {
       position: relative;
@@ -834,7 +843,7 @@
   }
   .txt_p {
     color: var(--gray1);
-    font-size: var(--space-s);
+    font-size: var(--text-s);
     margin-bottom: var(--space-s);
   }
   .current_study_level_container {

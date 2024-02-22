@@ -1,16 +1,18 @@
 // 공통상단
 .global_header {
+  width: 100vw;
   height: var(--header-height);
   background-color: #3ab6ff;
   display: flex;
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 100;
   @media (prefers-color-scheme: dark) {
     background-color: #0c0541;
   }
   .global_header_container {
+    min-width: 1024px;
     height: var(--header-height);
     padding: 0 15px;
     display: grid;

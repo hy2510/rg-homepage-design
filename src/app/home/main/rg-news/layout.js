@@ -7,10 +7,13 @@ import {
   Nav,
   NavItem,
 } from "@/components/common/common-components";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import { usePathname } from "next/navigation";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Layout({ children }) {
   const pathname = usePathname();
@@ -24,10 +27,11 @@ export default function Layout({ children }) {
 
   return (
     <main className="container compact">
+      {isMobile ? <div style={{ padding: "10px" }}></div> : <></>}
       <BackLink href="/home/main" largeFont colorWhite>
         RG 소식
       </BackLink>
-      <Margin height={30} />
+      <Margin height={isMobile ? 20 : 30} />
       <div className={style.rg_news}>
         <Nav>
           <Link href="notice">

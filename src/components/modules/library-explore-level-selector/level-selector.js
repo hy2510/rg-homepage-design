@@ -1,8 +1,13 @@
+"use client";
+
 import { AlertBar, Modal } from "@/components/common/common-components";
+import stylesMobile from "./level-selector_m.module.scss";
 import stylesPc from "./level-selector.module.scss";
 import { useState } from "react";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function LevelSelector({ _viewLevelSelector, studyType }) {
   const leveledStudyStatusData = [

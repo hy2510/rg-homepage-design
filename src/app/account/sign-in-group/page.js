@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { Button, TextField } from "@/components/common/common-components";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 임시
 const schoolName = "수내초등학교";

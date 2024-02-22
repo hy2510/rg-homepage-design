@@ -2,9 +2,14 @@
 
 import { useState } from "react";
 import { AlertBar, Button, EmptyMessage, Modal } from "../common-components";
-import style from "./global-option-streak.module.scss";
+import stylesMobile from "./global-option-streak_m.module.scss";
+import stylesPc from "./global-option-streak.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 연속학습 모달
 export function StreakModal({ _viewStreakModal }) {
@@ -67,9 +72,9 @@ export function StreakModal({ _viewStreakModal }) {
               date="2023.10.21"
               imgSrc="/src/images/@streak-modal/badges/badge_20days.svg"
             />
-            <div className={style.start_point}>
+            {/* <div className={style.start_point}>
               <div className={style.txt_p}>시작!</div>
-            </div>
+            </div> */}
           </>
           {/* 연속학습 달성 기록이 없을 때 */}
           {/* <EmptyMessage isAward>
@@ -80,7 +85,8 @@ export function StreakModal({ _viewStreakModal }) {
         <div className={style.streak_modal_bottom}>
           <div className={style.streak_status}>
             <div className={style.txt_l}>
-              윤서연님은 <span className="color-blue">연속학습</span>
+              지금까지
+              <span className="color-blue">연속학습</span>
             </div>
             <div className={style.score}>
               <span>300</span>

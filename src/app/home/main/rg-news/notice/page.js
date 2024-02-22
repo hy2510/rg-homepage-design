@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import {
@@ -7,6 +9,9 @@ import {
   Pagination,
   PaginationItem,
 } from "@/components/common/common-components";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
 
 export default function Page() {
   const data = [
@@ -71,7 +76,7 @@ export default function Page() {
           );
         })}
       </NoticeBoardContainer>
-      <Margin height={30} />
+      <Margin height={isMobile ? 15 : 30} />
       <Pagination>
         <PaginationItem>
           <Image

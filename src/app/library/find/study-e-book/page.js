@@ -1,6 +1,7 @@
 "use client";
 
-import style from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
+import stylesPc from "./page.module.scss";
 import Image from "next/image";
 import {
   BackLink,
@@ -15,6 +16,10 @@ import { BookCover } from "@/components/modules/library-book-cover/book-cover";
 import bookData from "@/app/library/sample-data-book-finder.json";
 import { useState } from "react";
 import LevelSelector from "@/components/modules/library-explore-level-selector/level-selector";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   const [isExportMode, _isExportMode] = useState(false);

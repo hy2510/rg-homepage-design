@@ -14,10 +14,15 @@ import {
   SelectBoxItem,
   TextField,
 } from "../common-components";
-import style from "./global-option-my-rg.module.scss";
+import stylesMobile from "./global-option-my-rg_m.module.scss";
+import stylesPc from "./global-option-my-rg.module.scss";
 import "./global-option-level-bg-color.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // My RG 모달
 export function MyRgModal({ _viewMyRgModal }) {
@@ -454,7 +459,7 @@ const TotalStudyScore = ({
   return (
     <div className={style.total_study_score}>
       <div className={style.student_info}>
-        <div className={style.user_grade}>{userGrade}</div>
+        {/* <div className={style.user_grade}>{userGrade}</div> */}
         <div className={style.student_name}>
           <div className={style.txt_l}>{studentName}</div>
         </div>

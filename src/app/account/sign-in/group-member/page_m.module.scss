@@ -1,0 +1,33 @@
+.group_member {
+  padding-top: var(--space-m);
+  display: grid;
+  gap: var(--space-s);
+  .comment {
+    padding: var(--space-xs);
+    display: flex;
+    color: var(--gray1);
+    font-weight: 400;
+    font-size: var(--text-m);
+    margin-bottom: var(--space-m);
+  }
+}
+
+.search_result_data {
+  display: grid;
+  gap: var(--space-s);
+  .txt_title {
+    font-size: var(--text-d-1);
+    font-weight: 500;
+  }
+}
+
+.school_card_item {
+  background-color: var(--gray3);
+  border-radius: var(--round-m);
+  padding: var(--space-m);
+  font-weight: 500;
+  cursor: pointer;
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba($color: #ffffff, $alpha: 0.15);
+  }
+}

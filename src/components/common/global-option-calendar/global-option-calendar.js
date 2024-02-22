@@ -9,10 +9,15 @@ import {
   SelectBox,
   SelectBoxItem,
 } from "../common-components";
-import style from "./global-option-calendar.module.scss";
+import stylesMobile from "./global-option-calendar_m.module.scss";
+import stylesPc from "./global-option-calendar.module.scss";
 import "./global-option-calendar.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 캘린더 모달
 export function CalendarModal({ _viewCalendarModal }) {

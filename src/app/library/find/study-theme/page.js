@@ -1,13 +1,20 @@
+"use client";
+
 import {
   BackLink,
   Pagination,
   PaginationItem,
 } from "@/components/common/common-components";
-import style from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
+import stylesPc from "./page.module.scss";
 import { BookList } from "@/components/modules/library-find-book-list/book-list";
 import bookData from "@/app/library/sample-data-book-finder.json";
 import Image from "next/image";
 import { BookCover } from "@/components/modules/library-book-cover/book-cover";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   return (

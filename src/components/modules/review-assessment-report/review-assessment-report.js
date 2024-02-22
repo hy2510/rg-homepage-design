@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import { AlertBox, Button, Modal } from "@/components/common/common-components";
+import stylesMobile from "./review-assessment-report_m.module.scss";
 import stylesPc from "./review-assessment-report.module.scss";
 import { useState } from "react";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export const ReviewAssessmentReport = ({
   onClickDelete,
@@ -70,7 +73,8 @@ export const ReviewAssessmentReport = ({
           isFavoriteCheck ? (
             <div className={style.alert}>
               <AlertBox
-                toolTipRight
+                toolTipRight={!isMobile}
+                toolTipLeft={isMobile}
                 text="Favorite에서 학습을 삭제할까요?"
                 onClickY={() => {
                   _isFavoriteOn(false);
@@ -87,7 +91,8 @@ export const ReviewAssessmentReport = ({
         ) : isFavoriteCheck ? (
           <div className={style.alert}>
             <AlertBox
-              toolTipRight
+              toolTipRight={!isMobile}
+              toolTipLeft={isMobile}
               text="Favorite에 학습을 추가할까요?"
               onClickY={() => {
                 _isFavoriteOn(true);
@@ -135,7 +140,8 @@ export const ReviewAssessmentReport = ({
           isToDoCheck ? (
             <div className={style.alert}>
               <AlertBox
-                toolTipRight={true}
+                toolTipRight={!isMobile}
+                toolTipLeft={isMobile}
                 text="To-Do에서 학습을 삭제할까요?"
                 onClickY={() => {
                   _isToDoOn(false);
@@ -152,7 +158,8 @@ export const ReviewAssessmentReport = ({
         ) : isToDoCheck ? (
           <div className={style.alert}>
             <AlertBox
-              toolTipRight={true}
+              toolTipRight={!isMobile}
+              toolTipLeft={isMobile}
               text="To-Do에 학습을 추가할까요?"
               onClickY={() => {
                 _isToDoOn(true);

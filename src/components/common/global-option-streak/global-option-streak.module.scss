@@ -8,8 +8,8 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      border-radius: var(--round-m);
-      border: 2px dashed var(--blue);
+      border-radius: var(--round-full);
+      border: 2px solid var(--blue);
       padding: var(--space-s);
       .txt_p {
         color: var(--blue);
@@ -79,6 +79,15 @@
   display: flex;
   align-items: stretch;
   gap: var(--space-m);
+  &:nth-last-child(1) {
+    .check_mark {
+      .line {
+        &:nth-last-child(1) {
+          background-color: transparent;
+        }
+      }
+    }
+  }
   .check_mark {
     display: flex;
     flex-direction: column;

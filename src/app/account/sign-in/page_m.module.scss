@@ -1,0 +1,48 @@
+.sign_in {
+  background-image: url("/src/images/@home/home_bg.svg");
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: auto;
+  @media (prefers-color-scheme: dark) {
+    background-image: none;
+  }
+  .catchphrase {
+    margin: auto;
+    margin-top: var(--space-s);
+    text-align: center;
+    .brand_name {
+      color: var(--white);
+      text-align: center;
+      font-size: var(--text-d-3);
+      font-weight: 700;
+      margin-bottom: var(--space-xxs);
+    }
+    .sentence {
+      color: var(--white);
+      text-align: center;
+      font-size: var(--text-l);
+      font-weight: 500;
+    }
+  }
+}
+
+.log_in_box {
+  width: calc(100% - 40px);
+  min-height: 400px;
+  background-color: var(--white);
+  border-radius: var(--round-l);
+  margin: auto;
+  margin-top: var(--space-l);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-s);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+    border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+  }
+  .nav_box {
+    border-radius: var(--round-l) var(--round-l) 0 0;
+    overflow: hidden;
+  }
+}

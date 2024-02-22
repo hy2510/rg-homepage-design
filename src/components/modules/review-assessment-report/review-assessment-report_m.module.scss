@@ -1,11 +1,11 @@
 .review_assessment_report {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
   height: 100%;
   .col_a {
     min-height: 60vh;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: var(--space-m);
+    padding: var(--space-s);
     background-position: center;
     background-size: 200%;
     background-repeat: no-repeat;
@@ -30,10 +30,10 @@
     }
   }
   .col_b {
-    padding: var(--space-m);
+    padding: var(--space-s);
     display: flex;
     flex-direction: column;
-    gap: var(--space-m);
+    gap: var(--space-s);
     .col_b_header {
       display: flex;
       justify-content: space-between;
@@ -43,16 +43,19 @@
         font-weight: 600;
       }
       .delete_button {
-        cursor: pointer;
         width: 40px;
         height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url("/src/images/delete-icons/x_black.svg");
+        background-image: url("/src/images/delete-icons/x_white.svg");
         background-repeat: no-repeat;
-        background-size: 24px;
+        background-size: 28px;
         background-position: center;
+        position: fixed;
+        top: var(--space-s);
+        right: var(--space-s);
+        z-index: 1;
         @media (prefers-color-scheme: dark) {
           background-image: url("/src/images/delete-icons/x_white.svg");
         }
@@ -74,7 +77,7 @@
 
 .add_assignment {
   display: flex;
-  justify-content: end;
+  justify-content: start;
   .add_assignment_container {
     display: flex;
     gap: var(--space-xxs);
@@ -101,7 +104,7 @@
   .alert {
     position: absolute;
     top: calc(100% + 10px);
-    right: 0;
+    left: 0;
     width: 250px;
   }
 }
@@ -191,15 +194,20 @@
   .detaild {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    border-top: 1.5px solid var(--gray1);
-
+    border-top: 1.2px solid var(--gray1);
+    @media (prefers-color-scheme: dark) {
+      border-top: 1.2px solid rgba($color: #ffffff, $alpha: 0.3);
+    }
     .detaild_row_b {
       display: grid;
       grid-template-columns: 1fr 3fr;
     }
     .detaild_item {
       font-size: var(--text-s);
-      border-bottom: 1px solid var(--gray2);
+      border-bottom: 1.2px solid var(--gray2);
+      @media (prefers-color-scheme: dark) {
+        border-bottom: 1.2px solid rgba($color: #ffffff, $alpha: 0.3);
+      }
       &:nth-child(odd) {
         color: var(--gray1);
         padding: var(--space-s) var(--space-xxs);
@@ -218,15 +226,21 @@
 .step_info {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  border-top: 1.5px solid var(--gray1);
+  border-top: 1.2px solid var(--gray1);
+  @media (prefers-color-scheme: dark) {
+    border-top: 1.2px solid rgba($color: #ffffff, $alpha: 0.3);
+  }
   @mixin tableItem {
     width: 100%;
     padding: var(--space-xs) 0;
-    border-bottom: 1px solid var(--gray2);
+    border-bottom: 1.2px solid var(--gray2);
     min-height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1.2px solid rgba($color: #ffffff, $alpha: 0.3);
+    }
   }
   .label {
     @include tableItem;

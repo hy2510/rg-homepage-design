@@ -20,6 +20,7 @@ import {
   RgPostItem,
 } from "@/components/modules/home-main-components/home-main-rg-post";
 import { useMobileDetect } from "@/components/util";
+import { useEffect } from "react";
 
 const isMobile = useMobileDetect();
 const style = isMobile ? stylesMobile : stylesPc;

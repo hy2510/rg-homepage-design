@@ -313,7 +313,12 @@ export function Modal({
   return (
     <>
       <div className={style.modal}>
-        <div className={`${style.modal_container} ${compact && style.compact}`}>
+        <div
+          className={`${style.modal_container} ${compact && style.compact}`}
+          style={{
+            height: isMobile ? window.innerHeight + "px" : "auto",
+          }}
+        >
           {header && (
             <div className={style.modal_header}>
               <div className={style.modal_header_container}>

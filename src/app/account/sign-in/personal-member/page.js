@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { Button, TextField } from "@/components/common/common-components";
 import Image from "next/image";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   return (

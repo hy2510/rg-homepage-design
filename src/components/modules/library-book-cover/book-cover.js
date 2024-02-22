@@ -1,9 +1,14 @@
 "use client";
 
 import { AlertBox, Button, Modal } from "@/components/common/common-components";
-import style from "./book-cover.module.scss";
+import stylesMobile from "./book-cover_m.module.scss";
+import stylesPc from "./book-cover.module.scss";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 도서 아이템
 export function BookCover({
@@ -27,6 +32,14 @@ export function BookCover({
 }) {
   const [isBookInfoActive, _isBookInfoActive] = useState(false);
   const [isCheckActive, _isCheckActive] = useState(false);
+
+  useEffect(() => {
+    if (isBookInfoActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
 
   return (
     <>
@@ -214,7 +227,8 @@ export function BookInfoModal({
                     isFavoriteCheck ? (
                       <div className={style.alert}>
                         <AlertBox
-                          toolTipRight
+                          toolTipRight={!isMobile}
+                          toolTipLeft={isMobile}
                           text="Favorite에서 학습을 삭제할까요?"
                           onClickY={() => {
                             _isFavoriteOn(false);
@@ -231,7 +245,8 @@ export function BookInfoModal({
                   ) : isFavoriteCheck ? (
                     <div className={style.alert}>
                       <AlertBox
-                        toolTipRight
+                        toolTipRight={!isMobile}
+                        toolTipLeft={isMobile}
                         text="Favorite에 학습을 추가할까요?"
                         onClickY={() => {
                           _isFavoriteOn(true);
@@ -274,7 +289,8 @@ export function BookInfoModal({
                     isToDoCheck ? (
                       <div className={style.alert}>
                         <AlertBox
-                          toolTipRight={true}
+                          toolTipRight={!isMobile}
+                          toolTipLeft={isMobile}
                           text="To-Do에서 학습을 삭제할까요?"
                           onClickY={() => {
                             _isToDoOn(false);
@@ -291,7 +307,8 @@ export function BookInfoModal({
                   ) : isToDoCheck ? (
                     <div className={style.alert}>
                       <AlertBox
-                        toolTipRight={true}
+                        toolTipRight={!isMobile}
+                        toolTipLeft={isMobile}
                         text="To-Do에 학습을 추가할까요?"
                         onClickY={() => {
                           _isToDoOn(true);

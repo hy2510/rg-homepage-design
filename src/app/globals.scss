@@ -76,9 +76,12 @@
 html,
 body {
   max-width: 100vw;
+  min-width: 1024px;
   height: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+  // touch-action: none;
   @media (prefers-color-scheme: dark) {
     background-image: url("/src/images/@home/home_bg_dark.svg");
     background-repeat: repeat-x;
@@ -93,6 +96,7 @@ body {
     }
   }
   @media (pointer: coarse) {
+    min-width: 360px;
     min-height: fit-content;
     height: fit-content;
   }
@@ -107,7 +111,11 @@ a {
 main {
   padding: var(--space-m) 0;
   // min-height: calc(100vh - var(--header-height) - var(--footer-height) - 10px);
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--space-xxl) - var(--header-height));
+  margin-bottom: var(--space-xxl) !important;
+  @media (pointer: coarse) {
+    // overflow-x: hidden;
+  }
 }
 
 input {
@@ -166,6 +174,8 @@ button {
   padding: 20px;
   @media (pointer: coarse) {
     padding-top: 0;
+    padding-left: var(--space-s);
+    padding-right: var(--space-s);
   }
   &.compact {
     max-width: 1024px;
@@ -568,6 +578,31 @@ button {
 }
 .ai-end {
   align-items: end;
+}
+
+// 아이콘
+.ico-arrow-left {
+  width: 24px;
+  height: 24px;
+  background-image: url("/src/images/arrow-icons/chv_left.svg");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (prefers-color-scheme: dark) {
+    background-image: url("/src/images/arrow-icons/chv_left_white.svg");
+  }
+}
+
+.ico-arrow-right {
+  width: 24px;
+  height: 24px;
+  background-image: url("/src/images/arrow-icons/chv_right.svg");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (prefers-color-scheme: dark) {
+    background-image: url("/src/images/arrow-icons/chv_right_white.svg");
+  }
 }
 
 // 애니메이션 효과

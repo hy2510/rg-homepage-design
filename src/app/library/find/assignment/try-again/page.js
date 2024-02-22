@@ -1,4 +1,7 @@
-import style from "./page.module.scss";
+"use client";
+
+import stylesMobile from "./page_m.module.scss";
+import stylesPc from "./page.module.scss";
 import Image from "next/image";
 import {
   AlertBar,
@@ -7,6 +10,10 @@ import {
 } from "@/components/common/common-components";
 import { BookCover } from "@/components/modules/library-book-cover/book-cover";
 import bookData from "@/app/library/sample-data-book-finder.json";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   return (

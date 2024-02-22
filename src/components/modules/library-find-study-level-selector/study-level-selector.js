@@ -1,6 +1,11 @@
 import { Dropdown, DropdownItem } from "@/components/common/common-components";
-import style from "./study-level-selector.module.scss";
+import stylesMobile from "./study-level-selector_m.module.scss";
+import stylesPc from "./study-level-selector.module.scss";
 import { SetFilter } from "../library-set-fliter/set-fliter";
+import { useMobileDetect } from "@/components/util";
+
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export function StudyLevelSelector({
   prek,

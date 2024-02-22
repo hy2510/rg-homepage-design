@@ -12,6 +12,9 @@ $oparcity-2: 60%;
     width: 100%;
     min-height: 200px;
     align-items: end;
+    @media (pointer: coarse) {
+      min-width: 130px;
+    }
     .books {
       width: 100%;
       border-radius: 10px;
@@ -53,7 +56,7 @@ $oparcity-2: 60%;
           min-height: 30px;
           bottom: 10px;
           left: -5px;
-          padding: var(--space-m) var(--space-s);
+          padding: var(--space-s) var(--space-xs);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -98,9 +101,9 @@ $oparcity-2: 60%;
             }
           }
           .series_name {
-            font-size: var(--text-l);
+            font-size: var(--text-m);
             font-style: normal;
-            font-weight: 700;
+            font-weight: 600;
             color: #fff;
           }
         }
@@ -156,6 +159,9 @@ $oparcity-2: 60%;
     }
     &.dark_green {
       @include theme(#22a57b);
+    }
+    &.default {
+      @include theme(#5e7496);
     }
   }
 }

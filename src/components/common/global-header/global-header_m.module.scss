@@ -3,7 +3,7 @@
   height: 60px;
   background-color: #3ab6ff;
   display: flex;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1.2px solid rgba(255, 255, 255, 0.15);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -200,9 +200,9 @@
   left: 0;
   bottom: 0;
   @media (prefers-color-scheme: dark) {
-    background-color: rgba($color: #0c0541, $alpha: 0.9);
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
+    background-color: rgba($color: #0c0541, $alpha: 0.99);
+    // -webkit-backdrop-filter: blur(15px);
+    // backdrop-filter: blur(15px);
   }
   .menu_button {
     display: flex;
@@ -251,6 +251,7 @@
     }
     &.active {
       background: #000000;
+      border: 2px solid #ffffff;
     }
   }
   .search_area {

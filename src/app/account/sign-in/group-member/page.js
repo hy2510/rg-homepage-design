@@ -3,10 +3,13 @@
 import Link from "next/link";
 import { Button, TextField } from "@/components/common/common-components";
 import Image from "next/image";
+import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import { useState } from "react";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 샘플 데이터
 const searchResultData = [

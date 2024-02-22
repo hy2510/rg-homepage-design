@@ -8,8 +8,12 @@
     font-weight: 600;
   }
   .series_list_container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: var(--space-m);
+    overflow-x: auto;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

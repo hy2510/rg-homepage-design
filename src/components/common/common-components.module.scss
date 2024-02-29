@@ -467,6 +467,71 @@
   }
 }
 
+// 폼 드랍다운
+.form_drop_down {
+  width: 100%;
+  padding: var(--space-xs) var(--space-s) var(--space-s);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+  border: 2px solid var(--gray2);
+  border-radius: var(--round-m);
+  position: relative;
+  .group_selected_info {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+    .txt_label {
+      color: var(--gray1);
+      font-size: var(--text-xs);
+    }
+    .txt_selected {
+      display: block;
+    }
+    select {
+      width: 100%;
+      border: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+  }
+  .box_drop_down_items {
+    width: calc(100% + 4px);
+    border: 2px solid var(--gray2);
+    border-radius: var(--round-m);
+    padding: var(--space-s);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-color: var(--white);
+    z-index: 3;
+  }
+  .ico_chev_down {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-image: url("/src/images/arrow-icons/chv_down.svg");
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 15px;
+    z-index: 1;
+  }
+  .form_drop_down_item {
+    cursor: pointer;
+    padding: var(--space-xxs);
+    padding-bottom: 5px;
+  }
+}
+.screen_block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
 // 텍스트필드
 .text_field {
   border: 2px solid var(--gray2);

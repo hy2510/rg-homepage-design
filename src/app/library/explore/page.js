@@ -53,8 +53,8 @@ export default function Page() {
     <main className={`${style.explore}`}>
       {/* <IntroChoodeLevel /> */}
       {/* <PrekMode /> */}
-      {/* <BookReadingMode /> */}
-      <ChallengeMode />
+      <BookReadingMode />
+      {/* <ChallengeMode /> */}
     </main>
   );
 }

@@ -50,7 +50,7 @@ export function BackLink({ href, largeFont, children, onClick, colorWhite }) {
   return (
     <div className={style.back_link}>
       <Link
-        href={href ? href : "javascript:history.back();"}
+        href={onClick ? "" : href ? href : "javascript:history.back();"}
         onClick={onClick ? onClick : null}
       >
         <div className={style.back_link}>
@@ -261,6 +261,54 @@ export function DropdownItem({ onClick, children }) {
     </div>
   );
 }
+
+// 폼 드랍다운
+export const FormDropDown = ({ label, select }) => {
+  const [selectedOption, _selectedOption] = useState(select ? select[0] : "");
+  const [viewOptions, _viewOptions] = useState(false);
+  const menuOpen = () => {
+    viewOptions ? _viewOptions(false) : _viewOptions(true);
+  };
+
+  const FormDropDownItem = ({ option, onClick }) => {
+    return (
+      <div className={style.form_drop_down_item} onClick={onClick}>
+        {option}
+      </div>
+    );
+  };
+
+  return (
+    <>
+      <div className={style.form_drop_down}>
+        <div className={style.group_selected_info} onClick={menuOpen}>
+          <div className={style.txt_label}>{label}</div>
+          <div className={style.txt_selected}>{selectedOption}</div>
+        </div>
+        <div className={style.ico_chev_down}></div>
+        {viewOptions && (
+          <div className={style.box_drop_down_items}>
+            {select &&
+              select.map((a, i) => {
+                return (
+                  <FormDropDownItem
+                    option={a}
+                    onClick={() => {
+                      _selectedOption(select[i]);
+                      _viewOptions(false);
+                    }}
+                  />
+                );
+              })}
+          </div>
+        )}
+      </div>
+      {viewOptions && (
+        <div className={style.screen_block} onClick={menuOpen}></div>
+      )}
+    </>
+  );
+};
 
 // 텍스트필드
 export function TextField({ id, hint, password, email, value, disabled }) {

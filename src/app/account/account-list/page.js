@@ -194,10 +194,7 @@ export default function Page() {
         />
       </div>
       <div className={style.add_account}>
-        <Link
-          href="./sign-in/personal-member"
-          className={style.add_account_button}
-        >
+        <Link href="./sign-in" className={style.add_account_button}>
           <div className={style.plus_icon}>
             <Image
               alt=""

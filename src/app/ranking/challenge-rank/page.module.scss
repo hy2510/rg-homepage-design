@@ -135,7 +135,8 @@
     border-bottom: 1px dotted rgba($color: #ffffff, $alpha: 0.15);
   }
   &.top_ranker {
-    background-color: var(--light);
+    // background-color: var(--light);
+    background-color: #fff9f5;
     @media (prefers-color-scheme: dark) {
       background-color: #ffffff10;
     }

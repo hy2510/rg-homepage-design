@@ -93,7 +93,7 @@ const DodoAndFriends = () => {
           포인트를 모으고 친구들의 성장 스토리를 확인해 보세요!
         </AlertBar>
       </div>
-      <div className={style.intro_button}>
+      {/* <div className={style.intro_button}>
         <span>인트로</span>
         <Image
           alt=""
@@ -101,7 +101,7 @@ const DodoAndFriends = () => {
           width={30}
           height={30}
         />
-      </div>
+      </div> */}
       <FriendsEntry
         imgSrc="/src/sample-images/baro.png"
         title="바로의 성장 스토리"
@@ -124,7 +124,7 @@ const DodoAndFriends = () => {
         imgSrcGif="https://wcfresource.a1edu.com/newsystem/image/character/dodofriends/motion/baro-002.gif"
       />
       <div className={style.bridge}></div>
-      <div className={style.ending_button}>
+      {/* <div className={style.ending_button}>
         <span>엔딩</span>
         <Image
           alt=""
@@ -132,7 +132,7 @@ const DodoAndFriends = () => {
           width={30}
           height={30}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

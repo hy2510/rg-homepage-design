@@ -1,6 +1,12 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
+"use client";
 
-export default function Page() {
-  return <main></main>;
+import { useRouter } from "next/navigation";
+
+export default function Home() {
+  const moveToPage = () => {
+    const router = useRouter();
+    router.push("/home/rg-membership/introduction");
+  };
+
+  return <main>{moveToPage()}</main>;
 }

@@ -2,7 +2,7 @@
   font-size: var(--text-l);
   font-weight: 600;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
   gap: var(--space-xs);
   span {
     color: var(--gray1);
@@ -140,6 +140,7 @@
     border-bottom: 1px dotted rgba($color: #ffffff, $alpha: 0.15);
   }
   &.top_ranker {
+    // background-color: var(--light);
     background-color: #fff9f5;
     @media (prefers-color-scheme: dark) {
       background-color: #ffffff10;

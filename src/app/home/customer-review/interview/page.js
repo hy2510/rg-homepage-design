@@ -1,8 +1,13 @@
+"use client";
+
+import { useMobileDetect } from "@/components/util";
 import stylesPc from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // RG인 인터뷰 카드1
 const InterviewCard1 = ({ meidaSrc }) => {
@@ -17,15 +22,18 @@ const InterviewCard1 = ({ meidaSrc }) => {
         />
       </Link> */}
       <iframe
-        width="100%"
-        height="560"
         src={meidaSrc}
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
-        style={{ display: "block" }}
-      ></iframe>
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "block",
+          position: "absolute",
+        }}
+      />
     </div>
   );
 };

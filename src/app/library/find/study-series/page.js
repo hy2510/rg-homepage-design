@@ -23,10 +23,7 @@ export default function Page() {
       <BackLink href="/library/explore" largeFont>
         시리즈
       </BackLink>
-      <LibraryFindTop
-        title="Sample Series"
-        imgSrc="/src/sample-images/series-sample/20_shakespeare_Children_s_stories.png"
-      />
+      <LibraryFindTop title="Sample Series" />
       <BookList count={50}>
         {bookData.map((a, i) => {
           return (

@@ -201,6 +201,9 @@
     background-color: #0c0541;
     box-shadow: 10px 0 #0c0541, -10px 0 #0c0541;
   }
+  @media (pointer: coarse) {
+    top: 68px;
+  }
   &::after {
     content: "";
     width: 100%;
@@ -356,7 +359,7 @@
       padding: var(--space-xxs) var(--space-xs);
       right: -25px;
       top: calc(50% - 16px);
-      background-color: var(--dark-blue);
+      background-color: var(--black);
       color: var(--white);
       font-weight: 500;
       border-radius: var(--round-full);
@@ -477,6 +480,10 @@
   border: 2px solid var(--gray2);
   border-radius: var(--round-m);
   position: relative;
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+    border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+  }
   .group_selected_info {
     cursor: pointer;
     display: flex;
@@ -506,6 +513,10 @@
     left: -2px;
     background-color: var(--white);
     z-index: 3;
+    @media (prefers-color-scheme: dark) {
+      background-color: #0c0541;
+      border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+    }
   }
   .ico_chev_down {
     cursor: pointer;
@@ -516,6 +527,9 @@
     top: calc(50% - 12px);
     right: 15px;
     z-index: 1;
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/arrow-icons/chev_down_white.svg");
+    }
   }
   .form_drop_down_item {
     cursor: pointer;

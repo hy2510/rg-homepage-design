@@ -1,9 +1,16 @@
+"use client";
+
 import stylesPc from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { hallOfFameRanking } from "../sample-data";
+import { useMobileDetect } from "@/components/util";
+import { Modal } from "@/components/common/common-components";
+import { useState } from "react";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // 리더보드
 const Leaderboard = () => {
@@ -74,7 +81,7 @@ const LeaderboardTableRow = ({
           src={medalImage()}
           width={60}
           height={60}
-          style={{ width: 60, height: "auto" }}
+          style={{ width: isMobile ? 30 : 60, height: "auto" }}
         />
         <div className={style.txt_student_name}>{studentName}</div>
       </div>
@@ -87,6 +94,8 @@ const LeaderboardTableRow = ({
 };
 
 export default function Page() {
+  const [viewModal, _viewModal] = useState(false);
+
   return (
     <main className={style.hall_off_fame_rank}>
       <div className={style.group_comment}>
@@ -94,10 +103,42 @@ export default function Page() {
           명예의 전당에 등재된 학생들은 Reading Gate의 R포인트를 10,000점 이상
           획득한 학생들입니다.
         </span>
-        <div className={style.btn_link}>
+        <div
+          className={style.btn_link}
+          onClick={() => {
+            _viewModal(true);
+          }}
+        >
           <span>등급 및 장학 혜택</span>
-          <span className={style.ico_arrow_right}></span>
         </div>
+        {viewModal && (
+          <Modal
+            header
+            title={"등급 및 장학혜택"}
+            onClickDelete={() => {
+              _viewModal(false);
+            }}
+            onClickLightbox={() => {
+              _viewModal(false);
+            }}
+          >
+            <iframe
+              width={"100%"}
+              frameBorder="0"
+              scrolling="no"
+              src={
+                isMobile
+                  ? "/src/html/page-contents/mobile/ranking/ranking_03_scholarship_benefits_pop.html"
+                  : "/src/html/page-contents/pc/ranking/ranking_03_scholarship_benefits_pop.html"
+              }
+              style={{
+                height: isMobile ? "1175px" : "870px",
+                backgroundColor: "transparent",
+                overflow: "hidden",
+              }}
+            />
+          </Modal>
+        )}
       </div>
       <div className={style.group_leaderboard}>
         <Leaderboard />

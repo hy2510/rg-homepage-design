@@ -2,10 +2,13 @@
 
 import { Modal } from "@/components/common/common-components";
 import stylesPc from "./board.module.scss";
+import sytlesMobile from "./board_m.module.scss";
 import { useState } from "react";
 import Link from "next/link";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? sytlesMobile : stylesPc;
 
 export function Board({ children }) {
   return <div className={style.board}>{children}</div>;

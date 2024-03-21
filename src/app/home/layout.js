@@ -31,11 +31,6 @@ export default function Layout({ children }) {
     return (
       <div className={`${style.home_nav_bar} container`}>
         <HomeNavItem name={"메인"} href={"/home/main"} active={connectMain} />
-        {/* <HomeNavItem
-          name={"명예의 전당"}
-          href={"/home/hall-of-fame"}
-          active={connectHallOfFame}
-        /> */}
         <HomeNavItem
           name={"활용수기"}
           href={"/home/customer-review"}
@@ -43,11 +38,11 @@ export default function Layout({ children }) {
         />
         <HomeNavItem
           name={"RG 멤버십"}
-          // href={"/home/rg-membership"}
-          // active={connectRgMembership}
-          href={"https://www.readinggate.com/Payment/Price"}
-          active={false}
-          target={"_blank"}
+          href={"/home/rg-membership"}
+          active={connectRgMembership}
+          // href={"https://www.readinggate.com/Payment/Price"}
+          // active={false}
+          // target={"_blank"}
         />
         <HomeNavItem
           name={"고객센터"}

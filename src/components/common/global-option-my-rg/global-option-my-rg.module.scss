@@ -71,7 +71,7 @@
     min-height: 100px;
     padding: var(--space-m) 0;
     // background-color: var(--blue);
-    background-color: #3ab6ff;
+    background-color: var(--blue);
     color: var(--white);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -197,7 +197,7 @@
   // margin-bottom: var(--space-l);
   padding: 0 var(--space-m);
   .student_info {
-    background-color: #3ab6ff;
+    background-color: var(--blue);
     padding: var(--space-m) var(--space-l);
     position: relative;
     border-radius: var(--round-l) var(--round-l) 0 0;
@@ -240,7 +240,8 @@
     }
   }
   .total_score_container {
-    background-color: #319ddd;
+    // background-color: #319ddd;
+    background-color: #096ba3;
     border-radius: 0 0 var(--round-l) var(--round-l);
     display: grid;
     grid-template-columns: repeat(2, 1fr);

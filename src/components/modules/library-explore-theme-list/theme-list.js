@@ -20,10 +20,11 @@ export function ThemeList({ children }) {
 }
 
 // 학습메인 > 사용자의 학습레벨의 주제 아이템
-export function ThemeListItem({ themeImgSrc, href }) {
+export function ThemeListItem({ themeImgSrc, href, title }) {
   return (
     <Link href={href ? href : "/"}>
       <div className={style.theme_list_item}>
+        <div className={style.txt_title}>{title}</div>
         <Image
           alt=""
           src={themeImgSrc}

@@ -1,8 +1,69 @@
+import Lottie from "react-lottie";
+import animationData from "../../public/src/lottie/loading.json";
+
 export const useMobileDetect = () => {
-  const isMobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  // const isMobile =
+  //   /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  //     navigator.userAgent
+  //   );
+
+  const deviceInfo =
+    /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
 
+  const screenWidth = screen.width < 1024;
+
+  const isMobile = deviceInfo && screenWidth;
+
   return isMobile;
+};
+
+export const LoadingScreen = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 999,
+        backgroundColor: "rgba(0,0,0,0.5)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        style={{
+          width: "130px",
+          height: "130px",
+          backgroundColor: "#fff",
+          borderRadius: "15px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "8px",
+          fontSize: "0.8em",
+          fontWeight: "500",
+          color: "#000",
+          paddingTop: "10px",
+        }}
+      >
+        <Lottie options={defaultOptions} height={60} width={90} />
+        <div>로딩중</div>
+      </div>
+    </div>
+  );
 };

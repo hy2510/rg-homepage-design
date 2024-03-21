@@ -4,7 +4,7 @@ import { AlertBox, Button, Modal } from "@/components/common/common-components";
 import stylesMobile from "./book-cover_m.module.scss";
 import stylesPc from "./book-cover.module.scss";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMobileDetect } from "@/components/util";
 
 const isMobile = useMobileDetect();
@@ -157,6 +157,7 @@ export function BookCover({
           title={title}
           author={author}
           summary={summary}
+          bookCode={bookCode}
           onClickDelete={() => {
             _isBookInfoActive(false);
           }}
@@ -176,11 +177,18 @@ export function BookInfoModal({
   addedToDo,
   addedFavorite,
   onClickDelete,
+  bookCode,
 }) {
   const [isFavoriteOn, _isFavoriteOn] = useState(addedFavorite);
   const [isFavoriteCheck, _isFavoriteCheck] = useState(false);
   const [isToDoOn, _isToDoOn] = useState(addedToDo);
   const [isToDoCheck, _isToDoCheck] = useState(false);
+
+  const [isMoviePlayOn, _isMoviePlayOn] = useState(false);
+  const videoRef = useRef(null);
+  const videoStop = () => {
+    videoRef.current.pause();
+  };
 
   return (
     <Modal
@@ -327,13 +335,32 @@ export function BookInfoModal({
             </div>
             <div className={style.book}>
               <div className={style.book_container}>
-                <div className={style.book_image}>
+                {/* 무비가 없는 경우 도서 표지 표시 */}
+                {/* <div className={style.book_image}>
                   <Image
                     alt=""
                     src={bookImgSrc}
                     layout="intrinsic"
                     width={200}
                     height={200}
+                  />
+                </div> */}
+                {/* 무비가 있는 경우 도서 표지 대신 무비 표시 */}
+                <div className={style.movie_player}>
+                  <video
+                    ref={videoRef}
+                    poster={bookImgSrc}
+                    disablepictureinpicture={"true"}
+                    autoPlay={false}
+                    controls
+                    controlslist={"nodownload"}
+                    playsinline
+                    style={{
+                      width: "100%",
+                      display: "block",
+                      maxHeight: isMobile ? "280px" : "300px",
+                    }}
+                    src={`https://moviebook.a1edu.com/newsystem/moviebook/${bookCode}.mp4`}
                   />
                 </div>
                 <div className={style.txt_h}>{title}</div>
@@ -415,13 +442,48 @@ export function BookInfoModal({
                 <div className={style.txt_h}>추가 학습</div>
                 <div className={style.buttons}>
                   <div className={style.speak_button}>Speak</div>
-                  <div className={style.movie_button}>영상시청</div>
+                  {/* <div
+                    className={style.movie_button}
+                    onClick={() => {
+                      _isMoviePlayOn(true);
+                    }}
+                  >
+                    영상시청
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {isMoviePlayOn && (
+        <div className={style.movie_player}>
+          <div className={style.container_video}>
+            <video
+              ref={videoRef}
+              controlslist="nodownload"
+              disablepictureinpicture="true"
+              controls
+              autoPlay
+              playsinline
+              poster=""
+              style={{ width: "100%" }}
+              src={`https://moviebook.a1edu.com/newsystem/moviebook/${bookCode}.mp4`}
+            />
+          </div>
+          <Button
+            color={"red"}
+            shadow
+            width={"200px"}
+            onClick={() => {
+              videoStop();
+              _isMoviePlayOn(false);
+            }}
+          >
+            close
+          </Button>
+        </div>
+      )}
     </Modal>
   );
 }

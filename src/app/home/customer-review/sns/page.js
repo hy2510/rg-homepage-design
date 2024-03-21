@@ -1,8 +1,13 @@
+"use client";
+
 import stylesPc from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 // sns카드
 const SnsCard = ({ title, txt_link, href, imgSrc }) => {

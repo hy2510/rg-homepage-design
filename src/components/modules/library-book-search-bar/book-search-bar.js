@@ -13,26 +13,38 @@ const style = isMobile ? stylesMobile : stylesPc;
 const bookSearchBarCategoryData = [
   {
     title: "기초 학습",
-    comment: "PreK - 알파벳, 파닉스 배우기",
+    comment: "알파벳, 파닉스 배우기",
     image: "/src/images/@book-search-bar/dodo_abc.png",
     link: "/library/find/study-dodo-abc/study",
   },
   {
     title: "기초 학습 (classic)",
-    comment: "PreK - 알파벳, 파닉스 배우기",
+    comment: "알파벳, 파닉스 배우기",
     image: "/src/images/@book-search-bar/prek.svg",
     link: "/library/find/study-prek",
   },
   {
-    title: "영어 독서",
-    comment: "eBook - 온라인 독서와 학습",
+    title: "eBook",
+    comment: "온라인 책읽기와 학습",
     image: "/src/images/@book-search-bar/ebook.svg",
     link: "/library/find/study-e-book",
   },
   {
-    title: "원서 학습",
-    comment: "pBook Quiz - 원서 읽기 후 학습",
+    title: "pBook Quiz",
+    comment: "(원서읽기) ➞ 온라인 학습",
     image: "/src/images/@book-search-bar/pbook_quiz.svg",
+    link: "/library/find/study-p-book-quiz",
+  },
+  {
+    title: "Movies",
+    comment: "동영상을 포함한 학습",
+    image: "/src/images/@book-search-bar/movie_book.svg",
+    link: "/library/find/study-p-book-quiz",
+  },
+  {
+    title: "New Books",
+    comment: "이 달의 신규도서",
+    image: "/src/images/@book-search-bar/new_book.svg",
     link: "/library/find/study-p-book-quiz",
   },
   {

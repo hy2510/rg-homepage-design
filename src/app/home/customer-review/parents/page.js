@@ -1,16 +1,21 @@
+"use client";
+
 import {
   Board,
   BoardHeader,
   BoardItem,
 } from "@/components/modules/home-customer-review-components/board";
 import stylesPc from "./page.module.scss";
+import stylesMobile from "./page_m.module.scss";
 import { parentsReflectionsData } from "@/components/modules/home-customer-review-components/sample-data";
 import {
   Pagination,
   PaginationItem,
 } from "@/components/common/common-components";
+import { useMobileDetect } from "@/components/util";
 
-const style = stylesPc;
+const isMobile = useMobileDetect();
+const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
   return (

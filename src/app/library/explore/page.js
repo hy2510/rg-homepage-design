@@ -162,9 +162,34 @@ const BookReadingMode = () => {
         />
       </SeriesList>
       <ThemeList>
-        <ThemeListItem themeImgSrc="/src/sample-images/theme_sample.png" />
-        <ThemeListItem themeImgSrc="/src/sample-images/theme_sample.png" />
-        <ThemeListItem themeImgSrc="/src/sample-images/theme_sample.png" />
+        <ThemeListItem
+          title="Adventure"
+          themeImgSrc="https://wcfresource.a1edu.com/newsystem/appmobile/thumbnail/theme_web_v20/adventure.jpg"
+        />
+        <ThemeListItem
+          title="Animals"
+          themeImgSrc="https://wcfresource.a1edu.com/newsystem/appmobile/thumbnail/theme_web_v20/animals.jpg"
+        />
+        <ThemeListItem
+          title="Arts"
+          themeImgSrc="https://wcfresource.a1edu.com/newsystem/appmobile/thumbnail/theme_web_v20/arts.jpg"
+        />
+        <ThemeListItem
+          title="Behavior"
+          themeImgSrc="https://wcfresource.a1edu.com/newsystem/appmobile/thumbnail/theme_web_v20/behavior.jpg"
+        />
+        <ThemeListItem
+          title="Biographies/Auto Biographies"
+          themeImgSrc="https://wcfresource.a1edu.com/newsystem/appmobile/thumbnail/theme_web_v20/biographies.jpg"
+        />
+        <ThemeListItem
+          title="Classics"
+          themeImgSrc="https://wcfresource.a1edu.com/newsystem/appmobile/thumbnail/theme_web_v20/classics.jpg"
+        />
+        <ThemeListItem
+          title="Community Life"
+          themeImgSrc="https://wcfresource.a1edu.com/newsystem/appmobile/thumbnail/theme_web_v20/community_life.jpg"
+        />
       </ThemeList>
     </>
   );

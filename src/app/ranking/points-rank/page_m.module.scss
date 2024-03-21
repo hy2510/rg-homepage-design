@@ -2,7 +2,8 @@
   font-size: var(--text-l);
   font-weight: 600;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  // align-items: flex-end;
   gap: var(--space-xs);
   span {
     color: var(--gray1);
@@ -15,6 +16,19 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
+  .group_sub_title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    position: relative;
+    .txt_link {
+      position: absolute;
+      right: 0;
+      color: var(--blue);
+      letter-spacing: 1.2;
+      cursor: pointer;
+    }
+  }
 }
 
 .user_engagement_status {
@@ -138,7 +152,8 @@
     border-bottom: 1px dotted rgba($color: #ffffff, $alpha: 0.15);
   }
   &.top_ranker {
-    background-color: #fff9f5;
+    // background-color: #fff9f5;
+    background-color: var(--light);
     @media (prefers-color-scheme: dark) {
       background-color: #ffffff10;
     }

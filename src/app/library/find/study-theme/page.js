@@ -12,6 +12,7 @@ import bookData from "@/app/library/sample-data-book-finder.json";
 import Image from "next/image";
 import { BookCover } from "@/components/modules/library-book-cover/book-cover";
 import { useMobileDetect } from "@/components/util";
+import { LibraryFindTop } from "@/components/modules/library-find-top/library-find-top";
 
 const isMobile = useMobileDetect();
 const style = isMobile ? stylesMobile : stylesPc;
@@ -22,7 +23,7 @@ export default function Page() {
       <BackLink href="/library/explore" largeFont>
         주제별
       </BackLink>
-      <div>[주제별 상단]</div>
+      <LibraryFindTop title="Sample Theme" />
       <BookList count={50}>
         {bookData.map((a, i) => {
           return (

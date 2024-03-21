@@ -1,16 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { Dropdown, DropdownItem } from "@/components/common/common-components";
+import {
+  Dropdown,
+  DropdownItem,
+  Modal,
+} from "@/components/common/common-components";
 import stylesMobile from "./page_m.module.scss";
 import stylesPc from "./page.module.scss";
 import { ranking } from "../sample-data";
 import { useMobileDetect } from "@/components/util";
+import { useEffect, useRef, useState } from "react";
 
 const isMobile = useMobileDetect();
 const style = isMobile ? stylesMobile : stylesPc;
 
 export default function Page() {
+  const [viewModal, _viewModal] = useState(false);
+
   const SubTitle = ({ children, message }) => {
     return (
       <div className={style.sub_title}>
@@ -142,9 +149,48 @@ export default function Page() {
         }
         userRank={998}
       />
-      <SubTitle message={"마지막 업데이트  : 2023.05.23 화요일 오전 12:04"}>
-        리더보드
-      </SubTitle>
+      <div className={style.group_sub_title}>
+        <SubTitle message={"마지막 업데이트  : 2023.05.23 화요일 오전 12:04"}>
+          리더보드
+        </SubTitle>
+        <div
+          className={style.txt_link}
+          onClick={() => {
+            _viewModal(true);
+          }}
+        >
+          포인트 안내
+        </div>
+        {viewModal && (
+          <Modal
+            compact
+            header
+            title={"포인트란?"}
+            onClickDelete={() => {
+              _viewModal(false);
+            }}
+            onClickLightbox={() => {
+              _viewModal(false);
+            }}
+          >
+            <iframe
+              width={"100%"}
+              frameBorder="0"
+              scrolling="no"
+              src={
+                isMobile
+                  ? "/src/html/page-contents/mobile/ranking/ranking_01_point_pop.html"
+                  : "/src/html/page-contents/pc/ranking/ranking_01_point_pop.html"
+              }
+              style={{
+                height: isMobile ? "1065px" : "867px",
+                backgroundColor: "transparent",
+                overflow: "hidden",
+              }}
+            />
+          </Modal>
+        )}
+      </div>
       <Leaderboard />
     </main>
   );

@@ -35,10 +35,18 @@
       position: absolute;
       z-index: 0;
       bottom: 0;
-      right: -50px;
+      right: -20px;
       img {
         width: 200px;
         height: 200px;
+      }
+      @media (orientation: portrait) {
+        bottom: 20px;
+        right: -40px;
+        img {
+          width: 150px;
+          height: 150px;
+        }
       }
     }
   }

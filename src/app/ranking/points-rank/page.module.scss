@@ -15,6 +15,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-l);
+  .group_sub_title {
+    display: flex;
+    gap: var(--space-xs);
+    align-items: center;
+    justify-content: space-between;
+    .txt_link {
+      color: var(--blue);
+      letter-spacing: 1.2;
+      cursor: pointer;
+    }
+  }
 }
 
 .user_engagement_status {
@@ -135,7 +146,8 @@
     border-bottom: 1px dotted rgba($color: #ffffff, $alpha: 0.15);
   }
   &.top_ranker {
-    background-color: #fff9f5;
+    // background-color: #fff9f5;
+    background-color: var(--light);
     @media (prefers-color-scheme: dark) {
       background-color: #ffffff10;
     }

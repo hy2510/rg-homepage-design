@@ -20,6 +20,9 @@
   align-items: center;
   gap: var(--space-l);
   padding-top: var(--space-l);
+  @media (pointer: coarse) {
+    padding-top: 35px;
+  }
 }
 
 .home_nav_item {

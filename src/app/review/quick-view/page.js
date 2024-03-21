@@ -31,9 +31,9 @@ export default function Page() {
         <DropdownItem>최근 90일</DropdownItem>
       </Dropdown>
       <Pills>
-        <PillItem active={true}>All: 25권</PillItem>
-        <PillItem active={false}>Passed: 20권</PillItem>
-        <PillItem active={false}>Failed: 5권</PillItem>
+        <PillItem active={true}>All 25권</PillItem>
+        <PillItem active={false}>Passed 20권</PillItem>
+        <PillItem active={false}>Failed 5권</PillItem>
       </Pills>
       <QuickReportsList>
         <>

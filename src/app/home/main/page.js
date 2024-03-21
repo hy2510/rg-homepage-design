@@ -19,7 +19,7 @@ import {
   RgPostContainer,
   RgPostItem,
 } from "@/components/modules/home-main-components/home-main-rg-post";
-import { useMobileDetect } from "@/components/util";
+import { LoadingScreen, useMobileDetect } from "@/components/util";
 import { useEffect } from "react";
 
 const isMobile = useMobileDetect();
@@ -32,6 +32,7 @@ export default function Page() {
 
   return (
     <main className={`${style.home_news} container`}>
+      <LoadingScreen />
       <div className={style.item1}>
         <MainBanner />
       </div>

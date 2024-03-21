@@ -19,7 +19,7 @@ const style = isMobile ? stylesMobile : stylesPc;
 
 // 공통상단
 export default function Gheader({ children }) {
-  const logOnStatus = false;
+  const logOnStatus = true;
   const pathname = usePathname();
   const connectHome = pathname.indexOf("/home") != -1;
   const connectAbout = pathname.indexOf("/about") != -1;
@@ -89,7 +89,7 @@ export default function Gheader({ children }) {
           )}
         </div>
       </div>
-      <div style={{ height: isMobile ? 0 : "78px" }}></div>
+      <div className={style.global_header_back_spcae}></div>
       {viewCalendarModal && (
         <CalendarModal _viewCalendarModal={_viewCalendarModal} />
       )}
@@ -415,21 +415,54 @@ const GnbLogOnMobile = () => {
     );
   };
 
+  const [isDarkMode, _isDarkMode] = useState(true);
+
+  useEffect(() => {
+    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    _isDarkMode(darkModeQuery.matches);
+
+    const handleDarkModeChange = (e) => {
+      _isDarkMode(e.matches);
+    };
+
+    darkModeQuery.addEventListener("change", handleDarkModeChange);
+
+    return () => {
+      darkModeQuery.removeEventListener("change", handleDarkModeChange);
+    };
+  }, []);
+
   return (
     <div className={style.gnb_log_on_mobile}>
       <MenuButton
         name={"홈"}
         href={"/home/main"}
         active={connectHome}
-        imgSrcBtnOff={"/src/images/@global-header/home_off_mobile.svg"}
-        imgSrcBtnOn={"/src/images/@global-header/home_on_mobile.svg"}
+        imgSrcBtnOff={
+          isDarkMode
+            ? "/src/images/@global-header/home_off_mobile_white.svg"
+            : "/src/images/@global-header/home_off_mobile.svg"
+        }
+        imgSrcBtnOn={
+          isDarkMode
+            ? "/src/images/@global-header/home_on_mobile_white.svg"
+            : "/src/images/@global-header/home_on_mobile.svg"
+        }
       />
       <MenuButton
         name={"학습"}
         href={"/library/explore"}
         active={connectLibrary}
-        imgSrcBtnOff={"/src/images/@global-header/study_room_off_mobile.svg"}
-        imgSrcBtnOn={"/src/images/@global-header/study_room_on_mobile.svg"}
+        imgSrcBtnOff={
+          isDarkMode
+            ? "/src/images/@global-header/study_room_off_mobile_white.svg"
+            : "/src/images/@global-header/study_room_off_mobile.svg"
+        }
+        imgSrcBtnOn={
+          isDarkMode
+            ? "/src/images/@global-header/study_room_on_mobile_white.svg"
+            : "/src/images/@global-header/study_room_on_mobile.svg"
+        }
       />
       <SearchButton
         onClick={() => {
@@ -440,15 +473,31 @@ const GnbLogOnMobile = () => {
         name={"리뷰"}
         href={"/review"}
         active={connectReview}
-        imgSrcBtnOff={"/src/images/@global-header/review_off_mobile.svg"}
-        imgSrcBtnOn={"/src/images/@global-header/review_on_mobile.svg"}
+        imgSrcBtnOff={
+          isMobile
+            ? "/src/images/@global-header/review_off_mobile_white.svg"
+            : "/src/images/@global-header/review_off_mobile.svg"
+        }
+        imgSrcBtnOn={
+          isMobile
+            ? "/src/images/@global-header/review_on_mobile_white.svg"
+            : "/src/images/@global-header/review_on_mobile.svg"
+        }
       />
       <MenuButton
         name={"랭킹"}
         href={"/ranking"}
         active={connectRanking}
-        imgSrcBtnOff={"/src/images/@global-header/ranking_off_mobile.svg"}
-        imgSrcBtnOn={"/src/images/@global-header/ranking_on_mobile.svg"}
+        imgSrcBtnOff={
+          isMobile
+            ? "/src/images/@global-header/ranking_off_mobile_white.svg"
+            : "/src/images/@global-header/ranking_off_mobile.svg"
+        }
+        imgSrcBtnOn={
+          isMobile
+            ? "/src/images/@global-header/ranking_on_mobile_white.svg"
+            : "/src/images/@global-header/ranking_on_mobile.svg"
+        }
       />
     </div>
   );

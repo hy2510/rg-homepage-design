@@ -35,6 +35,6 @@
   .row_b {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-s);
+    gap: var(--space-xs);
   }
 }

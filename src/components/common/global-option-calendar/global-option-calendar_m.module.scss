@@ -200,9 +200,10 @@
 // 캘린더 모달 > 상세보기 달력
 .cal_detail_mode_tabs {
   display: flex;
-  border-radius: var(--round-full);
+  border-radius: var(--round-m);
   background: var(--blue);
   padding: var(--space-xxs);
+  margin: 0 var(--space-xs);
   @media (prefers-color-scheme: dark) {
     background: rgba($color: #fff, $alpha: 0.15);
   }
@@ -221,7 +222,7 @@
     &.active {
       opacity: 1;
       color: var(--blue);
-      border-radius: var(--round-full);
+      border-radius: var(--round-s);
       background: var(--white);
       @media (prefers-color-scheme: dark) {
         background: rgba($color: #0c0541, $alpha: 0.8);
